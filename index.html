@@ -11,21 +11,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <audio id="weddingMusic" loop preload="none">
-      <source src="assets/music/wedding-song.mp3" type="audio/mpeg" />
-    </audio>
+    <div class="invitation-gate" id="invitationGate" aria-label="Öppna inbjudan">
+      <div class="gate-bg" aria-hidden="true"></div>
+      <div class="envelope-scene">
+        <div class="gate-verse">Therefore what God has joined together, let no one separate</div>
+        <button class="envelope-button" id="openInvitation" type="button">
+          <span class="envelope">
+            <span class="envelope-flap"></span>
+            <span class="envelope-card">
+              <span class="crest crest-small" aria-hidden="true">J<span>&</span>G</span>
+            </span>
+            <span class="wax-seal" aria-hidden="true">J&G</span>
+          </span>
+          <span class="gate-action" data-i18n="openInvitation">Öppna inbjudan</span>
+        </button>
+        <p class="gate-guest" data-guest-line></p>
+      </div>
+    </div>
 
     <header class="site-header" aria-label="Sidhuvud">
       <a class="brand" href="#home" aria-label="John och Georgina">
-        <span>J</span>
-        <span>&</span>
-        <span>G</span>
+        <span class="crest" aria-hidden="true">J<span>&</span>G</span>
       </a>
       <nav class="nav-links" aria-label="Huvudnavigation">
         <a href="#details" data-i18n="navDetails">Detaljer</a>
@@ -34,7 +46,7 @@
         <a href="#rsvp" data-i18n="navRsvp">OSA</a>
       </nav>
       <div class="header-actions" aria-label="Inställningar">
-        <div class="language-switch" aria-label="Sprak">
+        <div class="language-switch" aria-label="Språk">
           <button class="lang-btn is-active" type="button" data-lang="sv">SV</button>
           <button class="lang-btn" type="button" data-lang="en">EN</button>
           <button class="lang-btn" type="button" data-lang="ar">AR</button>
@@ -46,11 +58,12 @@
     </header>
 
     <main>
-      <section class="hero" id="home" aria-label="Brollopsinbjudan">
+      <section class="hero" id="home" aria-label="Bröllopsinbjudan">
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content reveal">
           <p class="kicker" data-i18n="heroKicker">Vi gifter oss</p>
+          <p class="personal-line" data-guest-line></p>
           <h1>John & Georgina</h1>
           <p class="verse" data-i18n="verse">
             Therefore what God has joined together, let no one separate
@@ -83,7 +96,7 @@
         </div>
       </section>
 
-      <section class="countdown-section" aria-label="Nedrakning">
+      <section class="countdown-section" aria-label="Nedräkning">
         <div class="section-shell">
           <p class="eyebrow reveal" data-i18n="countdownEyebrow">Nedräkning</p>
           <div class="countdown reveal" id="countdown">
@@ -140,7 +153,7 @@
         </div>
       </section>
 
-      <section class="photo-band" aria-label="Brollopsbild">
+      <section class="photo-band" aria-label="Bröllopsbild">
         <div class="parallax-photo" aria-hidden="true"></div>
         <div class="photo-quote reveal">
           <p data-i18n="photoQuote">
@@ -155,7 +168,8 @@
             <p class="eyebrow" data-i18n="scheduleEyebrow">Fredag 25 september</p>
             <h2 data-i18n="scheduleTitle">Schema</h2>
           </div>
-          <ol class="timeline reveal">
+          <ol class="timeline reveal" id="dayTimeline">
+            <span class="timeline-fill" aria-hidden="true"></span>
             <li>
               <time>18:30</time>
               <span data-i18n="scheduleArrival">Gäster anländer</span>
@@ -191,6 +205,42 @@
             <p class="story-note" data-i18n="storyNote">
               Här kan vi senare lägga in er personliga text och era egna bilder.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="love-journey-section" id="journey">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="journeyEyebrow">2015 till bröllopsdagen</p>
+            <h2 data-i18n="journeyTitle">Vägen hit</h2>
+          </div>
+          <div class="journey-track reveal" id="journeyTrack">
+            <span class="journey-fill" aria-hidden="true"></span>
+            <article class="journey-moment">
+              <div class="journey-photo"></div>
+              <time>2015</time>
+              <h3 data-i18n="journey2015Title">Första kapitlet</h3>
+              <p data-i18n="journey2015Body">En demo-text för början på er historia. Här byter vi senare till riktig bild och riktig berättelse.</p>
+            </article>
+            <article class="journey-moment">
+              <div class="journey-photo"></div>
+              <time>2020</time>
+              <h3 data-i18n="journey2020Title">Ett minne som stannade</h3>
+              <p data-i18n="journey2020Body">En plats, en resa eller en stund som blev viktig. Det här är förberett för er riktiga berättelse.</p>
+            </article>
+            <article class="journey-moment">
+              <div class="journey-photo"></div>
+              <time>2023</time>
+              <h3 data-i18n="journey2023Title">När allt blev tydligare</h3>
+              <p data-i18n="journey2023Body">En kort personlig berättelse kan ligga här, med en bild som öppnas större när gästen klickar.</p>
+            </article>
+            <article class="journey-moment">
+              <div class="journey-photo"></div>
+              <time>2026</time>
+              <h3 data-i18n="journey2026Title">Bröllopsdagen</h3>
+              <p data-i18n="journey2026Body">Den 25 september blir berättelsen ett nytt kapitel i Tensta Maria kyrka.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -237,6 +287,32 @@
               OSA-kontakter: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.
             </p>
           </form>
+        </div>
+      </section>
+
+      <section class="blessing-section" id="blessings">
+        <div class="section-shell blessing-layout">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="blessingEyebrow">Välsignelser</p>
+            <h2 data-i18n="blessingTitle">Lämna en hälsning</h2>
+            <p data-i18n="blessingBody">
+              Gäster kan skriva en kort hälsning. I denna första version sparas den på enheten; senare kan vi koppla den till en riktig databas.
+            </p>
+          </div>
+          <div class="blessing-panel reveal">
+            <form class="blessing-form" id="blessingForm">
+              <label>
+                <span data-i18n="blessingNameLabel">Namn</span>
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                <span data-i18n="blessingMessageLabel">Hälsning</span>
+                <textarea name="message" rows="4" maxlength="220" required></textarea>
+              </label>
+              <button class="primary-btn" type="submit" data-i18n="blessingSend">Lägg till hälsning</button>
+            </form>
+            <div class="blessing-wall" id="blessingWall" aria-live="polite"></div>
+          </div>
         </div>
       </section>
     </main>

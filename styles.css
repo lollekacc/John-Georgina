@@ -5,11 +5,13 @@
   --rose: #b56d76;
   --gold: #c8a45d;
   --deep: #312720;
+  --ink: #231b17;
   --muted: #7d7166;
   --line: rgba(200, 164, 93, 0.32);
   --shadow: 0 24px 70px rgba(49, 39, 32, 0.14);
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", Arial, sans-serif;
+  --arabic: "Noto Naskh Arabic", "Inter", sans-serif;
 }
 
 * {
@@ -32,6 +34,7 @@ body {
 
 body[dir="rtl"] {
   text-align: right;
+  font-family: var(--arabic);
 }
 
 body::before {
@@ -59,11 +62,207 @@ a {
   text-decoration: none;
 }
 
+section[id] {
+  scroll-margin-top: 124px;
+}
+
 button,
 input,
 select,
 textarea {
   font: inherit;
+}
+
+.invitation-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--ivory);
+  transition:
+    opacity 720ms ease,
+    visibility 720ms ease;
+}
+
+.invitation-gate.is-open {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gate-bg {
+  position: absolute;
+  inset: -5%;
+  background-image:
+    linear-gradient(180deg, rgba(49, 39, 32, 0.44), rgba(49, 39, 32, 0.72)),
+    url("assets/images/wedding-hero.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  transform: scale(1.04);
+}
+
+.envelope-scene {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  width: min(620px, calc(100% - 36px));
+  color: var(--warm-white);
+  text-align: center;
+}
+
+.gate-verse {
+  width: min(560px, 100%);
+  color: rgba(255, 253, 248, 0.92);
+  font-family: var(--serif);
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.02;
+  text-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+}
+
+.envelope-button {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: min(360px, 100%);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  width: min(320px, 88vw);
+  aspect-ratio: 1.58;
+  perspective: 900px;
+}
+
+.envelope::before,
+.envelope::after,
+.envelope-flap,
+.envelope-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.envelope::before {
+  content: "";
+  background:
+    linear-gradient(145deg, rgba(255, 253, 248, 0.98), rgba(246, 223, 225, 0.92)),
+    var(--warm-white);
+  border: 1px solid rgba(200, 164, 93, 0.48);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
+}
+
+.envelope::after {
+  content: "";
+  clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+  background: linear-gradient(180deg, rgba(200, 164, 93, 0.2), rgba(255, 253, 248, 0.62));
+}
+
+.envelope-flap {
+  transform-origin: top center;
+  clip-path: polygon(0 0, 50% 58%, 100% 0);
+  background: linear-gradient(180deg, #fffaf1, #ecd8c9);
+  border: 1px solid rgba(200, 164, 93, 0.36);
+  transition: transform 780ms cubic-bezier(0.2, 0.72, 0.16, 1);
+}
+
+.envelope-card {
+  top: 18%;
+  left: 10%;
+  right: 10%;
+  bottom: auto;
+  height: 66%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 253, 248, 0.98);
+  border: 1px solid rgba(200, 164, 93, 0.3);
+  transform: translateY(18%);
+  transition: transform 780ms cubic-bezier(0.2, 0.72, 0.16, 1);
+}
+
+.envelope-card .crest-small {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.wax-seal {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.35), transparent 28%),
+    var(--rose);
+  color: var(--warm-white);
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 12px 30px rgba(49, 39, 32, 0.28);
+  transition: transform 780ms ease, opacity 520ms ease;
+}
+
+.envelope-button:hover .envelope-flap,
+.envelope-button:focus-visible .envelope-flap,
+.invitation-gate.is-opening .envelope-flap {
+  transform: rotateX(168deg);
+}
+
+.envelope-button:hover .envelope-card,
+.envelope-button:focus-visible .envelope-card,
+.invitation-gate.is-opening .envelope-card {
+  transform: translateY(-28%);
+}
+
+.envelope-button:hover .envelope-card .crest-small,
+.envelope-button:focus-visible .envelope-card .crest-small,
+.invitation-gate.is-opening .envelope-card .crest-small {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.envelope-button:hover .wax-seal,
+.envelope-button:focus-visible .wax-seal,
+.invitation-gate.is-opening .wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.82);
+}
+
+.gate-action {
+  color: var(--warm-white);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gate-guest,
+.personal-line {
+  margin: 0;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.personal-line:empty,
+.gate-guest:empty {
+  display: none;
 }
 
 .site-header {
@@ -83,18 +282,32 @@ textarea {
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
+  display: inline-grid;
+  place-items: center;
   width: 56px;
   height: 56px;
   border: 1px solid var(--line);
   border-radius: 50%;
   color: var(--gold);
+}
+
+.crest {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gold);
   font-family: var(--serif);
   font-size: 20px;
   font-weight: 700;
+}
+
+.crest span {
+  color: var(--rose);
+  font-size: 0.82em;
+}
+
+.crest-small {
+  font-size: 38px;
 }
 
 .nav-links {
@@ -499,6 +712,7 @@ p {
 }
 
 .timeline {
+  --timeline-progress: 0%;
   position: relative;
   display: grid;
   gap: 0;
@@ -507,28 +721,57 @@ p {
   list-style: none;
 }
 
-.timeline::before {
+.timeline::before,
+.timeline-fill {
   content: "";
   position: absolute;
   top: 12px;
   bottom: 12px;
   left: 99px;
   width: 1px;
+}
+
+.timeline::before {
   background: var(--line);
 }
 
-body[dir="rtl"] .timeline::before {
+.timeline-fill {
+  bottom: auto;
+  height: var(--timeline-progress);
+  background: linear-gradient(180deg, var(--gold), var(--rose));
+  transition: height 220ms ease;
+}
+
+body[dir="rtl"] .timeline::before,
+body[dir="rtl"] .timeline-fill {
   right: 99px;
   left: auto;
 }
 
 .timeline li {
+  position: relative;
   display: grid;
   grid-template-columns: 130px 1fr;
   gap: 32px;
   align-items: center;
   min-height: 90px;
   border-bottom: 1px solid rgba(200, 164, 93, 0.2);
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 92px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: var(--ivory);
+}
+
+body[dir="rtl"] .timeline li::before {
+  right: 92px;
+  left: auto;
 }
 
 .timeline time {
@@ -566,20 +809,106 @@ body[dir="rtl"] .timeline::before {
   font-weight: 700;
 }
 
+.love-journey-section {
+  background: rgba(255, 253, 248, 0.68);
+}
+
+.journey-track {
+  --journey-progress: 0%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
+  gap: clamp(22px, 4vw, 46px);
+}
+
+.journey-track::before,
+.journey-fill {
+  content: "";
+  position: absolute;
+  top: 86px;
+  left: 6%;
+  right: 6%;
+  height: 1px;
+  background: var(--line);
+}
+
+.journey-fill {
+  right: auto;
+  width: var(--journey-progress);
+  background: linear-gradient(90deg, var(--gold), var(--rose));
+  transition: width 220ms ease;
+}
+
+.journey-moment {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 360px;
+  padding: 0 0 22px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+body[dir="rtl"] .journey-moment {
+  text-align: right;
+}
+
+.journey-photo {
+  width: 126px;
+  height: 126px;
+  border: 8px solid var(--ivory);
+  border-radius: 50%;
+  background-image: url("assets/images/wedding-hero.png");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 16px 42px rgba(49, 39, 32, 0.16);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.journey-moment:hover .journey-photo,
+.journey-moment:focus-visible .journey-photo {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 56px rgba(49, 39, 32, 0.2);
+}
+
+.journey-moment time {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 38px;
+  line-height: 1;
+}
+
+.journey-moment h3 {
+  font-size: 30px;
+}
+
+.journey-moment p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
 .rsvp-section {
   background:
     linear-gradient(135deg, rgba(246, 223, 225, 0.54), rgba(255, 250, 241, 0.92)),
     var(--ivory);
 }
 
-.rsvp-layout {
+.rsvp-layout,
+.blessing-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
   gap: clamp(34px, 6vw, 82px);
   align-items: start;
 }
 
-.rsvp-form {
+.rsvp-form,
+.blessing-panel {
   display: grid;
   gap: 18px;
   padding: clamp(26px, 4vw, 44px);
@@ -656,6 +985,117 @@ textarea:focus {
   line-height: 1.55;
 }
 
+.blessing-form {
+  display: grid;
+  gap: 16px;
+}
+
+.blessing-wall {
+  display: grid;
+  gap: 12px;
+}
+
+.blessing-card {
+  padding: 18px;
+  border: 1px solid rgba(200, 164, 93, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 250, 241, 0.76);
+}
+
+.blessing-card p {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.22;
+}
+
+.blessing-card span {
+  color: var(--rose);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.moment-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: rgba(35, 27, 23, 0.56);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 220ms ease,
+    visibility 220ms ease;
+}
+
+.moment-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.moment-dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(280px, 1fr);
+  gap: clamp(24px, 4vw, 46px);
+  width: min(920px, 100%);
+  max-height: min(760px, calc(100vh - 44px));
+  overflow: auto;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--warm-white);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
+}
+
+.moment-modal-photo {
+  min-height: 420px;
+  border-radius: 8px;
+  background-image: url("assets/images/wedding-hero.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.moment-modal-copy {
+  align-self: center;
+}
+
+.moment-modal-copy time {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 44px;
+}
+
+.moment-modal-copy h3 {
+  margin: 8px 0 16px;
+  font-size: clamp(38px, 5vw, 68px);
+}
+
+.moment-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 250, 241, 0.82);
+  color: var(--deep);
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+body[dir="rtl"] .moment-close {
+  right: auto;
+  left: 14px;
+}
+
 .site-footer {
   display: grid;
   gap: 6px;
@@ -725,6 +1165,48 @@ body.motion-ready .reveal.is-visible {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .journey-track {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .journey-track::before,
+  .journey-fill {
+    top: 0;
+    bottom: 0;
+    left: 63px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  .journey-fill {
+    height: var(--journey-progress);
+  }
+
+  .journey-moment {
+    grid-template-columns: 126px 1fr;
+    min-height: 0;
+    gap: 16px 22px;
+  }
+
+  .journey-photo {
+    grid-row: span 3;
+  }
+}
+
 @media (max-width: 900px) {
   .site-header {
     grid-template-columns: auto auto;
@@ -746,6 +1228,7 @@ body.motion-ready .reveal.is-visible {
   .split,
   .story-layout,
   .rsvp-layout,
+  .blessing-layout,
   .detail-grid {
     grid-template-columns: 1fr;
   }
@@ -764,6 +1247,14 @@ body.motion-ready .reveal.is-visible {
 
   .story-image {
     min-height: 420px;
+  }
+
+  .moment-dialog {
+    grid-template-columns: 1fr;
+  }
+
+  .moment-modal-photo {
+    min-height: 300px;
   }
 }
 
@@ -814,11 +1305,13 @@ body.motion-ready .reveal.is-visible {
     grid-template-columns: 1fr;
   }
 
-  .timeline::before {
+  .timeline::before,
+  .timeline-fill {
     left: 78px;
   }
 
-  body[dir="rtl"] .timeline::before {
+  body[dir="rtl"] .timeline::before,
+  body[dir="rtl"] .timeline-fill {
     right: 78px;
   }
 
@@ -827,7 +1320,31 @@ body.motion-ready .reveal.is-visible {
     gap: 20px;
   }
 
+  .timeline li::before {
+    left: 71px;
+  }
+
+  body[dir="rtl"] .timeline li::before {
+    right: 71px;
+    left: auto;
+  }
+
   .timeline time {
     font-size: 29px;
+  }
+
+  .journey-track::before,
+  .journey-fill {
+    left: 46px;
+  }
+
+  .journey-moment {
+    grid-template-columns: 92px 1fr;
+  }
+
+  .journey-photo {
+    width: 92px;
+    height: 92px;
+    border-width: 6px;
   }
 }
