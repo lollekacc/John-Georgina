@@ -19,6 +19,7 @@
   <body>
     <div class="invitation-gate" id="invitationGate" aria-label="Öppna inbjudan">
       <div class="gate-bg" aria-hidden="true"></div>
+      <div class="celebration-rain" id="celebrationRain" aria-hidden="true"></div>
       <div class="envelope-scene">
         <div class="gate-verse">Therefore what God has joined together, let no one separate</div>
         <button class="envelope-button" id="openInvitation" type="button">
@@ -32,6 +33,7 @@
           <span class="gate-action" data-i18n="openInvitation">Öppna inbjudan</span>
         </button>
         <p class="gate-guest" data-guest-line></p>
+        <p class="party-size" data-party-line></p>
       </div>
     </div>
 
@@ -64,6 +66,7 @@
         <div class="hero-content reveal">
           <p class="kicker" data-i18n="heroKicker">Vi gifter oss</p>
           <p class="personal-line" data-guest-line></p>
+          <p class="party-size hero-party-size" data-party-line></p>
           <h1>John & Georgina</h1>
           <p class="verse" data-i18n="verse">
             Therefore what God has joined together, let no one separate
@@ -128,6 +131,7 @@
           </div>
           <div class="detail-grid">
             <article class="detail-card reveal">
+              <span class="event-symbol" aria-hidden="true">⛪</span>
               <span class="card-number">01</span>
               <h3 data-i18n="ceremonyTitle">Ceremoni</h3>
               <p class="detail-time">19:00</p>
@@ -140,6 +144,7 @@
               </a>
             </article>
             <article class="detail-card reveal">
+              <span class="event-symbol" aria-hidden="true">🥂</span>
               <span class="card-number">02</span>
               <h3 data-i18n="receptionTitle">Fest</h3>
               <p class="detail-time">20:00</p>
@@ -171,18 +176,22 @@
           <ol class="timeline reveal" id="dayTimeline">
             <span class="timeline-fill" aria-hidden="true"></span>
             <li>
+              <span class="timeline-symbol" aria-hidden="true">✨</span>
               <time>18:30</time>
               <span data-i18n="scheduleArrival">Gäster anländer</span>
             </li>
             <li>
+              <span class="timeline-symbol" aria-hidden="true">⛪</span>
               <time>19:00</time>
               <span data-i18n="scheduleCeremony">Vigsel i Tensta Maria kyrka</span>
             </li>
             <li>
+              <span class="timeline-symbol" aria-hidden="true">🥂</span>
               <time>20:00</time>
               <span data-i18n="scheduleReception">Fest i kyrkans lokal</span>
             </li>
             <li>
+              <span class="timeline-symbol" aria-hidden="true">💍</span>
               <time>21:00</time>
               <span data-i18n="scheduleDinner">Middag, tal och firande</span>
             </li>
@@ -220,24 +229,28 @@
             <article class="journey-moment">
               <div class="journey-photo"></div>
               <time>2015</time>
+              <span class="journey-symbol" aria-hidden="true">🤍</span>
               <h3 data-i18n="journey2015Title">Första kapitlet</h3>
               <p data-i18n="journey2015Body">En demo-text för början på er historia. Här byter vi senare till riktig bild och riktig berättelse.</p>
             </article>
             <article class="journey-moment">
               <div class="journey-photo"></div>
               <time>2020</time>
+              <span class="journey-symbol" aria-hidden="true">✨</span>
               <h3 data-i18n="journey2020Title">Ett minne som stannade</h3>
               <p data-i18n="journey2020Body">En plats, en resa eller en stund som blev viktig. Det här är förberett för er riktiga berättelse.</p>
             </article>
             <article class="journey-moment">
               <div class="journey-photo"></div>
               <time>2023</time>
+              <span class="journey-symbol" aria-hidden="true">💫</span>
               <h3 data-i18n="journey2023Title">När allt blev tydligare</h3>
               <p data-i18n="journey2023Body">En kort personlig berättelse kan ligga här, med en bild som öppnas större när gästen klickar.</p>
             </article>
             <article class="journey-moment">
               <div class="journey-photo"></div>
               <time>2026</time>
+              <span class="journey-symbol" aria-hidden="true">💍</span>
               <h3 data-i18n="journey2026Title">Bröllopsdagen</h3>
               <p data-i18n="journey2026Body">Den 25 september blir berättelsen ett nytt kapitel i Tensta Maria kyrka.</p>
             </article>
@@ -254,6 +267,7 @@
               Berätta om du kommer eller inte, och hur många personer svaret
               gäller. Skicka ditt svar direkt till Yaeel eller Nuha.
             </p>
+            <p class="rsvp-party-line" data-party-line></p>
           </div>
           <form class="rsvp-form reveal" id="rsvpForm">
             <label>

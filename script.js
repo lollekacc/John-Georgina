@@ -21,7 +21,8 @@ const translations = {
   sv: {
     openInvitation: "Öppna inbjudan",
     guestLine: "Särskilt inbjuden: {guest}",
-    guestLineParty: "Särskilt inbjudna: {guest} | {party} personer",
+    guestLineParty: "Särskilt inbjudna: {guest}",
+    partyLine: "Denna inbjudan gäller {party} personer",
     navDetails: "Detaljer",
     navSchedule: "Schema",
     navStory: "Vår berättelse",
@@ -102,7 +103,8 @@ const translations = {
   en: {
     openInvitation: "Open invitation",
     guestLine: "Especially invited: {guest}",
-    guestLineParty: "Especially invited: {guest} | {party} guests",
+    guestLineParty: "Especially invited: {guest}",
+    partyLine: "This invitation is for {party} people",
     navDetails: "Details",
     navSchedule: "Schedule",
     navStory: "Our story",
@@ -181,7 +183,8 @@ const translations = {
   ar: {
     openInvitation: "افتح الدعوة",
     guestLine: "دعوة خاصة إلى: {guest}",
-    guestLineParty: "دعوة خاصة إلى: {guest} | عدد الأشخاص {party}",
+    guestLineParty: "دعوة خاصة إلى: {guest}",
+    partyLine: "هذه الدعوة مخصصة لعدد {party} أشخاص",
     navDetails: "التفاصيل",
     navSchedule: "البرنامج",
     navStory: "قصتنا",
@@ -298,10 +301,22 @@ function getGuestLine() {
   return template.replace("{guest}", guestName).replace("{party}", guestParty);
 }
 
+function getPartyLine() {
+  if (!guestParty) {
+    return "";
+  }
+
+  return translations[activeLang].partyLine.replace("{party}", guestParty);
+}
+
 function applyGuestPersonalization() {
   const line = getGuestLine();
+  const partyLine = getPartyLine();
   document.querySelectorAll("[data-guest-line]").forEach((element) => {
     element.textContent = line;
+  });
+  document.querySelectorAll("[data-party-line]").forEach((element) => {
+    element.textContent = partyLine;
   });
 
   const nameInput = document.querySelector('#rsvpForm input[name="name"]');
@@ -450,6 +465,7 @@ document.querySelector("#musicToggle").addEventListener("click", () => toggleMus
 document.querySelector("#openInvitation").addEventListener("click", async () => {
   const gate = document.querySelector("#invitationGate");
   gate.classList.add("is-opening");
+  launchCelebrationRain();
   await toggleMusic(true);
   window.setTimeout(() => {
     gate.classList.add("is-open");
@@ -458,6 +474,31 @@ document.querySelector("#openInvitation").addEventListener("click", async () => 
 
 if (skipIntro) {
   document.querySelector("#invitationGate").classList.add("is-open");
+}
+
+function launchCelebrationRain() {
+  const container = document.querySelector("#celebrationRain");
+  const pieces = ["♡", "♥", "✦", "✧", "❊"];
+  const colors = ["#fffdf8", "#f6dfe1", "#c8a45d", "#b56d76"];
+
+  container.innerHTML = "";
+
+  for (let i = 0; i < 46; i += 1) {
+    const piece = document.createElement("span");
+    piece.textContent = pieces[i % pieces.length];
+    piece.style.setProperty("--fall-left", `${Math.random() * 100}%`);
+    piece.style.setProperty("--fall-drift", `${Math.random() * 160 - 80}px`);
+    piece.style.setProperty("--fall-rotate", `${Math.random() * 520 - 260}deg`);
+    piece.style.setProperty("--fall-duration", `${2.6 + Math.random() * 1.8}s`);
+    piece.style.setProperty("--fall-delay", `${Math.random() * 0.5}s`);
+    piece.style.setProperty("--fall-size", `${12 + Math.random() * 16}px`);
+    piece.style.setProperty("--fall-color", colors[i % colors.length]);
+    container.appendChild(piece);
+  }
+
+  window.setTimeout(() => {
+    container.innerHTML = "";
+  }, 5200);
 }
 
 function setScrollProgress(element, property, axis = "vertical") {

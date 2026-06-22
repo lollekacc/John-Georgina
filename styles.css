@@ -104,6 +104,24 @@ textarea {
   transform: scale(1.04);
 }
 
+.celebration-rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.celebration-rain span {
+  position: absolute;
+  top: -12vh;
+  left: var(--fall-left);
+  color: var(--fall-color);
+  font-size: var(--fall-size);
+  opacity: 0;
+  filter: drop-shadow(0 8px 16px rgba(49, 39, 32, 0.18));
+  animation: celebrationFall var(--fall-duration) linear var(--fall-delay) forwards;
+}
+
 .envelope-scene {
   position: relative;
   z-index: 2;
@@ -252,7 +270,8 @@ textarea {
 }
 
 .gate-guest,
-.personal-line {
+.personal-line,
+.party-size {
   margin: 0;
   color: var(--gold);
   font-size: 13px;
@@ -261,8 +280,14 @@ textarea {
 }
 
 .personal-line:empty,
-.gate-guest:empty {
+.gate-guest:empty,
+.party-size:empty {
   display: none;
+}
+
+.hero-party-size {
+  margin-top: 8px;
+  color: rgba(255, 253, 248, 0.9);
 }
 
 .site-header {
@@ -644,12 +669,33 @@ p {
 }
 
 .detail-card {
+  position: relative;
   min-height: 430px;
   padding: clamp(28px, 4vw, 46px);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 253, 248, 0.82);
   box-shadow: var(--shadow);
+}
+
+.event-symbol {
+  position: absolute;
+  top: clamp(26px, 4vw, 42px);
+  right: clamp(26px, 4vw, 42px);
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 250, 241, 0.78);
+  font-size: 24px;
+  box-shadow: 0 12px 30px rgba(49, 39, 32, 0.08);
+}
+
+body[dir="rtl"] .event-symbol {
+  right: auto;
+  left: clamp(26px, 4vw, 42px);
 }
 
 .card-number {
@@ -758,6 +804,26 @@ body[dir="rtl"] .timeline-fill {
   border-bottom: 1px solid rgba(200, 164, 93, 0.2);
 }
 
+.timeline-symbol {
+  position: absolute;
+  left: 48px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(200, 164, 93, 0.34);
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.92);
+  font-size: 16px;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(49, 39, 32, 0.08);
+}
+
+body[dir="rtl"] .timeline-symbol {
+  right: 48px;
+  left: auto;
+}
+
 .timeline li::before {
   content: "";
   position: absolute;
@@ -784,6 +850,12 @@ body[dir="rtl"] .timeline li::before {
   color: var(--deep);
   font-size: 18px;
   font-weight: 600;
+}
+
+.timeline .timeline-symbol {
+  color: inherit;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .story-layout {
@@ -881,6 +953,18 @@ body[dir="rtl"] .journey-moment {
   font-family: var(--serif);
   font-size: 38px;
   line-height: 1;
+}
+
+.journey-symbol {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-top: -6px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 253, 248, 0.86);
+  font-size: 16px;
 }
 
 .journey-moment h3 {
@@ -983,6 +1067,12 @@ textarea:focus {
   color: var(--rose);
   font-size: 13px;
   line-height: 1.55;
+}
+
+.rsvp-party-line {
+  margin-top: 20px;
+  color: var(--rose);
+  font-weight: 800;
 }
 
 .blessing-form {
@@ -1165,6 +1255,20 @@ body.motion-ready .reveal.is-visible {
   }
 }
 
+@keyframes celebrationFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -10vh, 0) rotate(0deg) scale(0.8);
+  }
+  8% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--fall-drift), 112vh, 0) rotate(var(--fall-rotate)) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1322,6 +1426,15 @@ body.motion-ready .reveal.is-visible {
 
   .timeline li::before {
     left: 71px;
+  }
+
+  .timeline-symbol {
+    left: 31px;
+  }
+
+  body[dir="rtl"] .timeline-symbol {
+    right: 31px;
+    left: auto;
   }
 
   body[dir="rtl"] .timeline li::before {
