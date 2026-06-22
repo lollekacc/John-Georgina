@@ -826,8 +826,8 @@ body[dir="rtl"] .timeline li::before {
   content: "";
   position: absolute;
   top: 86px;
-  left: 6%;
-  right: 6%;
+  left: -4%;
+  right: -4%;
   height: 1px;
   background: var(--line);
 }
