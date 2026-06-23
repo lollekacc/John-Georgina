@@ -1483,7 +1483,51 @@ body.motion-ready .reveal.is-visible {
   }
 
   .hero {
-    min-height: 880px;
+    display: block;
+    min-height: 0;
+    padding-top: 108px;
+    background:
+      linear-gradient(180deg, rgba(35, 27, 23, 0.98), rgba(49, 39, 32, 0.94)),
+      var(--deep);
+  }
+
+  .site-video-backdrop {
+    position: relative;
+    inset: auto;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-color: var(--deep);
+    background-position: center;
+  }
+
+  .site-video-backdrop::before {
+    display: none;
+  }
+
+  .site-video-backdrop video {
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+    object-position: center;
+    background: rgba(35, 27, 23, 0.86);
+  }
+
+  .site-video-backdrop::after {
+    z-index: 2;
+    background:
+      linear-gradient(180deg, rgba(35, 27, 23, 0.08), rgba(35, 27, 23, 0.18)),
+      radial-gradient(circle at center, rgba(255, 253, 248, 0.04), rgba(35, 27, 23, 0.18));
+  }
+
+  .hero-media,
+  .hero-overlay {
+    display: none;
+  }
+
+  .hero-content {
+    width: min(100% - 32px, 620px);
+    margin: 0 auto;
+    padding: 34px 0 112px;
   }
 
   .hero h1 {
