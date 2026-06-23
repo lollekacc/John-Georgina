@@ -17,13 +17,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="site-video-backdrop" aria-hidden="true">
-      <video autoplay muted loop playsinline preload="metadata" poster="assets/images/wedding-hero.png">
-        <source src="assets/images/wedding-video.mp4" type="video/mp4" />
-        <source src="assets/images/ee7d8bca-46fb-460b-b779-bcfe493914c1.mov" type="video/quicktime" />
-      </video>
-    </div>
-
     <div class="invitation-gate" id="invitationGate" aria-label="Öppna inbjudan">
       <div class="gate-bg" aria-hidden="true"></div>
       <div class="celebration-rain" id="celebrationRain" aria-hidden="true"></div>
@@ -68,6 +61,12 @@
 
     <main>
       <section class="hero" id="home" aria-label="Bröllopsinbjudan">
+        <div class="site-video-backdrop" aria-hidden="true">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/images/wedding-hero.png">
+            <source src="assets/images/wedding-video.mp4" type="video/mp4" />
+            <source src="assets/images/ee7d8bca-46fb-460b-b779-bcfe493914c1.mov" type="video/quicktime" />
+          </video>
+        </div>
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content reveal">
