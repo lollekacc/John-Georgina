@@ -10,6 +10,7 @@ const types = {
   ".png": "image/png",
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
+  ".jfif": "image/jpeg",
   ".mov": "video/quicktime",
   ".mp4": "video/mp4",
   ".mp3": "audio/mpeg",

@@ -19,21 +19,24 @@ const contacts = {
 
 const translations = {
   sv: {
+    gateKicker: "John & Georgina",
+    gateTitle: "Vi gifter oss",
     openInvitation: "Öppna inbjudan",
     guestLine: "Särskilt inbjuden: {guest}",
     guestLineParty: "Särskilt inbjudna: {guest}",
     partyLine: "Denna inbjudan gäller {party} personer",
     navDetails: "Detaljer",
     navSchedule: "Schema",
-    navStory: "Vår berättelse",
+    navGallery: "Galleri",
     navRsvp: "OSA",
-    heroKicker: "Vi gifter oss",
+    heroKicker: "Bröllopsinbjudan",
     verse: "Therefore what God has joined together, let no one separate",
     heroDate: "Fredag 25 september 2026 | Tensta Maria kyrka",
+    heroCta: "Svara på inbjudan",
     welcomeEyebrow: "Med kärlek och glädje",
     welcomeTitle: "Välkommen till vår bröllopsdag",
     welcomeBody:
-      "Vi vill fira början på vårt liv tillsammans med våra familjer och vänner. Det skulle betyda mycket för oss att ha dig där när vi säger ja, delar middagen, musiken och kvällen.",
+      "Vi vill fira början på vårt liv tillsammans med våra familjer och vänner. Det betyder mycket för oss att ha dig där när vi säger ja och delar kvällen i tro, värme och glädje.",
     month: "September",
     countdownEyebrow: "Nedräkning",
     days: "Dagar",
@@ -50,31 +53,19 @@ const translations = {
     receptionBody:
       "Efter ceremonin fortsätter firandet i kyrkans lokal med mat, musik och minnen vi kommer bära med oss livet ut.",
     scheduleLink: "Se schema",
-    photoQuote: "En kväll för tro, familj, kärlek och allt som väntar.",
     scheduleEyebrow: "Fredag 25 september",
-    scheduleTitle: "Schema",
+    scheduleTitle: "Kvällens schema",
     scheduleArrival: "Gäster anländer",
     scheduleCeremony: "Vigsel i Tensta Maria kyrka",
     scheduleReception: "Fest i kyrkans lokal",
     scheduleDinner: "Middag, tal och firande",
     storyEyebrow: "Vår berättelse",
-    storyTitle: "En kärlek byggd för livet",
+    storyTitle: "Från ett ja i hjärtat till ett ja inför Gud",
     storyBody:
-      "Vår berättelse är fylld av små ögonblick som blev stora: skratt, samtal, böner, familj och en kärlek som växte till ett löfte. Nu går vi in i ett nytt kapitel, tacksamma för allt som varit och för allt Gud lägger framför oss.",
-    storyNote: "Här kan vi senare lägga in er personliga text och era egna bilder.",
-    journeyEyebrow: "2015 till bröllopsdagen",
-    journeyTitle: "Vägen hit",
-    journey2015Title: "Första kapitlet",
-    journey2015Body:
-      "En demo-text för början på er historia. Här byter vi senare till riktig bild och riktig berättelse.",
-    journey2020Title: "Ett minne som stannade",
-    journey2020Body:
-      "En plats, en resa eller en stund som blev viktig. Det här är förberett för er riktiga berättelse.",
-    journey2023Title: "När allt blev tydligare",
-    journey2023Body:
-      "En kort personlig berättelse kan ligga här, med en bild som öppnas större när gästen klickar.",
-    journey2026Title: "Bröllopsdagen",
-    journey2026Body: "Den 25 september blir berättelsen ett nytt kapitel i Tensta Maria kyrka.",
+      "Vår berättelse är fylld av små ögonblick som blev stora: skratt, samtal, bön, familj och en kärlek som växte till ett löfte. Nu går vi in i ett nytt kapitel, tacksamma för allt som varit och för allt Gud lägger framför oss.",
+    galleryEyebrow: "Bilder och video",
+    galleryTitle: "Några ögonblick från vägen hit",
+    playVideo: "Spela video",
     rsvpEyebrow: "OSA",
     rsvpTitle: "Svara på inbjudan",
     rsvpBody:
@@ -90,8 +81,7 @@ const translations = {
     phoneNote: "OSA-kontakter: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
     blessingEyebrow: "Välsignelser",
     blessingTitle: "Lämna en hälsning",
-    blessingBody:
-      "Gäster kan skriva en kort hälsning. I denna första version sparas den på enheten; senare kan vi koppla den till en riktig databas.",
+    blessingBody: "Gäster kan skriva en kort hälsning. I denna version sparas den på enheten.",
     blessingNameLabel: "Namn",
     blessingMessageLabel: "Hälsning",
     blessingSend: "Lägg till hälsning",
@@ -101,21 +91,24 @@ const translations = {
     smsIntro: "Hej, detta är mitt OSA till John och Georginas bröllop.",
   },
   en: {
+    gateKicker: "John & Georgina",
+    gateTitle: "We are getting married",
     openInvitation: "Open invitation",
     guestLine: "Especially invited: {guest}",
     guestLineParty: "Especially invited: {guest}",
     partyLine: "This invitation is for {party} people",
     navDetails: "Details",
     navSchedule: "Schedule",
-    navStory: "Our story",
+    navGallery: "Gallery",
     navRsvp: "RSVP",
-    heroKicker: "We are getting married",
+    heroKicker: "Wedding invitation",
     verse: "Therefore what God has joined together, let no one separate",
     heroDate: "Friday, September 25, 2026 | Tensta Maria Church",
+    heroCta: "Reply to the invitation",
     welcomeEyebrow: "With love and joy",
     welcomeTitle: "Welcome to our wedding day",
     welcomeBody:
-      "We want to celebrate the beginning of our life together with our families and friends. It would mean so much to have you with us as we say yes, share dinner, music and the evening.",
+      "We want to celebrate the beginning of our life together with our families and friends. It means so much to have you with us as we say yes and share the evening in faith, warmth and joy.",
     month: "September",
     countdownEyebrow: "Countdown",
     days: "Days",
@@ -132,29 +125,19 @@ const translations = {
     receptionBody:
       "After the ceremony, the celebration continues in the church hall with food, music and memories we will carry for life.",
     scheduleLink: "View schedule",
-    photoQuote: "An evening for faith, family, love and everything ahead.",
     scheduleEyebrow: "Friday, September 25",
-    scheduleTitle: "Schedule",
+    scheduleTitle: "Evening schedule",
     scheduleArrival: "Guests arrive",
     scheduleCeremony: "Ceremony at Tensta Maria Church",
     scheduleReception: "Reception in the church hall",
     scheduleDinner: "Dinner, speeches and celebration",
     storyEyebrow: "Our story",
-    storyTitle: "A love built for life",
+    storyTitle: "From yes in the heart to yes before God",
     storyBody:
-      "Our story is filled with small moments that became great ones: laughter, conversations, prayers, family and a love that grew into a promise. Now we enter a new chapter, grateful for everything behind us and everything God places before us.",
-    storyNote: "We can later add your personal text and your own photos here.",
-    journeyEyebrow: "2015 to the wedding day",
-    journeyTitle: "The road here",
-    journey2015Title: "The first chapter",
-    journey2015Body:
-      "Demo text for the beginning of your story. Later we replace this with a real photo and real memory.",
-    journey2020Title: "A memory that stayed",
-    journey2020Body: "A place, a trip or a moment that mattered. This is ready for your real story.",
-    journey2023Title: "When everything became clearer",
-    journey2023Body: "A short personal story can live here, with a photo guests can open larger.",
-    journey2026Title: "The wedding day",
-    journey2026Body: "On September 25, the story becomes a new chapter at Tensta Maria Church.",
+      "Our story is filled with small moments that became great ones: laughter, conversations, prayer, family and a love that grew into a promise. Now we enter a new chapter, grateful for everything behind us and everything God places before us.",
+    galleryEyebrow: "Photos and video",
+    galleryTitle: "A few moments from the road here",
+    playVideo: "Play video",
     rsvpEyebrow: "RSVP",
     rsvpTitle: "Reply to the invitation",
     rsvpBody:
@@ -170,8 +153,7 @@ const translations = {
     phoneNote: "RSVP contacts: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
     blessingEyebrow: "Blessings",
     blessingTitle: "Leave a message",
-    blessingBody:
-      "Guests can write a short message. In this first version it is saved on the device; later we can connect it to a real database.",
+    blessingBody: "Guests can write a short message. In this version it is saved on the device.",
     blessingNameLabel: "Name",
     blessingMessageLabel: "Message",
     blessingSend: "Add message",
@@ -181,21 +163,24 @@ const translations = {
     smsIntro: "Hello, this is my RSVP for John and Georgina's wedding.",
   },
   ar: {
+    gateKicker: "John & Georgina",
+    gateTitle: "سنتزوج",
     openInvitation: "افتح الدعوة",
     guestLine: "دعوة خاصة إلى: {guest}",
     guestLineParty: "دعوة خاصة إلى: {guest}",
     partyLine: "هذه الدعوة مخصصة لعدد {party} أشخاص",
     navDetails: "التفاصيل",
     navSchedule: "البرنامج",
-    navStory: "قصتنا",
+    navGallery: "الصور",
     navRsvp: "تأكيد الحضور",
-    heroKicker: "سنتزوج",
+    heroKicker: "دعوة زفاف",
     verse: "Therefore what God has joined together, let no one separate",
     heroDate: "الجمعة 25 سبتمبر 2026 | كنيسة تنستا ماريا",
+    heroCta: "أرسل الرد",
     welcomeEyebrow: "بمحبة وفرح",
     welcomeTitle: "أهلا بكم في يوم زفافنا",
     welcomeBody:
-      "نرغب أن نحتفل ببداية حياتنا معا مع عائلاتنا وأصدقائنا. وجودكم معنا يعني لنا الكثير ونحن نبدأ هذا الفصل الجميل.",
+      "نرغب أن نحتفل ببداية حياتنا معا مع عائلاتنا وأصدقائنا. وجودكم معنا يعني لنا الكثير ونحن نقول نعم ونشارك هذه الأمسية بالإيمان والدفء والفرح.",
     month: "سبتمبر",
     countdownEyebrow: "العد التنازلي",
     days: "أيام",
@@ -212,28 +197,19 @@ const translations = {
     receptionBody:
       "بعد المراسم نكمل الاحتفال في قاعة الكنيسة مع الطعام والموسيقى والذكريات الجميلة.",
     scheduleLink: "عرض البرنامج",
-    photoQuote: "أمسية للإيمان والعائلة والمحبة وكل ما ينتظرنا.",
     scheduleEyebrow: "الجمعة 25 سبتمبر",
-    scheduleTitle: "البرنامج",
+    scheduleTitle: "برنامج الأمسية",
     scheduleArrival: "وصول الضيوف",
     scheduleCeremony: "المراسم في كنيسة تنستا ماريا",
     scheduleReception: "الاحتفال في قاعة الكنيسة",
     scheduleDinner: "عشاء وكلمات واحتفال",
     storyEyebrow: "قصتنا",
-    storyTitle: "محبة مبنية للحياة",
+    storyTitle: "من نعم في القلب إلى نعم أمام الله",
     storyBody:
-      "قصتنا مليئة بلحظات صغيرة أصبحت كبيرة: ضحك، أحاديث، صلوات، عائلة ومحبة كبرت حتى أصبحت وعدا. والآن نبدأ فصلا جديدا بامتنان لكل ما مضى ولكل ما يضعه الله أمامنا.",
-    storyNote: "يمكننا لاحقا إضافة نصكم الشخصي وصوركم الخاصة هنا.",
-    journeyEyebrow: "من 2015 إلى يوم الزفاف",
-    journeyTitle: "الطريق إلى هنا",
-    journey2015Title: "الفصل الأول",
-    journey2015Body: "نص تجريبي لبداية قصتكم. لاحقا نضع الصورة والقصة الحقيقية.",
-    journey2020Title: "ذكرى بقيت معنا",
-    journey2020Body: "مكان أو رحلة أو لحظة مهمة. هذا القسم جاهز لقصتكم الحقيقية.",
-    journey2023Title: "حين أصبحت الأمور أوضح",
-    journey2023Body: "يمكن وضع قصة شخصية قصيرة هنا مع صورة يمكن للضيوف فتحها بحجم أكبر.",
-    journey2026Title: "يوم الزفاف",
-    journey2026Body: "في 25 سبتمبر تصبح القصة فصلا جديدا في كنيسة تنستا ماريا.",
+      "قصتنا مليئة بلحظات صغيرة أصبحت كبيرة: ضحك، أحاديث، صلاة، عائلة ومحبة كبرت حتى أصبحت وعدا. والآن نبدأ فصلا جديدا بامتنان لكل ما مضى ولكل ما يضعه الله أمامنا.",
+    galleryEyebrow: "صور وفيديو",
+    galleryTitle: "بعض اللحظات من الطريق إلى هنا",
+    playVideo: "تشغيل الفيديو",
     rsvpEyebrow: "تأكيد الحضور",
     rsvpTitle: "الرد على الدعوة",
     rsvpBody:
@@ -249,8 +225,7 @@ const translations = {
     phoneNote: "جهات تأكيد الحضور: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
     blessingEyebrow: "بركات",
     blessingTitle: "اتركوا رسالة",
-    blessingBody:
-      "يمكن للضيوف كتابة رسالة قصيرة. في هذه النسخة الأولى تحفظ على الجهاز، ولاحقا يمكن ربطها بقاعدة بيانات حقيقية.",
+    blessingBody: "يمكن للضيوف كتابة رسالة قصيرة. في هذه النسخة تحفظ على الجهاز.",
     blessingNameLabel: "الاسم",
     blessingMessageLabel: "الرسالة",
     blessingSend: "إضافة الرسالة",
@@ -260,6 +235,15 @@ const translations = {
     smsIntro: "مرحبا، هذا تأكيد حضوري لزفاف John و Georgina.",
   },
 };
+
+const galleryItems = [
+  { type: "image", src: "assets/images/q.jfif", alt: "John och Georgina på bryggan vid vattnet" },
+  { type: "image", src: "assets/images/t.jfif", alt: "John och Georgina i kyrkan" },
+  { type: "image", src: "assets/images/e.jfif", alt: "John och Georgina vid solnedgången" },
+  { type: "video", src: "assets/images/wedding-video.mp4", poster: "assets/images/w.jfif" },
+  { type: "image", src: "assets/images/r.jfif", alt: "John och Georgina framför altaret" },
+  { type: "image", src: "assets/images/w.jfif", alt: "John och Georgina skrattar vid vattnet" },
+];
 
 let activeLang = "sv";
 
@@ -272,7 +256,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.18 }
+  { threshold: 0.16 }
 );
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
@@ -322,11 +306,11 @@ function applyGuestPersonalization() {
   const nameInput = document.querySelector('#rsvpForm input[name="name"]');
   const countInput = document.querySelector('#rsvpForm input[name="guests"]');
 
-  if (guestName && !nameInput.value) {
+  if (guestName && nameInput && !nameInput.value) {
     nameInput.value = guestName;
   }
 
-  if (guestParty && !Number.isNaN(Number(guestParty))) {
+  if (guestParty && countInput && !Number.isNaN(Number(guestParty))) {
     countInput.value = guestParty;
   }
 }
@@ -451,12 +435,12 @@ async function toggleMusic(forcePlay = false) {
     }
     isPlaying = true;
     button.classList.add("is-playing");
-    button.setAttribute("aria-label", "Stoppa musik");
+    button.setAttribute("aria-label", activeLang === "sv" ? "Stoppa musik" : "Stop music");
   } else {
     stopSoftMusic();
     isPlaying = false;
     button.classList.remove("is-playing");
-    button.setAttribute("aria-label", "Spela musik");
+    button.setAttribute("aria-label", activeLang === "sv" ? "Spela musik" : "Play music");
   }
 }
 
@@ -469,7 +453,7 @@ document.querySelector("#openInvitation").addEventListener("click", async () => 
   await toggleMusic(true);
   window.setTimeout(() => {
     gate.classList.add("is-open");
-  }, 720);
+  }, 620);
 });
 
 if (skipIntro) {
@@ -478,20 +462,18 @@ if (skipIntro) {
 
 function launchCelebrationRain() {
   const container = document.querySelector("#celebrationRain");
-  const pieces = ["♡", "♥", "✦", "✧", "❊"];
-  const colors = ["#fffdf8", "#f6dfe1", "#c8a45d", "#b56d76"];
+  const colors = ["#fffdf8", "#f2d7d7", "#c3a25f", "#b36b72"];
 
   container.innerHTML = "";
 
-  for (let i = 0; i < 46; i += 1) {
+  for (let i = 0; i < 44; i += 1) {
     const piece = document.createElement("span");
-    piece.textContent = pieces[i % pieces.length];
     piece.style.setProperty("--fall-left", `${Math.random() * 100}%`);
     piece.style.setProperty("--fall-drift", `${Math.random() * 160 - 80}px`);
     piece.style.setProperty("--fall-rotate", `${Math.random() * 520 - 260}deg`);
     piece.style.setProperty("--fall-duration", `${2.6 + Math.random() * 1.8}s`);
     piece.style.setProperty("--fall-delay", `${Math.random() * 0.5}s`);
-    piece.style.setProperty("--fall-size", `${12 + Math.random() * 16}px`);
+    piece.style.setProperty("--fall-size", `${7 + Math.random() * 12}px`);
     piece.style.setProperty("--fall-color", colors[i % colors.length]);
     container.appendChild(piece);
   }
@@ -500,32 +482,6 @@ function launchCelebrationRain() {
     container.innerHTML = "";
   }, 5200);
 }
-
-function setScrollProgress(element, property, axis = "vertical") {
-  if (!element) {
-    return;
-  }
-
-  const rect = element.getBoundingClientRect();
-  const viewport = window.innerHeight;
-  const total = rect.height + viewport * 0.65;
-  const progressed = viewport * 0.72 - rect.top;
-  const percent = Math.min(100, Math.max(0, (progressed / total) * 100));
-
-  element.style.setProperty(property, `${percent}%`);
-
-  if (axis === "horizontal") {
-    element.style.setProperty(property, `${Math.min(88, percent)}%`);
-  }
-}
-
-function updateScrollAnimations() {
-  setScrollProgress(document.querySelector("#dayTimeline"), "--timeline-progress");
-  setScrollProgress(document.querySelector("#journeyTrack"), "--journey-progress", window.innerWidth > 1100 ? "horizontal" : "vertical");
-}
-
-window.addEventListener("scroll", updateScrollAnimations, { passive: true });
-window.addEventListener("resize", updateScrollAnimations);
 
 const blessingStorageKey = "john-georgina-blessings";
 
@@ -540,8 +496,8 @@ function getSavedBlessings() {
 function getDefaultBlessings() {
   const copy = translations[activeLang];
   return [
-    { name: "Familjen", message: copy.blessingDefaultOne },
-    { name: "Vänner", message: copy.blessingDefaultTwo },
+    { name: activeLang === "ar" ? "العائلة" : activeLang === "sv" ? "Familjen" : "Family", message: copy.blessingDefaultOne },
+    { name: activeLang === "ar" ? "الأصدقاء" : activeLang === "sv" ? "Vänner" : "Friends", message: copy.blessingDefaultTwo },
   ];
 }
 
@@ -589,58 +545,59 @@ document.querySelector("#blessingForm").addEventListener("submit", (event) => {
   renderBlessings();
 });
 
-const momentModal = document.createElement("div");
-momentModal.className = "moment-modal";
-momentModal.innerHTML = `
-  <div class="moment-dialog" role="dialog" aria-modal="true" aria-labelledby="momentTitle">
-    <button class="moment-close" type="button" aria-label="Stäng">×</button>
-    <div class="moment-modal-photo" aria-hidden="true"></div>
-    <div class="moment-modal-copy">
-      <time id="momentYear"></time>
-      <h3 id="momentTitle"></h3>
-      <p id="momentBody"></p>
-    </div>
+const mediaModal = document.createElement("div");
+mediaModal.className = "media-modal";
+mediaModal.innerHTML = `
+  <div class="media-dialog" role="dialog" aria-modal="true" aria-label="Media">
+    <button class="media-close" type="button" aria-label="Stäng">×</button>
+    <div class="media-stage"></div>
   </div>
 `;
-document.body.appendChild(momentModal);
+document.body.appendChild(mediaModal);
 
-function openMoment(moment) {
-  momentModal.querySelector("#momentYear").textContent = moment.querySelector("time").textContent;
-  momentModal.querySelector("#momentTitle").textContent = moment.querySelector("h3").textContent;
-  momentModal.querySelector("#momentBody").textContent = moment.querySelector("p").textContent;
-  momentModal.classList.add("is-open");
-  momentModal.querySelector(".moment-close").focus();
+function openMedia(index) {
+  const item = galleryItems[index];
+  const stage = mediaModal.querySelector(".media-stage");
+
+  if (item.type === "video") {
+    stage.innerHTML = `
+      <video controls autoplay playsinline poster="${item.poster || ""}">
+        <source src="${item.src}" type="video/mp4" />
+      </video>
+    `;
+  } else {
+    stage.innerHTML = `<img src="${item.src}" alt="${escapeHtml(item.alt || "")}" />`;
+  }
+
+  mediaModal.classList.add("is-open");
+  mediaModal.querySelector(".media-close").focus();
 }
 
-function closeMoment() {
-  momentModal.classList.remove("is-open");
+function closeMedia() {
+  mediaModal.classList.remove("is-open");
+  mediaModal.querySelector(".media-stage").innerHTML = "";
 }
 
-document.querySelectorAll(".journey-moment").forEach((moment) => {
-  moment.setAttribute("tabindex", "0");
-  moment.setAttribute("role", "button");
-  moment.addEventListener("click", () => openMoment(moment));
-  moment.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openMoment(moment);
-    }
-  });
+document.querySelectorAll("[data-media]").forEach((button) => {
+  button.addEventListener("click", () => openMedia(Number(button.dataset.media)));
 });
 
-momentModal.querySelector(".moment-close").addEventListener("click", closeMoment);
-momentModal.addEventListener("click", (event) => {
-  if (event.target === momentModal) {
-    closeMoment();
+document.querySelectorAll(".media-video video").forEach((video) => {
+  video.play().catch(() => {});
+});
+
+mediaModal.querySelector(".media-close").addEventListener("click", closeMedia);
+mediaModal.addEventListener("click", (event) => {
+  if (event.target === mediaModal) {
+    closeMedia();
   }
 });
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
-    closeMoment();
+    closeMedia();
   }
 });
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 applyLanguage("sv");
-updateScrollAnimations();
