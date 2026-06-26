@@ -26,6 +26,22 @@
       <div class="gate-media" aria-hidden="true"></div>
       <div class="celebration-rain" id="celebrationRain" aria-hidden="true"></div>
       <div class="gate-panel">
+        <div class="gate-envelope" aria-hidden="true">
+          <div class="envelope-shadow"></div>
+          <div class="envelope-body">
+            <span class="envelope-letter">
+              <span>John & Georgina</span>
+              <strong>25.09.2026</strong>
+            </span>
+            <span class="envelope-back"></span>
+            <span class="envelope-flap envelope-flap-left"></span>
+            <span class="envelope-flap envelope-flap-right"></span>
+            <span class="envelope-flap envelope-flap-front"></span>
+            <span class="envelope-flap envelope-flap-top"></span>
+            <span class="envelope-seal">J&amp;G</span>
+            <span class="envelope-burst"></span>
+          </div>
+        </div>
         <p class="gate-kicker" data-i18n="gateKicker">John & Georgina</p>
         <h1 data-i18n="gateTitle">Vi gifter oss</h1>
         <p class="gate-verse" data-i18n="verse">
@@ -46,6 +62,7 @@
       </a>
       <nav class="nav-links" aria-label="Huvudnavigation">
         <a href="#details" data-i18n="navDetails">Detaljer</a>
+        <a href="#travel" data-i18n="navTravel">Resa</a>
         <a href="#schedule" data-i18n="navSchedule">Schema</a>
         <a href="#gallery" data-i18n="navGallery">Galleri</a>
         <a href="#rsvp" data-i18n="navRsvp">OSA</a>
@@ -180,6 +197,71 @@
         </div>
       </section>
 
+      <section class="travel-section" id="travel">
+        <div class="section-shell travel-layout">
+          <div class="travel-map reveal" role="img" aria-label="Karta till Tensta Maria kyrka">
+            <div class="map-embed" aria-hidden="true">
+              <span class="map-road map-road-main"></span>
+              <span class="map-road map-road-cross"></span>
+              <span class="map-road map-road-soft"></span>
+              <span class="map-transit-line"></span>
+              <span class="map-marker"></span>
+              <span class="map-label map-church">Tensta Maria kyrka</span>
+              <span class="map-label map-address">Krällingegränd 1</span>
+              <span class="map-label map-bus">Buss: Krällingegränd</span>
+              <span class="map-label map-metro">Tensta T-bana</span>
+            </div>
+          </div>
+          <div class="travel-copy reveal">
+            <p class="eyebrow" data-i18n="travelEyebrow">Resa och ankomst</p>
+            <h2 data-i18n="travelTitle">Hitta till kyrkan</h2>
+            <p data-i18n="travelBody">
+              Tensta Maria kyrka ligger på Krällingegränd 1, 163 62 Spånga.
+              Planera gärna resan så att du är på plats i god tid före vigseln.
+            </p>
+            <div class="travel-cards">
+              <article class="travel-card">
+                <span data-i18n="parkingLabel">Parkering</span>
+                <h3 data-i18n="parkingTitle">Kom i god tid</h3>
+                <p data-i18n="parkingBody">
+                  Parkering finns i området runt kyrkan. Räkna med extra tid för
+                  att hitta plats och gå in lugnt.
+                </p>
+              </article>
+              <article class="travel-card">
+                <span data-i18n="transitLabel">Kollektivtrafik</span>
+                <h3 data-i18n="transitTitle">Buss och tunnelbana</h3>
+                <p data-i18n="transitBody">
+                  Närmaste busshållplats är Krällingegränd. Tensta centrum och
+                  Tensta T-bana ligger inom promenadavstånd.
+                </p>
+              </article>
+              <article class="travel-card">
+                <span data-i18n="arrivalLabel">Ankomst</span>
+                <h3 data-i18n="arrivalTitle">18:30 ankomst</h3>
+                <p data-i18n="arrivalBody">
+                  Gäster är välkomna från 18:30. Vigseln börjar 19:00.
+                </p>
+              </article>
+            </div>
+            <div class="travel-actions">
+              <a
+                class="primary-link travel-link"
+                href="https://maps.google.com/?q=Kr%C3%A4llingegr%C3%A4nd%201%2C%20163%2062%20Sp%C3%A5nga"
+                target="_blank"
+                rel="noreferrer"
+                data-i18n="openMap"
+              >
+                Öppna karta
+              </a>
+              <button class="secondary-btn calendar-btn" id="addToCalendar" type="button" data-i18n="addCalendar">
+                Lägg till i kalender
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="schedule-section" id="schedule">
         <div class="section-shell schedule-layout">
           <div class="section-heading reveal">
@@ -219,13 +301,13 @@
           </div>
           <div class="media-grid reveal" id="mediaGrid">
             <button class="media-tile media-wide" type="button" data-media="0">
-              <img src="assets/images/q.jfif" alt="John och Georgina på bryggan vid vattnet" />
+              <img src="assets/images/q.jfif" alt="John och Georgina på bryggan vid vattnet" loading="lazy" decoding="async" />
             </button>
             <button class="media-tile media-tall" type="button" data-media="1">
-              <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" />
+              <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" loading="lazy" decoding="async" />
             </button>
             <button class="media-tile" type="button" data-media="2">
-              <img src="assets/images/e.jfif" alt="John och Georgina vid solnedgången" />
+              <img src="assets/images/e.jfif" alt="John och Georgina vid solnedgången" loading="lazy" decoding="async" />
             </button>
             <button class="media-tile media-video" type="button" data-media="3">
               <video muted loop playsinline preload="metadata" poster="assets/images/w.jfif">
@@ -234,11 +316,24 @@
               <span data-i18n="playVideo">Spela video</span>
             </button>
             <button class="media-tile media-tall" type="button" data-media="4">
-              <img src="assets/images/r.jfif" alt="John och Georgina framför altaret" />
+              <img src="assets/images/r.jfif" alt="John och Georgina framför altaret" loading="lazy" decoding="async" />
             </button>
             <button class="media-tile" type="button" data-media="5">
-              <img src="assets/images/w.jfif" alt="John och Georgina skrattar vid vattnet" />
+              <img src="assets/images/w.jfif" alt="John och Georgina skrattar vid vattnet" loading="lazy" decoding="async" />
             </button>
+          </div>
+          <div class="gallery-upload reveal">
+            <p data-i18n="uploadPhotosBody">
+              Efter bröllopet kan du dela dina bilder med oss här.
+            </p>
+            <a
+              href="https://photos.app.goo.gl/"
+              target="_blank"
+              rel="noreferrer"
+              data-i18n="uploadPhotos"
+            >
+              Ladda upp bilder
+            </a>
           </div>
         </div>
       </section>
