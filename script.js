@@ -1,7 +1,8 @@
 const weddingDate = new Date("2026-09-25T19:00:00+02:00");
 const params = new URLSearchParams(window.location.search);
-const guestName = params.get("guest") || params.get("name") || "";
-const guestParty = params.get("party") || "";
+let guestName = params.get("guest") || params.get("name") || "";
+let guestParty = params.get("party") || "";
+const inviteToken = params.get("invite") || "";
 const skipIntro = params.get("open") === "1";
 
 document.body.classList.add("motion-ready");
@@ -26,6 +27,7 @@ const translations = {
     guestLineParty: "Särskilt inbjudna: {guest}",
     partyLine: "Denna inbjudan gäller {party} personer",
     navDetails: "Detaljer",
+    navTravel: "Resa",
     navSchedule: "Schema",
     navGallery: "Galleri",
     navRsvp: "OSA",
@@ -62,6 +64,23 @@ const translations = {
     receptionBody:
       "Efter ceremonin fortsätter firandet i kyrkans lokal med mat, musik och minnen vi kommer bära med oss livet ut.",
     scheduleLink: "Se schema",
+    travelEyebrow: "Resa och ankomst",
+    travelTitle: "Hitta till kyrkan",
+    travelBody:
+      "Tensta Maria kyrka ligger på Krällingegränd 1, 163 62 Spånga. Planera gärna resan så att du är på plats i god tid före vigseln.",
+    parkingLabel: "Parkering",
+    parkingTitle: "Kom i god tid",
+    parkingBody:
+      "Parkering finns i området runt kyrkan. Räkna med extra tid för att hitta plats och gå in lugnt.",
+    transitLabel: "Kollektivtrafik",
+    transitTitle: "Buss och tunnelbana",
+    transitBody:
+      "Närmaste busshållplats är Krällingegränd. Tensta centrum och Tensta T-bana ligger inom promenadavstånd.",
+    arrivalLabel: "Ankomst",
+    arrivalTitle: "18:30 ankomst",
+    arrivalBody: "Gäster är välkomna från 18:30. Vigseln börjar 19:00.",
+    openMap: "Öppna karta",
+    addCalendar: "Lägg till i kalender",
     scheduleEyebrow: "Fredag 25 september",
     scheduleTitle: "Kvällens schema",
     scheduleArrival: "Gäster anländer",
@@ -75,6 +94,8 @@ const translations = {
     galleryEyebrow: "Bilder och video",
     galleryTitle: "Några ögonblick från vägen hit",
     playVideo: "Spela video",
+    uploadPhotosBody: "Efter bröllopet kan du dela dina bilder med oss här.",
+    uploadPhotos: "Ladda upp bilder",
     rsvpEyebrow: "OSA",
     rsvpTitle: "Svara på inbjudan",
     rsvpBody:
@@ -107,6 +128,7 @@ const translations = {
     guestLineParty: "Especially invited: {guest}",
     partyLine: "This invitation is for {party} people",
     navDetails: "Details",
+    navTravel: "Travel",
     navSchedule: "Schedule",
     navGallery: "Gallery",
     navRsvp: "RSVP",
@@ -143,6 +165,23 @@ const translations = {
     receptionBody:
       "After the ceremony, the celebration continues in the church hall with food, music and memories we will carry for life.",
     scheduleLink: "View schedule",
+    travelEyebrow: "Travel and arrival",
+    travelTitle: "Find the church",
+    travelBody:
+      "Tensta Maria Church is at Krällingegränd 1, 163 62 Spånga. Please plan your journey so you arrive calmly before the ceremony.",
+    parkingLabel: "Parking",
+    parkingTitle: "Arrive early",
+    parkingBody:
+      "Parking is available in the area around the church. Allow extra time to find a place and enter calmly.",
+    transitLabel: "Public transport",
+    transitTitle: "Bus and metro",
+    transitBody:
+      "The closest bus stop is Krällingegränd. Tensta centrum and Tensta metro station are within walking distance.",
+    arrivalLabel: "Arrival",
+    arrivalTitle: "18:30 arrival",
+    arrivalBody: "Guests are welcome from 18:30. The ceremony begins at 19:00.",
+    openMap: "Open map",
+    addCalendar: "Add to calendar",
     scheduleEyebrow: "Friday, September 25",
     scheduleTitle: "Evening schedule",
     scheduleArrival: "Guests arrive",
@@ -156,6 +195,8 @@ const translations = {
     galleryEyebrow: "Photos and video",
     galleryTitle: "A few moments from the road here",
     playVideo: "Play video",
+    uploadPhotosBody: "After the wedding, you can share your photos with us here.",
+    uploadPhotos: "Upload photos",
     rsvpEyebrow: "RSVP",
     rsvpTitle: "Reply to the invitation",
     rsvpBody:
@@ -188,6 +229,7 @@ const translations = {
     guestLineParty: "دعوة خاصة إلى: {guest}",
     partyLine: "هذه الدعوة مخصصة لعدد {party} أشخاص",
     navDetails: "التفاصيل",
+    navTravel: "الوصول",
     navSchedule: "البرنامج",
     navGallery: "الصور",
     navRsvp: "تأكيد الحضور",
@@ -224,6 +266,23 @@ const translations = {
     receptionBody:
       "بعد المراسم نكمل الاحتفال في قاعة الكنيسة مع الطعام والموسيقى والذكريات الجميلة.",
     scheduleLink: "عرض البرنامج",
+    travelEyebrow: "الطريق والوصول",
+    travelTitle: "الوصول إلى الكنيسة",
+    travelBody:
+      "تقع كنيسة تنستا ماريا في Krällingegränd 1, 163 62 Spånga. نرجو التخطيط للوصول بهدوء قبل بدء المراسم.",
+    parkingLabel: "مواقف السيارات",
+    parkingTitle: "احضروا مبكرا",
+    parkingBody:
+      "توجد مواقف في المنطقة المحيطة بالكنيسة. خصصوا وقتا إضافيا للعثور على موقف والدخول بهدوء.",
+    transitLabel: "المواصلات العامة",
+    transitTitle: "الحافلة والمترو",
+    transitBody:
+      "أقرب موقف حافلات هو Krällingegränd. يقع Tensta centrum ومحطة مترو Tensta ضمن مسافة مشي.",
+    arrivalLabel: "الوصول",
+    arrivalTitle: "الوصول 18:30",
+    arrivalBody: "نرحب بالضيوف من الساعة 18:30. تبدأ المراسم الساعة 19:00.",
+    openMap: "فتح الخريطة",
+    addCalendar: "إضافة إلى التقويم",
     scheduleEyebrow: "الجمعة 25 سبتمبر",
     scheduleTitle: "برنامج الأمسية",
     scheduleArrival: "وصول الضيوف",
@@ -237,6 +296,8 @@ const translations = {
     galleryEyebrow: "صور وفيديو",
     galleryTitle: "بعض اللحظات من الطريق إلى هنا",
     playVideo: "تشغيل الفيديو",
+    uploadPhotosBody: "بعد الزفاف يمكنكم مشاركة صوركم معنا هنا.",
+    uploadPhotos: "رفع الصور",
     rsvpEyebrow: "تأكيد الحضور",
     rsvpTitle: "الرد على الدعوة",
     rsvpBody:
@@ -264,12 +325,66 @@ const translations = {
 };
 
 const galleryItems = [
-  { type: "image", src: "assets/images/q.jfif", alt: "John och Georgina på bryggan vid vattnet" },
-  { type: "image", src: "assets/images/t.jfif", alt: "John och Georgina i kyrkan" },
-  { type: "image", src: "assets/images/e.jfif", alt: "John och Georgina vid solnedgången" },
-  { type: "video", src: "assets/images/wedding-video.mp4", poster: "assets/images/w.jfif" },
-  { type: "image", src: "assets/images/r.jfif", alt: "John och Georgina framför altaret" },
-  { type: "image", src: "assets/images/w.jfif", alt: "John och Georgina skrattar vid vattnet" },
+  {
+    type: "image",
+    src: "assets/images/q.jfif",
+    alt: "John och Georgina på bryggan vid vattnet",
+    caption: {
+      sv: "Vid vattnet i kvällsljuset",
+      en: "By the water in the evening light",
+      ar: "بجانب الماء في ضوء المساء",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/t.jfif",
+    alt: "John och Georgina i kyrkan",
+    caption: {
+      sv: "En stund i kyrkan",
+      en: "A moment in the church",
+      ar: "لحظة في الكنيسة",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/e.jfif",
+    alt: "John och Georgina vid solnedgången",
+    caption: {
+      sv: "Solnedgång vid vattnet",
+      en: "Sunset by the water",
+      ar: "غروب الشمس بجانب الماء",
+    },
+  },
+  {
+    type: "video",
+    src: "assets/images/wedding-video.mp4",
+    poster: "assets/images/w.jfif",
+    caption: {
+      sv: "En kort film från vägen hit",
+      en: "A short film from the road here",
+      ar: "فيلم قصير من الطريق إلى هنا",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/r.jfif",
+    alt: "John och Georgina framför altaret",
+    caption: {
+      sv: "Framför altaret",
+      en: "Before the altar",
+      ar: "أمام المذبح",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/w.jfif",
+    alt: "John och Georgina skrattar vid vattnet",
+    caption: {
+      sv: "Glädje vid vattnet",
+      en: "Joy by the water",
+      ar: "فرح بجانب الماء",
+    },
+  },
 ];
 
 let activeLang = "sv";
@@ -342,6 +457,40 @@ function applyGuestPersonalization() {
   }
 }
 
+async function fetchInviteMap() {
+  const paths = ["data/invite-map.json", "data/invite-map.sample.json"];
+
+  for (const path of paths) {
+    try {
+      const response = await fetch(path, { cache: "no-store" });
+      if (response.ok) {
+        return response.json();
+      }
+    } catch {
+      // Opening the file directly can block fetch; query-string guests still work.
+    }
+  }
+
+  return {};
+}
+
+async function loadInvitePersonalization() {
+  if (!inviteToken) {
+    return;
+  }
+
+  const inviteMap = await fetchInviteMap();
+  const invite = inviteMap[inviteToken] || inviteMap[inviteToken.toLowerCase()];
+
+  if (!invite) {
+    return;
+  }
+
+  guestName = invite.guest || guestName;
+  guestParty = String(invite.party || guestParty || "");
+  applyGuestPersonalization();
+}
+
 function applyLanguage(lang) {
   activeLang = lang;
   const copy = translations[lang];
@@ -361,6 +510,9 @@ function applyLanguage(lang) {
 
   applyGuestPersonalization();
   renderBlessings();
+  if (mediaModal.classList.contains("is-open")) {
+    renderMedia(activeMediaIndex);
+  }
 }
 
 document.querySelectorAll(".lang-btn").forEach((button) => {
@@ -475,12 +627,19 @@ document.querySelector("#musicToggle").addEventListener("click", () => toggleMus
 
 document.querySelector("#openInvitation").addEventListener("click", async () => {
   const gate = document.querySelector("#invitationGate");
+  const button = document.querySelector("#openInvitation");
+
+  if (gate.classList.contains("is-opening")) {
+    return;
+  }
+
+  button.disabled = true;
   gate.classList.add("is-opening");
   launchCelebrationRain();
   await toggleMusic(true);
   window.setTimeout(() => {
     gate.classList.add("is-open");
-  }, 620);
+  }, 3250);
 });
 
 if (skipIntro) {
@@ -489,26 +648,114 @@ if (skipIntro) {
 
 function launchCelebrationRain() {
   const container = document.querySelector("#celebrationRain");
-  const colors = ["#fffdf8", "#f2d7d7", "#c3a25f", "#b36b72"];
+  const colors = ["#fffdf8", "#f7e8e2", "#f2d7d7", "#c3a25f", "#b36b72", "#d8b66f"];
+  const shapes = ["petal", "petal", "petal", "sparkle", "ribbon"];
+  const envelope = document.querySelector(".gate-envelope");
+  const envelopeRect = envelope.getBoundingClientRect();
+  const containerRect = container.getBoundingClientRect();
+  const originX = envelopeRect.left + envelopeRect.width / 2 - containerRect.left;
+  const originY = envelopeRect.top + envelopeRect.height * 0.48 - containerRect.top;
+  const randomBetween = (min, max) => min + Math.random() * (max - min);
 
   container.innerHTML = "";
 
-  for (let i = 0; i < 44; i += 1) {
+  for (let i = 0; i < 30; i += 1) {
     const piece = document.createElement("span");
-    piece.style.setProperty("--fall-left", `${Math.random() * 100}%`);
-    piece.style.setProperty("--fall-drift", `${Math.random() * 160 - 80}px`);
-    piece.style.setProperty("--fall-rotate", `${Math.random() * 520 - 260}deg`);
-    piece.style.setProperty("--fall-duration", `${2.6 + Math.random() * 1.8}s`);
-    piece.style.setProperty("--fall-delay", `${Math.random() * 0.5}s`);
-    piece.style.setProperty("--fall-size", `${7 + Math.random() * 12}px`);
+    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+    const isSparkle = shape === "sparkle";
+    const isRibbon = shape === "ribbon";
+    const size = isSparkle ? randomBetween(5, 10) : isRibbon ? randomBetween(6, 11) : randomBetween(7, 15);
+    const angle = randomBetween(-168, -12) * (Math.PI / 180);
+    const distance = randomBetween(130, Math.min(window.innerWidth * 0.44, 300));
+    const burstX = Math.cos(angle) * distance;
+    const burstY = Math.abs(Math.sin(angle) * distance);
+
+    piece.className = `${shape} burst`;
+    piece.style.setProperty("--burst-left", `${originX}px`);
+    piece.style.setProperty("--burst-top", `${originY}px`);
+    piece.style.setProperty("--burst-x", `${burstX}px`);
+    piece.style.setProperty("--burst-y", `${burstY}px`);
+    piece.style.setProperty("--fall-drift", `${randomBetween(-95, 95)}px`);
+    piece.style.setProperty("--fall-start-rotate", `${randomBetween(-80, 80)}deg`);
+    piece.style.setProperty("--fall-rotate", `${randomBetween(-760, 760)}deg`);
+    piece.style.setProperty("--fall-duration", `${randomBetween(3.7, 5.6)}s`);
+    piece.style.setProperty("--fall-delay", `${randomBetween(0.22, 0.62)}s`);
+    piece.style.setProperty("--fall-size", `${size}px`);
     piece.style.setProperty("--fall-color", colors[i % colors.length]);
+    container.appendChild(piece);
+  }
+
+  for (let i = 0; i < 96; i += 1) {
+    const piece = document.createElement("span");
+    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+    const isSparkle = shape === "sparkle";
+    const isRibbon = shape === "ribbon";
+    const size = isSparkle ? randomBetween(5, 10) : isRibbon ? randomBetween(6, 13) : randomBetween(7, 16);
+
+    piece.className = `${shape} fall`;
+    piece.style.setProperty("--fall-left", `${randomBetween(-5, 105)}%`);
+    piece.style.setProperty("--fall-drift", `${randomBetween(-190, 190)}px`);
+    piece.style.setProperty("--fall-start-rotate", `${randomBetween(-90, 90)}deg`);
+    piece.style.setProperty("--fall-rotate", `${randomBetween(-820, 820)}deg`);
+    piece.style.setProperty("--fall-duration", `${randomBetween(4.0, 7.0)}s`);
+    piece.style.setProperty("--fall-delay", `${randomBetween(0.28, 1.55)}s`);
+    piece.style.setProperty("--fall-size", `${size}px`);
+    piece.style.setProperty("--fall-color", colors[(i + 2) % colors.length]);
     container.appendChild(piece);
   }
 
   window.setTimeout(() => {
     container.innerHTML = "";
-  }, 5200);
+  }, 8200);
 }
+
+function formatIcsDate(date) {
+  return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
+}
+
+function escapeIcsText(value) {
+  return String(value)
+    .replaceAll("\\", "\\\\")
+    .replaceAll(";", "\\;")
+    .replaceAll(",", "\\,")
+    .replaceAll("\n", "\\n");
+}
+
+function downloadCalendarInvite() {
+  const description = [
+    "John & Georgina wedding",
+    "Guests arrive 18:30. Ceremony begins 19:00.",
+    "Map: https://maps.google.com/?q=Kr%C3%A4llingegr%C3%A4nd%201%2C%20163%2062%20Sp%C3%A5nga",
+  ].join("\n");
+  const lines = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//John Georgina Wedding//Invitation//SV",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    "BEGIN:VEVENT",
+    "UID:john-georgina-wedding-20260925T183000@john-georgina",
+    `DTSTAMP:${formatIcsDate(new Date())}`,
+    "DTSTART:20260925T163000Z",
+    "DTEND:20260925T220000Z",
+    `SUMMARY:${escapeIcsText("John & Georgina wedding")}`,
+    `LOCATION:${escapeIcsText("Tensta Maria kyrka, Krällingegränd 1, 163 62 Spånga")}`,
+    `DESCRIPTION:${escapeIcsText(description)}`,
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ];
+  const blob = new Blob([`${lines.join("\r\n")}\r\n`], { type: "text/calendar;charset=utf-8" });
+  const link = document.createElement("a");
+
+  link.href = URL.createObjectURL(blob);
+  link.download = "john-georgina-wedding.ics";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+}
+
+document.querySelector("#addToCalendar")?.addEventListener("click", downloadCalendarInvite);
 
 const blessingStorageKey = "john-georgina-blessings";
 
@@ -572,19 +819,41 @@ document.querySelector("#blessingForm").addEventListener("submit", (event) => {
   renderBlessings();
 });
 
+let activeMediaIndex = 0;
+let touchStartX = 0;
+let touchStartY = 0;
+
 const mediaModal = document.createElement("div");
 mediaModal.className = "media-modal";
 mediaModal.innerHTML = `
   <div class="media-dialog" role="dialog" aria-modal="true" aria-label="Media">
     <button class="media-close" type="button" aria-label="Stäng">×</button>
+    <button class="media-nav media-prev" type="button" aria-label="Föregående">‹</button>
     <div class="media-stage"></div>
+    <button class="media-nav media-next" type="button" aria-label="Nästa">›</button>
+    <div class="media-meta">
+      <p class="media-caption"></p>
+      <span class="media-count"></span>
+    </div>
   </div>
 `;
 document.body.appendChild(mediaModal);
 
-function openMedia(index) {
-  const item = galleryItems[index];
+function getMediaCaption(item) {
+  if (!item.caption) {
+    return "";
+  }
+
+  return item.caption[activeLang] || item.caption.en || item.caption.sv || "";
+}
+
+function renderMedia(index) {
   const stage = mediaModal.querySelector(".media-stage");
+  const caption = mediaModal.querySelector(".media-caption");
+  const count = mediaModal.querySelector(".media-count");
+
+  activeMediaIndex = (index + galleryItems.length) % galleryItems.length;
+  const item = galleryItems[activeMediaIndex];
 
   if (item.type === "video") {
     stage.innerHTML = `
@@ -596,6 +865,12 @@ function openMedia(index) {
     stage.innerHTML = `<img src="${item.src}" alt="${escapeHtml(item.alt || "")}" />`;
   }
 
+  caption.textContent = getMediaCaption(item);
+  count.textContent = `${activeMediaIndex + 1} / ${galleryItems.length}`;
+}
+
+function openMedia(index) {
+  renderMedia(index);
   mediaModal.classList.add("is-open");
   mediaModal.querySelector(".media-close").focus();
 }
@@ -603,6 +878,10 @@ function openMedia(index) {
 function closeMedia() {
   mediaModal.classList.remove("is-open");
   mediaModal.querySelector(".media-stage").innerHTML = "";
+}
+
+function showMedia(direction) {
+  renderMedia(activeMediaIndex + direction);
 }
 
 document.querySelectorAll("[data-media]").forEach((button) => {
@@ -614,17 +893,46 @@ document.querySelectorAll(".media-video video").forEach((video) => {
 });
 
 mediaModal.querySelector(".media-close").addEventListener("click", closeMedia);
+mediaModal.querySelector(".media-prev").addEventListener("click", () => showMedia(-1));
+mediaModal.querySelector(".media-next").addEventListener("click", () => showMedia(1));
 mediaModal.addEventListener("click", (event) => {
   if (event.target === mediaModal) {
     closeMedia();
   }
 });
+mediaModal.addEventListener(
+  "touchstart",
+  (event) => {
+    const touch = event.changedTouches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  },
+  { passive: true }
+);
+mediaModal.addEventListener(
+  "touchend",
+  (event) => {
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    if (Math.abs(deltaX) > 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+      showMedia(deltaX > 0 ? -1 : 1);
+    }
+  },
+  { passive: true }
+);
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeMedia();
+  } else if (mediaModal.classList.contains("is-open") && event.key === "ArrowLeft") {
+    showMedia(-1);
+  } else if (mediaModal.classList.contains("is-open") && event.key === "ArrowRight") {
+    showMedia(1);
   }
 });
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 applyLanguage("sv");
+loadInvitePersonalization();
