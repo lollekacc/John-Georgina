@@ -411,10 +411,10 @@ function updateCountdown() {
   const minutes = Math.floor((distance % 3600000) / 60000);
   const seconds = Math.floor((distance % 60000) / 1000);
 
-  document.querySelector('[data-time="days"]').textContent = String(days).padStart(3, "0");
-  document.querySelector('[data-time="hours"]').textContent = String(hours).padStart(2, "0");
-  document.querySelector('[data-time="minutes"]').textContent = String(minutes).padStart(2, "0");
-  document.querySelector('[data-time="seconds"]').textContent = String(seconds).padStart(2, "0");
+  document.querySelector('[data-time="days"]').textContent = String(days);
+  document.querySelector('[data-time="hours"]').textContent = String(hours);
+  document.querySelector('[data-time="minutes"]').textContent = String(minutes);
+  document.querySelector('[data-time="seconds"]').textContent = String(seconds);
 }
 
 function getGuestLine() {
