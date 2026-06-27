@@ -98,9 +98,15 @@
           <a class="primary-link" href="#rsvp" data-i18n="heroCta">Svara på inbjudan</a>
         </div>
         <aside class="hero-photo-strip" aria-label="Förlovningsbilder" data-i18n-aria-label="heroPhotosAria">
-          <img src="assets/images/q.jfif" alt="John och Georgina vid vattnet i solnedgången" data-i18n-alt="heroPhotoAltOne" />
-          <img src="assets/images/e.jfif" alt="John och Georgina framför vattnet" data-i18n-alt="heroPhotoAltTwo" />
-          <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" data-i18n-alt="heroPhotoAltThree" />
+          <button type="button" data-media="0">
+            <img src="assets/images/q.jfif" alt="John och Georgina vid vattnet i solnedgången" data-i18n-alt="heroPhotoAltOne" />
+          </button>
+          <button type="button" data-media="2">
+            <img src="assets/images/e.jfif" alt="John och Georgina framför vattnet" data-i18n-alt="heroPhotoAltTwo" />
+          </button>
+          <button type="button" data-media="1">
+            <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" data-i18n-alt="heroPhotoAltThree" />
+          </button>
         </aside>
       </section>
 
@@ -148,18 +154,13 @@
               <a href="https://maps.google.com/?q=Tensta%20Maria%20kyrkan" target="_blank" rel="noreferrer" data-i18n="mapLink">
                 Öppna karta
               </a>
-              <div class="travel-map detail-map" role="img" aria-label="Karta till Tensta Maria kyrka" data-i18n-aria-label="travelMapAria">
-                <div class="map-embed" aria-hidden="true">
-                  <span class="map-road map-road-main"></span>
-                  <span class="map-road map-road-cross"></span>
-                  <span class="map-road map-road-soft"></span>
-                  <span class="map-transit-line"></span>
-                  <span class="map-marker"></span>
-                  <span class="map-label map-church">Tensta Maria kyrka</span>
-                  <span class="map-label map-address">Krällingegränd 1</span>
-                  <span class="map-label map-bus" data-i18n="mapBusLabel">Buss: Krällingegränd</span>
-                  <span class="map-label map-metro" data-i18n="mapMetroLabel">Tensta T-bana</span>
-                </div>
+              <div class="travel-map detail-map">
+                <iframe
+                  title="Tensta Maria kyrka"
+                  src="https://www.google.com/maps?q=Tensta%20Maria%20kyrka&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </article>
             <article class="detail-card reveal">

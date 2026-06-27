@@ -34,7 +34,6 @@ const translations = {
     heroPhotosAria: "Förlovningsbilder",
     essentialsAria: "Viktig information",
     countdownAria: "Nedräkning",
-    travelMapAria: "Karta till Tensta Maria kyrka",
     mediaDialogLabel: "Media",
     mediaClose: "Stäng",
     mediaPrev: "Föregående",
@@ -72,8 +71,6 @@ const translations = {
     receptionTitle: "Fest",
     receptionBody:
       "Efter ceremonin fortsätter firandet i kyrkans lokal med mat, musik och minnen vi kommer bära med oss livet ut.",
-    mapBusLabel: "Buss: Krällingegränd",
-    mapMetroLabel: "Tensta T-bana",
     storyEyebrow: "Vår berättelse",
     storyTitle: "Från ett ja i hjärtat till ett ja inför Gud",
     storyBody:
@@ -134,7 +131,6 @@ const translations = {
     heroPhotosAria: "Engagement photos",
     essentialsAria: "Important information",
     countdownAria: "Countdown",
-    travelMapAria: "Map to Tensta Maria Church",
     mediaDialogLabel: "Media",
     mediaClose: "Close",
     mediaPrev: "Previous",
@@ -172,8 +168,6 @@ const translations = {
     receptionTitle: "Reception",
     receptionBody:
       "After the ceremony, the celebration continues in the church hall with food, music and memories we will carry for life.",
-    mapBusLabel: "Bus: Krällingegränd",
-    mapMetroLabel: "Tensta metro",
     storyEyebrow: "Our story",
     storyTitle: "From yes in the heart to yes before God",
     storyBody:
@@ -234,7 +228,6 @@ const translations = {
     heroPhotosAria: "صور الخطوبة",
     essentialsAria: "معلومات مهمة",
     countdownAria: "العد التنازلي",
-    travelMapAria: "خريطة الوصول إلى كنيسة تنستا ماريا",
     mediaDialogLabel: "الوسائط",
     mediaClose: "إغلاق",
     mediaPrev: "السابق",
@@ -272,8 +265,6 @@ const translations = {
     receptionTitle: "الاحتفال",
     receptionBody:
       "بعد المراسم نكمل الاحتفال في قاعة الكنيسة مع الطعام والموسيقى والذكريات الجميلة.",
-    mapBusLabel: "الحافلة: Krällingegränd",
-    mapMetroLabel: "مترو Tensta",
     storyEyebrow: "قصتنا",
     storyTitle: "من نعم في القلب إلى نعم أمام الله",
     storyBody:
