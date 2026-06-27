@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500..800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700;800&family=Alex+Brush&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fraunces:opsz,wght@9..144,500..800&family=Noto+Naskh+Arabic:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <script>
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="invitation-gate" id="invitationGate" aria-label="Öppna inbjudan">
+    <div class="invitation-gate" id="invitationGate" aria-label="Öppna inbjudan" data-i18n-aria-label="gateAria">
       <div class="gate-media" aria-hidden="true"></div>
       <div class="celebration-rain" id="celebrationRain" aria-hidden="true"></div>
       <div class="gate-panel">
@@ -30,7 +30,7 @@
           <div class="envelope-shadow"></div>
           <div class="envelope-body">
             <span class="envelope-letter">
-              <span>John & Georgina</span>
+              <span class="wordmark">John <span class="wordmark-amp">&amp;</span> Georgina</span>
               <strong>25.09.2026</strong>
             </span>
             <span class="envelope-back"></span>
@@ -45,7 +45,7 @@
         <p class="gate-kicker" data-i18n="gateKicker">John & Georgina</p>
         <h1 data-i18n="gateTitle">Vi gifter oss</h1>
         <p class="gate-verse" data-i18n="verse">
-          Therefore what God has joined together, let no one separate
+          Det Gud har fogat samman får människan inte skilja åt
         </p>
         <p class="gate-guest" data-guest-line></p>
         <p class="party-size" data-party-line></p>
@@ -56,24 +56,22 @@
       </div>
     </div>
 
-    <header class="site-header" aria-label="Sidhuvud">
-      <a class="brand" href="#home" aria-label="John och Georgina">
+    <header class="site-header" aria-label="Sidhuvud" data-i18n-aria-label="headerAria">
+      <a class="brand" href="#home" aria-label="John och Georgina" data-i18n-aria-label="brandAria">
         <span>J</span><span>&</span><span>G</span>
       </a>
-      <nav class="nav-links" aria-label="Huvudnavigation">
+      <nav class="nav-links" aria-label="Huvudnavigation" data-i18n-aria-label="navAria">
         <a href="#details" data-i18n="navDetails">Detaljer</a>
-        <a href="#travel" data-i18n="navTravel">Resa</a>
-        <a href="#schedule" data-i18n="navSchedule">Schema</a>
-        <a href="#gallery" data-i18n="navGallery">Galleri</a>
         <a href="#rsvp" data-i18n="navRsvp">OSA</a>
+        <a href="#gallery" data-i18n="navGallery">Galleri</a>
       </nav>
-      <div class="header-actions" aria-label="Inställningar">
-        <div class="language-switch" aria-label="Språk">
+      <div class="header-actions" aria-label="Inställningar" data-i18n-aria-label="settingsAria">
+        <div class="language-switch" aria-label="Språk" data-i18n-aria-label="languageAria">
           <button class="lang-btn is-active" type="button" data-lang="sv">SV</button>
           <button class="lang-btn" type="button" data-lang="en">EN</button>
           <button class="lang-btn" type="button" data-lang="ar">AR</button>
         </div>
-        <button class="icon-btn" id="musicToggle" type="button" aria-label="Spela musik">
+        <button class="icon-btn" id="musicToggle" type="button" aria-label="Spela musik" data-i18n-aria-label="musicPlay">
           <span class="music-icon" aria-hidden="true"></span>
         </button>
       </div>
@@ -82,7 +80,7 @@
     <a class="sticky-rsvp" href="#rsvp" data-i18n="stickyRsvp">OSA</a>
 
     <main>
-      <section class="hero" id="home" aria-label="Bröllopsinbjudan">
+      <section class="hero" id="home" aria-label="Bröllopsinbjudan" data-i18n-aria-label="heroAria">
         <div class="hero-video" aria-hidden="true">
           <video autoplay muted loop playsinline preload="metadata" poster="assets/images/w.jfif">
             <source src="assets/images/wedding-video.mp4" type="video/mp4" />
@@ -91,25 +89,22 @@
         </div>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content reveal">
-          <p class="kicker" data-i18n="heroKicker">Bröllopsinbjudan</p>
           <p class="personal-line" data-guest-line></p>
-          <h1>John & Georgina</h1>
+          <h1 class="wordmark">John <span class="wordmark-amp">&amp;</span> Georgina</h1>
           <p class="verse" data-i18n="verse">
-            Therefore what God has joined together, let no one separate
+            Det Gud har fogat samman får människan inte skilja åt
           </p>
-          <p class="hero-date" data-i18n="heroDate">
-            Fredag 25 september 2026 | Tensta Maria kyrka
-          </p>
+          <p class="hero-date" data-i18n="heroDate">Markus 10:9</p>
           <a class="primary-link" href="#rsvp" data-i18n="heroCta">Svara på inbjudan</a>
         </div>
-        <aside class="hero-photo-strip" aria-label="Förlovningsbilder">
-          <img src="assets/images/q.jfif" alt="John och Georgina vid vattnet i solnedgången" />
-          <img src="assets/images/e.jfif" alt="John och Georgina framför vattnet" />
-          <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" />
+        <aside class="hero-photo-strip" aria-label="Förlovningsbilder" data-i18n-aria-label="heroPhotosAria">
+          <img src="assets/images/q.jfif" alt="John och Georgina vid vattnet i solnedgången" data-i18n-alt="heroPhotoAltOne" />
+          <img src="assets/images/e.jfif" alt="John och Georgina framför vattnet" data-i18n-alt="heroPhotoAltTwo" />
+          <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" data-i18n-alt="heroPhotoAltThree" />
         </aside>
       </section>
 
-      <section class="essentials-section" aria-label="Viktig information">
+      <section class="essentials-section" aria-label="Viktig information" data-i18n-aria-label="essentialsAria">
         <div class="section-shell essentials-grid">
           <article class="essential-card reveal">
             <span data-i18n="essentialDateLabel">Datum</span>
@@ -117,39 +112,16 @@
           </article>
           <article class="essential-card reveal">
             <span data-i18n="essentialTimeLabel">Tid</span>
-            <strong data-i18n="essentialTimeValue">18:30 ankomst | 19:00 vigsel</strong>
+            <strong data-i18n="essentialTimeValue">19:00 vigsel</strong>
           </article>
           <article class="essential-card reveal">
             <span data-i18n="essentialPlaceLabel">Plats</span>
             <strong data-i18n="essentialPlaceValue">Tensta Maria kyrka</strong>
           </article>
-          <article class="essential-card reveal">
-            <span data-i18n="essentialReplyLabel">Svar</span>
-            <strong data-i18n="essentialReplyValue">Skicka OSA till Yaeel eller Nuha</strong>
-          </article>
         </div>
       </section>
 
-      <section class="welcome-section" id="welcome">
-        <div class="section-shell welcome-layout">
-          <div class="welcome-copy reveal">
-            <p class="eyebrow" data-i18n="welcomeEyebrow">Med kärlek och glädje</p>
-            <h2 data-i18n="welcomeTitle">Välkommen till vår bröllopsdag</h2>
-            <p data-i18n="welcomeBody">
-              Vi vill fira början på vårt liv tillsammans med våra familjer och
-              vänner. Det betyder mycket för oss att ha dig där när vi säger ja
-              och delar kvällen i tro, värme och glädje.
-            </p>
-          </div>
-          <div class="date-lockup reveal" aria-label="25 september 2026">
-            <span data-i18n="month">September</span>
-            <strong>25</strong>
-            <span>2026</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="countdown-section" aria-label="Nedräkning">
+      <section class="countdown-section" aria-label="Nedräkning" data-i18n-aria-label="countdownAria">
         <div class="section-shell countdown-shell">
           <p class="eyebrow reveal" data-i18n="countdownEyebrow">Nedräkning</p>
           <div class="countdown reveal" id="countdown">
@@ -172,13 +144,23 @@
               <span class="card-number">01</span>
               <h3 data-i18n="ceremonyTitle">Ceremoni</h3>
               <p class="detail-time">19:00</p>
-              <p data-i18n="ceremonyBody">
-                Vigseln hålls i Tensta Maria kyrka. Kom gärna i god tid så vi
-                kan börja kvällen lugnt och vackert tillsammans.
-              </p>
+              <p data-i18n="ceremonyBody">Vigseln hålls i Tensta Maria kyrka.</p>
               <a href="https://maps.google.com/?q=Tensta%20Maria%20kyrkan" target="_blank" rel="noreferrer" data-i18n="mapLink">
                 Öppna karta
               </a>
+              <div class="travel-map detail-map" role="img" aria-label="Karta till Tensta Maria kyrka" data-i18n-aria-label="travelMapAria">
+                <div class="map-embed" aria-hidden="true">
+                  <span class="map-road map-road-main"></span>
+                  <span class="map-road map-road-cross"></span>
+                  <span class="map-road map-road-soft"></span>
+                  <span class="map-transit-line"></span>
+                  <span class="map-marker"></span>
+                  <span class="map-label map-church">Tensta Maria kyrka</span>
+                  <span class="map-label map-address">Krällingegränd 1</span>
+                  <span class="map-label map-bus" data-i18n="mapBusLabel">Buss: Krällingegränd</span>
+                  <span class="map-label map-metro" data-i18n="mapMetroLabel">Tensta T-bana</span>
+                </div>
+              </div>
             </article>
             <article class="detail-card reveal">
               <span class="card-number">02</span>
@@ -188,92 +170,8 @@
                 Efter ceremonin fortsätter firandet i kyrkans lokal med mat,
                 musik och minnen vi kommer bära med oss livet ut.
               </p>
-              <a href="#schedule" data-i18n="scheduleLink">Se schema</a>
             </article>
-            <figure class="detail-photo reveal">
-              <img src="assets/images/r.jfif" alt="John och Georgina i Tensta Maria kyrka" />
-            </figure>
           </div>
-        </div>
-      </section>
-
-      <section class="travel-section" id="travel">
-        <div class="section-shell travel-layout">
-          <div class="travel-map reveal" role="img" aria-label="Karta till Tensta Maria kyrka">
-            <div class="map-embed" aria-hidden="true">
-              <span class="map-road map-road-main"></span>
-              <span class="map-road map-road-cross"></span>
-              <span class="map-road map-road-soft"></span>
-              <span class="map-transit-line"></span>
-              <span class="map-marker"></span>
-              <span class="map-label map-church">Tensta Maria kyrka</span>
-              <span class="map-label map-address">Krällingegränd 1</span>
-              <span class="map-label map-bus">Buss: Krällingegränd</span>
-              <span class="map-label map-metro">Tensta T-bana</span>
-            </div>
-          </div>
-          <div class="travel-copy reveal">
-            <p class="eyebrow" data-i18n="travelEyebrow">Resa och ankomst</p>
-            <h2 data-i18n="travelTitle">Hitta till kyrkan</h2>
-            <p data-i18n="travelBody">
-              Tensta Maria kyrka ligger på Krällingegränd 1, 163 62 Spånga.
-              Planera gärna resan så att du är på plats i god tid före vigseln.
-            </p>
-            <div class="travel-cards">
-              <article class="travel-card">
-                <span data-i18n="parkingLabel">Parkering</span>
-                <h3 data-i18n="parkingTitle">Kom i god tid</h3>
-                <p data-i18n="parkingBody">
-                  Parkering finns i området runt kyrkan. Räkna med extra tid för
-                  att hitta plats och gå in lugnt.
-                </p>
-              </article>
-              <article class="travel-card">
-                <span data-i18n="transitLabel">Kollektivtrafik</span>
-                <h3 data-i18n="transitTitle">Buss och tunnelbana</h3>
-                <p data-i18n="transitBody">
-                  Närmaste busshållplats är Krällingegränd. Tensta centrum och
-                  Tensta T-bana ligger inom promenadavstånd.
-                </p>
-              </article>
-              <article class="travel-card">
-                <span data-i18n="arrivalLabel">Ankomst</span>
-                <h3 data-i18n="arrivalTitle">18:30 ankomst</h3>
-                <p data-i18n="arrivalBody">
-                  Gäster är välkomna från 18:30. Vigseln börjar 19:00.
-                </p>
-              </article>
-            </div>
-            <div class="travel-actions">
-              <a
-                class="primary-link travel-link"
-                href="https://maps.google.com/?q=Kr%C3%A4llingegr%C3%A4nd%201%2C%20163%2062%20Sp%C3%A5nga"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n="openMap"
-              >
-                Öppna karta
-              </a>
-              <button class="secondary-btn calendar-btn" id="addToCalendar" type="button" data-i18n="addCalendar">
-                Lägg till i kalender
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="schedule-section" id="schedule">
-        <div class="section-shell schedule-layout">
-          <div class="section-heading reveal">
-            <p class="eyebrow" data-i18n="scheduleEyebrow">Fredag 25 september</p>
-            <h2 data-i18n="scheduleTitle">Kvällens schema</h2>
-          </div>
-          <ol class="timeline reveal" id="dayTimeline">
-            <li><time>18:30</time><span data-i18n="scheduleArrival">Gäster anländer</span></li>
-            <li><time>19:00</time><span data-i18n="scheduleCeremony">Vigsel i Tensta Maria kyrka</span></li>
-            <li><time>20:00</time><span data-i18n="scheduleReception">Fest i kyrkans lokal</span></li>
-            <li><time>21:00</time><span data-i18n="scheduleDinner">Middag, tal och firande</span></li>
-          </ol>
         </div>
       </section>
 
@@ -290,50 +188,28 @@
             vi in i ett nytt kapitel, tacksamma för allt som varit och för allt
             Gud lägger framför oss.
           </p>
-        </div>
-      </section>
-
-      <section class="gallery-section" id="gallery">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <p class="eyebrow" data-i18n="galleryEyebrow">Bilder och video</p>
-            <h2 data-i18n="galleryTitle">Några ögonblick från vägen hit</h2>
-          </div>
-          <div class="media-grid reveal" id="mediaGrid">
-            <button class="media-tile media-wide" type="button" data-media="0">
-              <img src="assets/images/q.jfif" alt="John och Georgina på bryggan vid vattnet" loading="lazy" decoding="async" />
-            </button>
-            <button class="media-tile media-tall" type="button" data-media="1">
-              <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" loading="lazy" decoding="async" />
-            </button>
-            <button class="media-tile" type="button" data-media="2">
-              <img src="assets/images/e.jfif" alt="John och Georgina vid solnedgången" loading="lazy" decoding="async" />
-            </button>
-            <button class="media-tile media-video" type="button" data-media="3">
-              <video muted loop playsinline preload="metadata" poster="assets/images/w.jfif">
-                <source src="assets/images/wedding-video.mp4" type="video/mp4" />
-              </video>
-              <span data-i18n="playVideo">Spela video</span>
-            </button>
-            <button class="media-tile media-tall" type="button" data-media="4">
-              <img src="assets/images/r.jfif" alt="John och Georgina framför altaret" loading="lazy" decoding="async" />
-            </button>
-            <button class="media-tile" type="button" data-media="5">
-              <img src="assets/images/w.jfif" alt="John och Georgina skrattar vid vattnet" loading="lazy" decoding="async" />
-            </button>
-          </div>
-          <div class="gallery-upload reveal">
-            <p data-i18n="uploadPhotosBody">
-              Efter bröllopet kan du dela dina bilder med oss här.
-            </p>
-            <a
-              href="https://photos.app.goo.gl/"
-              target="_blank"
-              rel="noreferrer"
-              data-i18n="uploadPhotos"
-            >
-              Ladda upp bilder
-            </a>
+          <div class="journey-track story-journey">
+            <span class="journey-fill" aria-hidden="true"></span>
+            <article class="journey-moment">
+              <time>2015</time>
+              <h3 data-i18n="journey2015Title">Första kapitlet</h3>
+              <p data-i18n="journey2015Body">Början på en berättelse som sakta växte till något större.</p>
+            </article>
+            <article class="journey-moment">
+              <time>2020</time>
+              <h3 data-i18n="journey2020Title">Ett minne som stannade</h3>
+              <p data-i18n="journey2020Body">En tid av samtal, skratt och ögonblick som förde oss närmare varandra.</p>
+            </article>
+            <article class="journey-moment">
+              <time>2023</time>
+              <h3 data-i18n="journey2023Title">När allt blev tydligare</h3>
+              <p data-i18n="journey2023Body">Kärleken växte till ett löfte och framtiden började kännas självklar.</p>
+            </article>
+            <article class="journey-moment">
+              <time>2026</time>
+              <h3 data-i18n="journey2026Title">Bröllopsdagen</h3>
+              <p data-i18n="journey2026Body">Den 25 september börjar vårt nya kapitel i Tensta Maria kyrka.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -343,10 +219,7 @@
           <div class="rsvp-copy reveal">
             <p class="eyebrow" data-i18n="rsvpEyebrow">OSA</p>
             <h2 data-i18n="rsvpTitle">Svara på inbjudan</h2>
-            <p data-i18n="rsvpBody">
-              Berätta om du kommer eller inte, och hur många personer svaret
-              gäller. Skicka ditt svar direkt till Yaeel eller Nuha.
-            </p>
+            <p data-i18n="rsvpBody">OSA kan också göras genom att kontakta Yaeel eller Nuha.</p>
             <p class="rsvp-party-line" data-party-line></p>
           </div>
           <form class="rsvp-form reveal" id="rsvpForm">
@@ -370,50 +243,66 @@
               <textarea name="message" rows="4"></textarea>
             </label>
             <div class="contact-actions">
-              <button type="button" class="primary-btn" data-recipient="yaeel" data-i18n="sendYaeel">
-                Skicka till Yaeel
-              </button>
-              <button type="button" class="secondary-btn" data-recipient="nuha" data-i18n="sendNuha">
-                Skicka till Nuha
+              <button type="button" class="primary-btn" data-rsvp-send data-i18n="sendReply">
+                Skicka svar
               </button>
             </div>
             <p class="form-note" data-i18n="phoneNote">
-              OSA-kontakter: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.
+              OSA-kontakter: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.
             </p>
           </form>
         </div>
       </section>
 
-      <section class="blessing-section" id="blessings">
-        <div class="section-shell blessing-layout">
+      <section class="gallery-section" id="gallery">
+        <div class="section-shell">
           <div class="section-heading reveal">
-            <p class="eyebrow" data-i18n="blessingEyebrow">Välsignelser</p>
-            <h2 data-i18n="blessingTitle">Lämna en hälsning</h2>
-            <p data-i18n="blessingBody">
-              Gäster kan skriva en kort hälsning. I denna version sparas den på
-              enheten.
-            </p>
+            <p class="eyebrow" data-i18n="galleryEyebrow">Bilder och video</p>
+            <h2 data-i18n="galleryTitle">Våra minnen fram till den stora dagen</h2>
           </div>
-          <div class="blessing-panel reveal">
-            <form class="blessing-form" id="blessingForm">
-              <label>
-                <span data-i18n="blessingNameLabel">Namn</span>
-                <input type="text" name="name" required />
-              </label>
-              <label>
-                <span data-i18n="blessingMessageLabel">Hälsning</span>
-                <textarea name="message" rows="4" maxlength="220" required></textarea>
-              </label>
-              <button class="primary-btn" type="submit" data-i18n="blessingSend">Lägg till hälsning</button>
-            </form>
-            <div class="blessing-wall" id="blessingWall" aria-live="polite"></div>
+          <div class="media-grid reveal" id="mediaGrid">
+            <button class="media-tile media-wide" type="button" data-media="0">
+              <img src="assets/images/q.jfif" alt="John och Georgina på bryggan vid vattnet" loading="lazy" decoding="async" data-i18n-alt="galleryAltDock" />
+            </button>
+            <button class="media-tile media-tall" type="button" data-media="1">
+              <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" loading="lazy" decoding="async" data-i18n-alt="galleryAltChurch" />
+            </button>
+            <button class="media-tile" type="button" data-media="2">
+              <img src="assets/images/e.jfif" alt="John och Georgina vid solnedgången" loading="lazy" decoding="async" data-i18n-alt="galleryAltSunset" />
+            </button>
+            <button class="media-tile media-video" type="button" data-media="3">
+              <video muted loop playsinline preload="metadata" poster="assets/images/w.jfif">
+                <source src="assets/images/wedding-video.mp4" type="video/mp4" />
+              </video>
+              <span data-i18n="playVideo">Spela video</span>
+            </button>
+            <button class="media-tile media-tall" type="button" data-media="4">
+              <img src="assets/images/r.jfif" alt="John och Georgina framför altaret" loading="lazy" decoding="async" data-i18n-alt="galleryAltAltar" />
+            </button>
+            <button class="media-tile" type="button" data-media="5">
+              <img src="assets/images/w.jfif" alt="John och Georgina skrattar vid vattnet" loading="lazy" decoding="async" data-i18n-alt="galleryAltLaughing" />
+            </button>
+          </div>
+          <div class="gallery-upload reveal">
+            <p data-i18n="uploadPhotosBody">
+              Efter bröllopet kan du dela dina bilder med oss här.
+            </p>
+            <a
+              href="https://photos.app.goo.gl/"
+              target="_blank"
+              rel="noreferrer"
+              data-i18n="uploadPhotos"
+            >
+              Ladda upp bilder
+            </a>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer class="site-footer">
-      <p>John & Georgina</p>
+      <p class="wordmark">John <span class="wordmark-amp">&amp;</span> Georgina</p>
       <span data-i18n="footerText">25 september 2026 | Tensta Maria kyrka</span>
     </footer>
 

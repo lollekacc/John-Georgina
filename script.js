@@ -10,16 +10,35 @@ document.body.classList.add("motion-ready");
 const contacts = {
   yaeel: {
     name: "Yaeel Jadaon",
-    phone: "07xxxxxxxx",
+    phone: "0722671116",
   },
   nuha: {
     name: "Nuha Kawas",
-    phone: "07xxxxxxxxxx",
+    phone: "0720283065",
   },
 };
 
 const translations = {
   sv: {
+    documentTitle: "John & Georgina | Bröllop",
+    metaDescription: "Bröllopsinbjudan för John och Georgina, 25 september 2026.",
+    gateAria: "Öppna inbjudan",
+    headerAria: "Sidhuvud",
+    brandAria: "John och Georgina",
+    navAria: "Huvudnavigation",
+    settingsAria: "Inställningar",
+    languageAria: "Språk",
+    musicPlay: "Spela musik",
+    musicStop: "Stoppa musik",
+    heroAria: "Bröllopsinbjudan",
+    heroPhotosAria: "Förlovningsbilder",
+    essentialsAria: "Viktig information",
+    countdownAria: "Nedräkning",
+    travelMapAria: "Karta till Tensta Maria kyrka",
+    mediaDialogLabel: "Media",
+    mediaClose: "Stäng",
+    mediaPrev: "Föregående",
+    mediaNext: "Nästa",
     gateKicker: "John & Georgina",
     gateTitle: "Vi gifter oss",
     openInvitation: "Öppna inbjudan",
@@ -27,28 +46,19 @@ const translations = {
     guestLineParty: "Särskilt inbjudna: {guest}",
     partyLine: "Denna inbjudan gäller {party} personer",
     navDetails: "Detaljer",
-    navTravel: "Resa",
-    navSchedule: "Schema",
     navGallery: "Galleri",
     navRsvp: "OSA",
     stickyRsvp: "OSA",
     heroKicker: "Bröllopsinbjudan",
-    verse: "Therefore what God has joined together, let no one separate",
-    heroDate: "Fredag 25 september 2026 | Tensta Maria kyrka",
+    verse: "Det Gud har fogat samman får människan inte skilja åt",
+    heroDate: "Markus 10:9",
     heroCta: "Svara på inbjudan",
     essentialDateLabel: "Datum",
     essentialDateValue: "Fredag 25 september 2026",
     essentialTimeLabel: "Tid",
-    essentialTimeValue: "18:30 | 19:00",
+    essentialTimeValue: "19:00 vigsel",
     essentialPlaceLabel: "Plats",
     essentialPlaceValue: "Tensta Maria kyrka",
-    essentialReplyLabel: "Svar",
-    essentialReplyValue: "Yaeel / Nuha",
-    welcomeEyebrow: "Med kärlek och glädje",
-    welcomeTitle: "Välkommen till vår bröllopsdag",
-    welcomeBody:
-      "Vi vill fira början på vårt liv tillsammans med våra familjer och vänner. Det betyder mycket för oss att ha dig där när vi säger ja och delar kvällen i tro, värme och glädje.",
-    month: "September",
     countdownEyebrow: "Nedräkning",
     days: "Dagar",
     hours: "Timmar",
@@ -57,70 +67,78 @@ const translations = {
     detailsEyebrow: "Dagens detaljer",
     detailsTitle: "Ceremoni och fest",
     ceremonyTitle: "Ceremoni",
-    ceremonyBody:
-      "Vigseln hålls i Tensta Maria kyrka. Kom gärna i god tid så vi kan börja kvällen lugnt och vackert tillsammans.",
+    ceremonyBody: "Vigseln hålls i Tensta Maria kyrka.",
     mapLink: "Öppna karta",
     receptionTitle: "Fest",
     receptionBody:
       "Efter ceremonin fortsätter firandet i kyrkans lokal med mat, musik och minnen vi kommer bära med oss livet ut.",
-    scheduleLink: "Se schema",
-    travelEyebrow: "Resa och ankomst",
-    travelTitle: "Hitta till kyrkan",
-    travelBody:
-      "Tensta Maria kyrka ligger på Krällingegränd 1, 163 62 Spånga. Planera gärna resan så att du är på plats i god tid före vigseln.",
-    parkingLabel: "Parkering",
-    parkingTitle: "Kom i god tid",
-    parkingBody:
-      "Parkering finns i området runt kyrkan. Räkna med extra tid för att hitta plats och gå in lugnt.",
-    transitLabel: "Kollektivtrafik",
-    transitTitle: "Buss och tunnelbana",
-    transitBody:
-      "Närmaste busshållplats är Krällingegränd. Tensta centrum och Tensta T-bana ligger inom promenadavstånd.",
-    arrivalLabel: "Ankomst",
-    arrivalTitle: "18:30 ankomst",
-    arrivalBody: "Gäster är välkomna från 18:30. Vigseln börjar 19:00.",
-    openMap: "Öppna karta",
-    addCalendar: "Lägg till i kalender",
-    scheduleEyebrow: "Fredag 25 september",
-    scheduleTitle: "Kvällens schema",
-    scheduleArrival: "Gäster anländer",
-    scheduleCeremony: "Vigsel i Tensta Maria kyrka",
-    scheduleReception: "Fest i kyrkans lokal",
-    scheduleDinner: "Middag, tal och firande",
+    mapBusLabel: "Buss: Krällingegränd",
+    mapMetroLabel: "Tensta T-bana",
     storyEyebrow: "Vår berättelse",
     storyTitle: "Från ett ja i hjärtat till ett ja inför Gud",
     storyBody:
       "Vår berättelse är fylld av små ögonblick som blev stora: skratt, samtal, bön, familj och en kärlek som växte till ett löfte. Nu går vi in i ett nytt kapitel, tacksamma för allt som varit och för allt Gud lägger framför oss.",
+    journey2015Title: "Första kapitlet",
+    journey2015Body: "Början på en berättelse som sakta växte till något större.",
+    journey2020Title: "Ett minne som stannade",
+    journey2020Body: "En tid av samtal, skratt och ögonblick som förde oss närmare varandra.",
+    journey2023Title: "När allt blev tydligare",
+    journey2023Body: "Kärleken växte till ett löfte och framtiden började kännas självklar.",
+    journey2026Title: "Bröllopsdagen",
+    journey2026Body: "Den 25 september börjar vårt nya kapitel i Tensta Maria kyrka.",
     galleryEyebrow: "Bilder och video",
-    galleryTitle: "Några ögonblick från vägen hit",
+    galleryTitle: "Våra minnen fram till den stora dagen",
     playVideo: "Spela video",
     uploadPhotosBody: "Efter bröllopet kan du dela dina bilder med oss här.",
     uploadPhotos: "Ladda upp bilder",
     rsvpEyebrow: "OSA",
     rsvpTitle: "Svara på inbjudan",
-    rsvpBody:
-      "Berätta om du kommer eller inte, och hur många personer svaret gäller. Skicka ditt svar direkt till Yaeel eller Nuha.",
+    rsvpBody: "OSA kan också göras genom att kontakta Yaeel eller Nuha.",
     nameLabel: "Namn",
     attendanceLabel: "Kan du komma?",
     attendingYes: "Ja, jag/vi kommer",
     attendingNo: "Nej, jag/vi kan inte komma",
     guestCountLabel: "Antal personer",
     messageLabel: "Meddelande",
-    sendYaeel: "Skicka till Yaeel",
-    sendNuha: "Skicka till Nuha",
-    phoneNote: "OSA-kontakter: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
-    blessingEyebrow: "Välsignelser",
-    blessingTitle: "Lämna en hälsning",
-    blessingBody: "Gäster kan skriva en kort hälsning. I denna version sparas den på enheten.",
-    blessingNameLabel: "Namn",
-    blessingMessageLabel: "Hälsning",
-    blessingSend: "Lägg till hälsning",
-    blessingDefaultOne: "Må Gud välsigna ert äktenskap med kärlek, frid och glädje.",
-    blessingDefaultTwo: "Vi längtar efter att fira denna dag tillsammans med er.",
+    sendReply: "Skicka svar",
+    phoneNote: "OSA-kontakter: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.",
     footerText: "25 september 2026 | Tensta Maria kyrka",
     smsIntro: "Hej, detta är mitt OSA till John och Georginas bröllop.",
+    smsNameLabel: "Namn",
+    smsReplyLabel: "Svar",
+    smsGuestsLabel: "Antal",
+    smsMessageLabel: "Meddelande",
+    smsGuestLabel: "Inbjuden gäst",
+    heroPhotoAltOne: "John och Georgina vid vattnet i solnedgången",
+    heroPhotoAltTwo: "John och Georgina framför vattnet",
+    heroPhotoAltThree: "John och Georgina i kyrkan",
+    detailPhotoAlt: "John och Georgina i Tensta Maria kyrka",
+    galleryAltDock: "John och Georgina på bryggan vid vattnet",
+    galleryAltChurch: "John och Georgina i kyrkan",
+    galleryAltSunset: "John och Georgina vid solnedgången",
+    galleryAltAltar: "John och Georgina framför altaret",
+    galleryAltLaughing: "John och Georgina skrattar vid vattnet",
   },
   en: {
+    documentTitle: "John & Georgina | Wedding",
+    metaDescription: "Wedding invitation for John and Georgina, September 25, 2026.",
+    gateAria: "Open invitation",
+    headerAria: "Header",
+    brandAria: "John and Georgina",
+    navAria: "Main navigation",
+    settingsAria: "Settings",
+    languageAria: "Language",
+    musicPlay: "Play music",
+    musicStop: "Stop music",
+    heroAria: "Wedding invitation",
+    heroPhotosAria: "Engagement photos",
+    essentialsAria: "Important information",
+    countdownAria: "Countdown",
+    travelMapAria: "Map to Tensta Maria Church",
+    mediaDialogLabel: "Media",
+    mediaClose: "Close",
+    mediaPrev: "Previous",
+    mediaNext: "Next",
     gateKicker: "John & Georgina",
     gateTitle: "We are getting married",
     openInvitation: "Open invitation",
@@ -128,28 +146,19 @@ const translations = {
     guestLineParty: "Especially invited: {guest}",
     partyLine: "This invitation is for {party} people",
     navDetails: "Details",
-    navTravel: "Travel",
-    navSchedule: "Schedule",
     navGallery: "Gallery",
     navRsvp: "RSVP",
     stickyRsvp: "RSVP",
     heroKicker: "Wedding invitation",
     verse: "Therefore what God has joined together, let no one separate",
-    heroDate: "Friday, September 25, 2026 | Tensta Maria Church",
+    heroDate: "Mark 10:9",
     heroCta: "Reply to the invitation",
     essentialDateLabel: "Date",
     essentialDateValue: "Friday, September 25, 2026",
     essentialTimeLabel: "Time",
-    essentialTimeValue: "18:30 | 19:00",
+    essentialTimeValue: "19:00 ceremony",
     essentialPlaceLabel: "Place",
     essentialPlaceValue: "Tensta Maria Church",
-    essentialReplyLabel: "Reply",
-    essentialReplyValue: "Yaeel / Nuha",
-    welcomeEyebrow: "With love and joy",
-    welcomeTitle: "Welcome to our wedding day",
-    welcomeBody:
-      "We want to celebrate the beginning of our life together with our families and friends. It means so much to have you with us as we say yes and share the evening in faith, warmth and joy.",
-    month: "September",
     countdownEyebrow: "Countdown",
     days: "Days",
     hours: "Hours",
@@ -158,70 +167,78 @@ const translations = {
     detailsEyebrow: "The details",
     detailsTitle: "Ceremony and celebration",
     ceremonyTitle: "Ceremony",
-    ceremonyBody:
-      "The ceremony will take place at Tensta Maria Church. Please arrive a little early so we can begin the evening calmly and beautifully together.",
+    ceremonyBody: "The ceremony will take place at Tensta Maria Church.",
     mapLink: "Open map",
     receptionTitle: "Reception",
     receptionBody:
       "After the ceremony, the celebration continues in the church hall with food, music and memories we will carry for life.",
-    scheduleLink: "View schedule",
-    travelEyebrow: "Travel and arrival",
-    travelTitle: "Find the church",
-    travelBody:
-      "Tensta Maria Church is at Krällingegränd 1, 163 62 Spånga. Please plan your journey so you arrive calmly before the ceremony.",
-    parkingLabel: "Parking",
-    parkingTitle: "Arrive early",
-    parkingBody:
-      "Parking is available in the area around the church. Allow extra time to find a place and enter calmly.",
-    transitLabel: "Public transport",
-    transitTitle: "Bus and metro",
-    transitBody:
-      "The closest bus stop is Krällingegränd. Tensta centrum and Tensta metro station are within walking distance.",
-    arrivalLabel: "Arrival",
-    arrivalTitle: "18:30 arrival",
-    arrivalBody: "Guests are welcome from 18:30. The ceremony begins at 19:00.",
-    openMap: "Open map",
-    addCalendar: "Add to calendar",
-    scheduleEyebrow: "Friday, September 25",
-    scheduleTitle: "Evening schedule",
-    scheduleArrival: "Guests arrive",
-    scheduleCeremony: "Ceremony at Tensta Maria Church",
-    scheduleReception: "Reception in the church hall",
-    scheduleDinner: "Dinner, speeches and celebration",
+    mapBusLabel: "Bus: Krällingegränd",
+    mapMetroLabel: "Tensta metro",
     storyEyebrow: "Our story",
     storyTitle: "From yes in the heart to yes before God",
     storyBody:
       "Our story is filled with small moments that became great ones: laughter, conversations, prayer, family and a love that grew into a promise. Now we enter a new chapter, grateful for everything behind us and everything God places before us.",
+    journey2015Title: "The first chapter",
+    journey2015Body: "The beginning of a story that slowly grew into something greater.",
+    journey2020Title: "A memory that stayed",
+    journey2020Body: "A season of conversations, laughter and moments that brought us closer together.",
+    journey2023Title: "When everything became clearer",
+    journey2023Body: "Love grew into a promise, and the future began to feel certain.",
+    journey2026Title: "The wedding day",
+    journey2026Body: "On September 25, our new chapter begins at Tensta Maria Church.",
     galleryEyebrow: "Photos and video",
-    galleryTitle: "A few moments from the road here",
+    galleryTitle: "Our memories leading up to the big day",
     playVideo: "Play video",
     uploadPhotosBody: "After the wedding, you can share your photos with us here.",
     uploadPhotos: "Upload photos",
     rsvpEyebrow: "RSVP",
     rsvpTitle: "Reply to the invitation",
-    rsvpBody:
-      "Let us know whether you can attend, and how many people your reply includes. Send your answer directly to Yaeel or Nuha.",
+    rsvpBody: "RSVP can also be made by contacting Yaeel or Nuha.",
     nameLabel: "Name",
     attendanceLabel: "Can you attend?",
     attendingYes: "Yes, I/we will attend",
     attendingNo: "No, I/we cannot attend",
     guestCountLabel: "Number of people",
     messageLabel: "Message",
-    sendYaeel: "Send to Yaeel",
-    sendNuha: "Send to Nuha",
-    phoneNote: "RSVP contacts: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
-    blessingEyebrow: "Blessings",
-    blessingTitle: "Leave a message",
-    blessingBody: "Guests can write a short message. In this version it is saved on the device.",
-    blessingNameLabel: "Name",
-    blessingMessageLabel: "Message",
-    blessingSend: "Add message",
-    blessingDefaultOne: "May God bless your marriage with love, peace and joy.",
-    blessingDefaultTwo: "We cannot wait to celebrate this day with you.",
+    sendReply: "Send reply",
+    phoneNote: "RSVP contacts: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.",
     footerText: "September 25, 2026 | Tensta Maria Church",
     smsIntro: "Hello, this is my RSVP for John and Georgina's wedding.",
+    smsNameLabel: "Name",
+    smsReplyLabel: "Reply",
+    smsGuestsLabel: "Guests",
+    smsMessageLabel: "Message",
+    smsGuestLabel: "Invited guest",
+    heroPhotoAltOne: "John and Georgina by the water at sunset",
+    heroPhotoAltTwo: "John and Georgina by the water",
+    heroPhotoAltThree: "John and Georgina in the church",
+    detailPhotoAlt: "John and Georgina in Tensta Maria Church",
+    galleryAltDock: "John and Georgina on the dock by the water",
+    galleryAltChurch: "John and Georgina in the church",
+    galleryAltSunset: "John and Georgina at sunset",
+    galleryAltAltar: "John and Georgina before the altar",
+    galleryAltLaughing: "John and Georgina laughing by the water",
   },
   ar: {
+    documentTitle: "John & Georgina | الزفاف",
+    metaDescription: "دعوة زفاف John وGeorgina، 25 سبتمبر 2026.",
+    gateAria: "افتح الدعوة",
+    headerAria: "رأس الصفحة",
+    brandAria: "John وGeorgina",
+    navAria: "التنقل الرئيسي",
+    settingsAria: "الإعدادات",
+    languageAria: "اللغة",
+    musicPlay: "تشغيل الموسيقى",
+    musicStop: "إيقاف الموسيقى",
+    heroAria: "دعوة زفاف",
+    heroPhotosAria: "صور الخطوبة",
+    essentialsAria: "معلومات مهمة",
+    countdownAria: "العد التنازلي",
+    travelMapAria: "خريطة الوصول إلى كنيسة تنستا ماريا",
+    mediaDialogLabel: "الوسائط",
+    mediaClose: "إغلاق",
+    mediaPrev: "السابق",
+    mediaNext: "التالي",
     gateKicker: "John & Georgina",
     gateTitle: "سنتزوج",
     openInvitation: "افتح الدعوة",
@@ -229,28 +246,19 @@ const translations = {
     guestLineParty: "دعوة خاصة إلى: {guest}",
     partyLine: "هذه الدعوة مخصصة لعدد {party} أشخاص",
     navDetails: "التفاصيل",
-    navTravel: "الوصول",
-    navSchedule: "البرنامج",
     navGallery: "الصور",
     navRsvp: "تأكيد الحضور",
     stickyRsvp: "تأكيد الحضور",
     heroKicker: "دعوة زفاف",
-    verse: "Therefore what God has joined together, let no one separate",
-    heroDate: "الجمعة 25 سبتمبر 2026 | كنيسة تنستا ماريا",
+    verse: "ما جمعه الله لا يفرقه إنسان",
+    heroDate: "مرقس 10:9",
     heroCta: "أرسل الرد",
     essentialDateLabel: "التاريخ",
     essentialDateValue: "الجمعة 25 سبتمبر 2026",
     essentialTimeLabel: "الوقت",
-    essentialTimeValue: "18:30 | 19:00",
+    essentialTimeValue: "المراسم 19:00",
     essentialPlaceLabel: "المكان",
     essentialPlaceValue: "كنيسة تنستا ماريا",
-    essentialReplyLabel: "الرد",
-    essentialReplyValue: "يائيل / نهى",
-    welcomeEyebrow: "بمحبة وفرح",
-    welcomeTitle: "أهلا بكم في يوم زفافنا",
-    welcomeBody:
-      "نرغب أن نحتفل ببداية حياتنا معا مع عائلاتنا وأصدقائنا. وجودكم معنا يعني لنا الكثير ونحن نقول نعم ونشارك هذه الأمسية بالإيمان والدفء والفرح.",
-    month: "سبتمبر",
     countdownEyebrow: "العد التنازلي",
     days: "أيام",
     hours: "ساعات",
@@ -259,68 +267,57 @@ const translations = {
     detailsEyebrow: "تفاصيل اليوم",
     detailsTitle: "المراسم والاحتفال",
     ceremonyTitle: "المراسم",
-    ceremonyBody:
-      "ستقام المراسم في كنيسة تنستا ماريا. نرجو الحضور مبكرا قليلا لنبدأ الأمسية بهدوء وجمال معا.",
+    ceremonyBody: "ستقام المراسم في كنيسة تنستا ماريا.",
     mapLink: "فتح الخريطة",
     receptionTitle: "الاحتفال",
     receptionBody:
       "بعد المراسم نكمل الاحتفال في قاعة الكنيسة مع الطعام والموسيقى والذكريات الجميلة.",
-    scheduleLink: "عرض البرنامج",
-    travelEyebrow: "الطريق والوصول",
-    travelTitle: "الوصول إلى الكنيسة",
-    travelBody:
-      "تقع كنيسة تنستا ماريا في Krällingegränd 1, 163 62 Spånga. نرجو التخطيط للوصول بهدوء قبل بدء المراسم.",
-    parkingLabel: "مواقف السيارات",
-    parkingTitle: "احضروا مبكرا",
-    parkingBody:
-      "توجد مواقف في المنطقة المحيطة بالكنيسة. خصصوا وقتا إضافيا للعثور على موقف والدخول بهدوء.",
-    transitLabel: "المواصلات العامة",
-    transitTitle: "الحافلة والمترو",
-    transitBody:
-      "أقرب موقف حافلات هو Krällingegränd. يقع Tensta centrum ومحطة مترو Tensta ضمن مسافة مشي.",
-    arrivalLabel: "الوصول",
-    arrivalTitle: "الوصول 18:30",
-    arrivalBody: "نرحب بالضيوف من الساعة 18:30. تبدأ المراسم الساعة 19:00.",
-    openMap: "فتح الخريطة",
-    addCalendar: "إضافة إلى التقويم",
-    scheduleEyebrow: "الجمعة 25 سبتمبر",
-    scheduleTitle: "برنامج الأمسية",
-    scheduleArrival: "وصول الضيوف",
-    scheduleCeremony: "المراسم في كنيسة تنستا ماريا",
-    scheduleReception: "الاحتفال في قاعة الكنيسة",
-    scheduleDinner: "عشاء وكلمات واحتفال",
+    mapBusLabel: "الحافلة: Krällingegränd",
+    mapMetroLabel: "مترو Tensta",
     storyEyebrow: "قصتنا",
     storyTitle: "من نعم في القلب إلى نعم أمام الله",
     storyBody:
       "قصتنا مليئة بلحظات صغيرة أصبحت كبيرة: ضحك، أحاديث، صلاة، عائلة ومحبة كبرت حتى أصبحت وعدا. والآن نبدأ فصلا جديدا بامتنان لكل ما مضى ولكل ما يضعه الله أمامنا.",
+    journey2015Title: "الفصل الأول",
+    journey2015Body: "بداية قصة نمت بهدوء حتى أصبحت شيئا أكبر.",
+    journey2020Title: "ذكرى بقيت معنا",
+    journey2020Body: "وقت من الأحاديث والضحك واللحظات التي قربتنا من بعضنا.",
+    journey2023Title: "عندما اتضح كل شيء",
+    journey2023Body: "كبرت المحبة حتى أصبحت وعدا، وأصبح المستقبل أوضح.",
+    journey2026Title: "يوم الزفاف",
+    journey2026Body: "في 25 سبتمبر يبدأ فصلنا الجديد في كنيسة تنستا ماريا.",
     galleryEyebrow: "صور وفيديو",
-    galleryTitle: "بعض اللحظات من الطريق إلى هنا",
+    galleryTitle: "ذكرياتنا حتى اليوم الكبير",
     playVideo: "تشغيل الفيديو",
     uploadPhotosBody: "بعد الزفاف يمكنكم مشاركة صوركم معنا هنا.",
     uploadPhotos: "رفع الصور",
     rsvpEyebrow: "تأكيد الحضور",
     rsvpTitle: "الرد على الدعوة",
-    rsvpBody:
-      "أخبرونا إن كنتم ستتمكنون من الحضور، وكم شخصا يشمل الرد. أرسلوا الرد مباشرة إلى يائيل أو نهى.",
+    rsvpBody: "يمكن أيضا تأكيد الحضور من خلال التواصل مع يائيل أو نهى.",
     nameLabel: "الاسم",
     attendanceLabel: "هل تستطيع الحضور؟",
     attendingYes: "نعم، سأحضر / سنحضر",
     attendingNo: "لا، لا أستطيع / لا نستطيع الحضور",
     guestCountLabel: "عدد الأشخاص",
     messageLabel: "رسالة",
-    sendYaeel: "إرسال إلى يائيل",
-    sendNuha: "إرسال إلى نهى",
-    phoneNote: "جهات تأكيد الحضور: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
-    blessingEyebrow: "بركات",
-    blessingTitle: "اتركوا رسالة",
-    blessingBody: "يمكن للضيوف كتابة رسالة قصيرة. في هذه النسخة تحفظ على الجهاز.",
-    blessingNameLabel: "الاسم",
-    blessingMessageLabel: "الرسالة",
-    blessingSend: "إضافة الرسالة",
-    blessingDefaultOne: "ليبارك الله زواجكما بالمحبة والسلام والفرح.",
-    blessingDefaultTwo: "ننتظر أن نحتفل بهذا اليوم الجميل معكما.",
+    sendReply: "إرسال الرد",
+    phoneNote: "جهات تأكيد الحضور: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.",
     footerText: "25 سبتمبر 2026 | كنيسة تنستا ماريا",
-    smsIntro: "مرحبا، هذا تأكيد حضوري لزفاف John و Georgina.",
+    smsIntro: "مرحبا، هذا تأكيد حضوري لزفاف John وGeorgina.",
+    smsNameLabel: "الاسم",
+    smsReplyLabel: "الرد",
+    smsGuestsLabel: "عدد الأشخاص",
+    smsMessageLabel: "الرسالة",
+    smsGuestLabel: "الضيف المدعو",
+    heroPhotoAltOne: "John وGeorgina بجانب الماء عند الغروب",
+    heroPhotoAltTwo: "John وGeorgina بجانب الماء",
+    heroPhotoAltThree: "John وGeorgina في الكنيسة",
+    detailPhotoAlt: "John وGeorgina في كنيسة تنستا ماريا",
+    galleryAltDock: "John وGeorgina على الرصيف بجانب الماء",
+    galleryAltChurch: "John وGeorgina في الكنيسة",
+    galleryAltSunset: "John وGeorgina عند الغروب",
+    galleryAltAltar: "John وGeorgina أمام المذبح",
+    galleryAltLaughing: "John وGeorgina يضحكان بجانب الماء",
   },
 };
 
@@ -328,7 +325,7 @@ const galleryItems = [
   {
     type: "image",
     src: "assets/images/q.jfif",
-    alt: "John och Georgina på bryggan vid vattnet",
+    altKey: "galleryAltDock",
     caption: {
       sv: "Vid vattnet i kvällsljuset",
       en: "By the water in the evening light",
@@ -338,7 +335,7 @@ const galleryItems = [
   {
     type: "image",
     src: "assets/images/t.jfif",
-    alt: "John och Georgina i kyrkan",
+    altKey: "galleryAltChurch",
     caption: {
       sv: "En stund i kyrkan",
       en: "A moment in the church",
@@ -348,7 +345,7 @@ const galleryItems = [
   {
     type: "image",
     src: "assets/images/e.jfif",
-    alt: "John och Georgina vid solnedgången",
+    altKey: "galleryAltSunset",
     caption: {
       sv: "Solnedgång vid vattnet",
       en: "Sunset by the water",
@@ -368,7 +365,7 @@ const galleryItems = [
   {
     type: "image",
     src: "assets/images/r.jfif",
-    alt: "John och Georgina framför altaret",
+    altKey: "galleryAltAltar",
     caption: {
       sv: "Framför altaret",
       en: "Before the altar",
@@ -378,7 +375,7 @@ const galleryItems = [
   {
     type: "image",
     src: "assets/images/w.jfif",
-    alt: "John och Georgina skrattar vid vattnet",
+    altKey: "galleryAltLaughing",
     caption: {
       sv: "Glädje vid vattnet",
       en: "Joy by the water",
@@ -495,7 +492,10 @@ function applyLanguage(lang) {
   activeLang = lang;
   const copy = translations[lang];
   document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   document.body.dir = lang === "ar" ? "rtl" : "ltr";
+  document.title = copy.documentTitle;
+  document.querySelector('meta[name="description"]')?.setAttribute("content", copy.metaDescription);
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
@@ -504,12 +504,27 @@ function applyLanguage(lang) {
     }
   });
 
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const key = element.dataset.i18nAriaLabel;
+    if (copy[key]) {
+      element.setAttribute("aria-label", copy[key]);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    const key = element.dataset.i18nAlt;
+    if (copy[key]) {
+      element.setAttribute("alt", copy[key]);
+    }
+  });
+
   document.querySelectorAll(".lang-btn").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.lang === lang);
   });
 
   applyGuestPersonalization();
-  renderBlessings();
+  updateMusicButtonLabel();
+  updateMediaLabels();
   if (mediaModal.classList.contains("is-open")) {
     renderMedia(activeMediaIndex);
   }
@@ -524,7 +539,7 @@ function createRsvpMessage(contactKey) {
   const formData = new FormData(form);
   const copy = translations[activeLang];
   const name = formData.get("name") || "";
-  const attendance = formData.get("attendance") || "";
+  const attendance = form.querySelector('[name="attendance"] option:checked')?.textContent || "";
   const guests = formData.get("guests") || "";
   const message = formData.get("message") || "";
   const contact = contacts[contactKey];
@@ -533,27 +548,25 @@ function createRsvpMessage(contactKey) {
     phone: contact.phone,
     body: [
       copy.smsIntro,
-      `Namn/Name: ${name}`,
-      `Svar/Reply: ${attendance}`,
-      `Antal/Guests: ${guests}`,
-      message ? `Meddelande/Message: ${message}` : "",
-      guestName ? `Invite link guest: ${guestName}` : "",
+      `${copy.smsNameLabel}: ${name}`,
+      `${copy.smsReplyLabel}: ${attendance}`,
+      `${copy.smsGuestsLabel}: ${guests}`,
+      message ? `${copy.smsMessageLabel}: ${message}` : "",
+      guestName ? `${copy.smsGuestLabel}: ${guestName}` : "",
     ]
       .filter(Boolean)
       .join("\n"),
   };
 }
 
-document.querySelectorAll("[data-recipient]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const form = document.querySelector("#rsvpForm");
-    if (!form.reportValidity()) {
-      return;
-    }
+document.querySelector("[data-rsvp-send]")?.addEventListener("click", () => {
+  const form = document.querySelector("#rsvpForm");
+  if (!form.reportValidity()) {
+    return;
+  }
 
-    const { phone, body } = createRsvpMessage(button.dataset.recipient);
-    window.location.href = `sms:${phone}?&body=${encodeURIComponent(body)}`;
-  });
+  const { phone, body } = createRsvpMessage("yaeel");
+  window.location.href = `sms:${phone}?&body=${encodeURIComponent(body)}`;
 });
 
 let audioContext;
@@ -602,6 +615,15 @@ function stopSoftMusic() {
   musicTimer = null;
 }
 
+function updateMusicButtonLabel() {
+  const button = document.querySelector("#musicToggle");
+  if (!button) {
+    return;
+  }
+
+  button.setAttribute("aria-label", translations[activeLang][isPlaying ? "musicStop" : "musicPlay"]);
+}
+
 async function toggleMusic(forcePlay = false) {
   const button = document.querySelector("#musicToggle");
 
@@ -614,12 +636,12 @@ async function toggleMusic(forcePlay = false) {
     }
     isPlaying = true;
     button.classList.add("is-playing");
-    button.setAttribute("aria-label", activeLang === "sv" ? "Stoppa musik" : "Stop music");
+    updateMusicButtonLabel();
   } else {
     stopSoftMusic();
     isPlaying = false;
     button.classList.remove("is-playing");
-    button.setAttribute("aria-label", activeLang === "sv" ? "Spela musik" : "Play music");
+    updateMusicButtonLabel();
   }
 }
 
@@ -709,91 +731,6 @@ function launchCelebrationRain() {
   }, 8200);
 }
 
-function formatIcsDate(date) {
-  return date.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
-}
-
-function escapeIcsText(value) {
-  return String(value)
-    .replaceAll("\\", "\\\\")
-    .replaceAll(";", "\\;")
-    .replaceAll(",", "\\,")
-    .replaceAll("\n", "\\n");
-}
-
-function downloadCalendarInvite() {
-  const description = [
-    "John & Georgina wedding",
-    "Guests arrive 18:30. Ceremony begins 19:00.",
-    "Map: https://maps.google.com/?q=Kr%C3%A4llingegr%C3%A4nd%201%2C%20163%2062%20Sp%C3%A5nga",
-  ].join("\n");
-  const lines = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//John Georgina Wedding//Invitation//SV",
-    "CALSCALE:GREGORIAN",
-    "METHOD:PUBLISH",
-    "BEGIN:VEVENT",
-    "UID:john-georgina-wedding-20260925T183000@john-georgina",
-    `DTSTAMP:${formatIcsDate(new Date())}`,
-    "DTSTART:20260925T163000Z",
-    "DTEND:20260925T220000Z",
-    `SUMMARY:${escapeIcsText("John & Georgina wedding")}`,
-    `LOCATION:${escapeIcsText("Tensta Maria kyrka, Krällingegränd 1, 163 62 Spånga")}`,
-    `DESCRIPTION:${escapeIcsText(description)}`,
-    "END:VEVENT",
-    "END:VCALENDAR",
-  ];
-  const blob = new Blob([`${lines.join("\r\n")}\r\n`], { type: "text/calendar;charset=utf-8" });
-  const link = document.createElement("a");
-
-  link.href = URL.createObjectURL(blob);
-  link.download = "john-georgina-wedding.ics";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  window.setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-}
-
-document.querySelector("#addToCalendar")?.addEventListener("click", downloadCalendarInvite);
-
-const blessingStorageKey = "john-georgina-blessings";
-
-function getSavedBlessings() {
-  try {
-    return JSON.parse(localStorage.getItem(blessingStorageKey)) || [];
-  } catch {
-    return [];
-  }
-}
-
-function getDefaultBlessings() {
-  const copy = translations[activeLang];
-  return [
-    { name: activeLang === "ar" ? "العائلة" : activeLang === "sv" ? "Familjen" : "Family", message: copy.blessingDefaultOne },
-    { name: activeLang === "ar" ? "الأصدقاء" : activeLang === "sv" ? "Vänner" : "Friends", message: copy.blessingDefaultTwo },
-  ];
-}
-
-function renderBlessings() {
-  const wall = document.querySelector("#blessingWall");
-  if (!wall) {
-    return;
-  }
-
-  const blessings = [...getDefaultBlessings(), ...getSavedBlessings()].slice(-6).reverse();
-  wall.innerHTML = blessings
-    .map(
-      (blessing) => `
-        <article class="blessing-card">
-          <p>${escapeHtml(blessing.message)}</p>
-          <span>${escapeHtml(blessing.name)}</span>
-        </article>
-      `
-    )
-    .join("");
-}
-
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -803,22 +740,6 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-document.querySelector("#blessingForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const formData = new FormData(form);
-  const blessings = getSavedBlessings();
-
-  blessings.push({
-    name: formData.get("name"),
-    message: formData.get("message"),
-  });
-
-  localStorage.setItem(blessingStorageKey, JSON.stringify(blessings.slice(-20)));
-  form.reset();
-  renderBlessings();
-});
-
 let activeMediaIndex = 0;
 let touchStartX = 0;
 let touchStartY = 0;
@@ -826,11 +747,11 @@ let touchStartY = 0;
 const mediaModal = document.createElement("div");
 mediaModal.className = "media-modal";
 mediaModal.innerHTML = `
-  <div class="media-dialog" role="dialog" aria-modal="true" aria-label="Media">
-    <button class="media-close" type="button" aria-label="Stäng">×</button>
-    <button class="media-nav media-prev" type="button" aria-label="Föregående">‹</button>
+  <div class="media-dialog" role="dialog" aria-modal="true" aria-label="Media" data-i18n-aria-label="mediaDialogLabel">
+    <button class="media-close" type="button" aria-label="Stäng" data-i18n-aria-label="mediaClose">×</button>
+    <button class="media-nav media-prev" type="button" aria-label="Föregående" data-i18n-aria-label="mediaPrev">‹</button>
     <div class="media-stage"></div>
-    <button class="media-nav media-next" type="button" aria-label="Nästa">›</button>
+    <button class="media-nav media-next" type="button" aria-label="Nästa" data-i18n-aria-label="mediaNext">›</button>
     <div class="media-meta">
       <p class="media-caption"></p>
       <span class="media-count"></span>
@@ -838,6 +759,16 @@ mediaModal.innerHTML = `
   </div>
 `;
 document.body.appendChild(mediaModal);
+
+function updateMediaLabels() {
+  const copy = translations[activeLang];
+  mediaModal.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const key = element.dataset.i18nAriaLabel;
+    if (copy[key]) {
+      element.setAttribute("aria-label", copy[key]);
+    }
+  });
+}
 
 function getMediaCaption(item) {
   if (!item.caption) {
@@ -866,6 +797,7 @@ function renderMedia(index) {
   }
 
   caption.textContent = getMediaCaption(item);
+  stage.querySelector("img")?.setAttribute("alt", translations[activeLang][item.altKey] || "");
   count.textContent = `${activeMediaIndex + 1} / ${galleryItems.length}`;
 }
 
