@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html, body, video { width: 100%; height: 100%; margin: 0; background: #111; }
+      video { object-fit: contain; }
+    </style>
+  </head>
+  <body>
+    <video id="preview" muted playsinline preload="auto" src="assets/video/untying.webm"></video>
+    <script>
+      const video = document.querySelector("#preview");
+      const time = Number(new URLSearchParams(location.search).get("t") || 0);
+      video.addEventListener("loadedmetadata", () => {
+        video.currentTime = Math.min(time, Math.max(0, video.duration - 0.05));
+      });
+      video.addEventListener("seeked", () => video.pause());
+    </script>
+  </body>
+</html>

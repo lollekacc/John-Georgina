@@ -34,11 +34,213 @@
         </div>
         <div class="velvet-ribbons" aria-hidden="true">
           <span class="velvet-ribbon-bow">
-            <img class="velvet-bow-piece velvet-bow-tail velvet-bow-tail-left" src="assets/images/champagne-ribbon-bow.png" alt="" />
-            <img class="velvet-bow-piece velvet-bow-tail velvet-bow-tail-right" src="assets/images/champagne-ribbon-bow.png" alt="" />
-            <img class="velvet-bow-piece velvet-bow-loop velvet-bow-loop-left" src="assets/images/champagne-ribbon-bow.png" alt="" />
-            <img class="velvet-bow-piece velvet-bow-loop velvet-bow-loop-right" src="assets/images/champagne-ribbon-bow.png" alt="" />
-            <img class="velvet-bow-piece velvet-bow-knot" src="assets/images/champagne-ribbon-bow.png" alt="" />
+            <img class="velvet-bow-photo" src="assets/images/champagne-ribbon-bow.png" alt="" />
+            <svg class="velvet-ribbon-svg" viewBox="0 0 900 500" role="presentation" hidden>
+              <defs>
+                <linearGradient id="ribbonTailLeft" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#b66f5e" />
+                  <stop offset=".18" stop-color="#f5d1c2" />
+                  <stop offset=".5" stop-color="#dfa18b" />
+                  <stop offset=".78" stop-color="#f2c9b8" />
+                  <stop offset="1" stop-color="#a95f50" />
+                </linearGradient>
+                <linearGradient id="ribbonTailRight" x1="1" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#b66f5e" />
+                  <stop offset=".18" stop-color="#f5d1c2" />
+                  <stop offset=".5" stop-color="#dfa18b" />
+                  <stop offset=".78" stop-color="#f2c9b8" />
+                  <stop offset="1" stop-color="#a95f50" />
+                </linearGradient>
+                <linearGradient id="ribbonLoopLeft" x1=".1" y1=".15" x2=".85" y2=".8">
+                  <stop offset="0" stop-color="#f8daca" />
+                  <stop offset=".3" stop-color="#d9937d" />
+                  <stop offset=".58" stop-color="#f4c8b6" />
+                  <stop offset=".8" stop-color="#c77d69" />
+                  <stop offset="1" stop-color="#f0bca7" />
+                </linearGradient>
+                <linearGradient id="ribbonLoopRight" x1=".9" y1=".15" x2=".15" y2=".8">
+                  <stop offset="0" stop-color="#f8daca" />
+                  <stop offset=".3" stop-color="#d9937d" />
+                  <stop offset=".58" stop-color="#f4c8b6" />
+                  <stop offset=".8" stop-color="#c77d69" />
+                  <stop offset="1" stop-color="#f0bca7" />
+                </linearGradient>
+                <linearGradient id="ribbonKnot" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#f7d5c5" />
+                  <stop offset=".4" stop-color="#d58d77" />
+                  <stop offset=".68" stop-color="#f0bda9" />
+                  <stop offset="1" stop-color="#a96051" />
+                </linearGradient>
+                <filter id="ribbonShadow" x="-25%" y="-25%" width="150%" height="170%">
+                  <feDropShadow dx="0" dy="11" stdDeviation="9" flood-color="#3b0d16" flood-opacity=".36" />
+                </filter>
+                <mask id="ribbonLoopLeftMask" maskUnits="userSpaceOnUse" x="80" y="50" width="380" height="220">
+                  <rect x="80" y="50" width="380" height="220" fill="#fff" />
+                  <path
+                    fill="#000"
+                    d="M405 212 C345 178 260 137 178 146 C224 188 314 218 419 227 C419 221 413 216 405 212 Z"
+                  >
+                    <animate
+                      data-ribbon-motion
+                      attributeName="d"
+                      begin="indefinite"
+                      dur="1.1s"
+                      fill="freeze"
+                      calcMode="spline"
+                      keyTimes="0;.16;.7;1"
+                      keySplines=".22 .7 .2 1;.22 .7 .2 1;.4 0 1 1"
+                      values="
+                        M405 212 C345 178 260 137 178 146 C224 188 314 218 419 227 C419 221 413 216 405 212 Z;
+                        M405 212 C345 178 260 137 178 146 C224 188 314 218 419 227 C419 221 413 216 405 212 Z;
+                        M426 215 C402 200 370 190 340 197 C361 216 393 226 425 226 C427 222 427 218 426 215 Z;
+                        M434 216 C429 214 423 214 418 218 C423 222 429 224 434 223 C435 220 435 218 434 216 Z"
+                    />
+                  </path>
+                </mask>
+                <mask id="ribbonLoopRightMask" maskUnits="userSpaceOnUse" x="440" y="50" width="380" height="220">
+                  <rect x="440" y="50" width="380" height="220" fill="#fff" />
+                  <path
+                    fill="#000"
+                    d="M495 212 C555 178 640 137 722 146 C676 188 586 218 481 227 C481 221 487 216 495 212 Z"
+                  >
+                    <animate
+                      data-ribbon-motion
+                      attributeName="d"
+                      begin="indefinite"
+                      dur="1.1s"
+                      fill="freeze"
+                      calcMode="spline"
+                      keyTimes="0;.16;.7;1"
+                      keySplines=".22 .7 .2 1;.22 .7 .2 1;.4 0 1 1"
+                      values="
+                        M495 212 C555 178 640 137 722 146 C676 188 586 218 481 227 C481 221 487 216 495 212 Z;
+                        M495 212 C555 178 640 137 722 146 C676 188 586 218 481 227 C481 221 487 216 495 212 Z;
+                        M474 215 C498 200 530 190 560 197 C539 216 507 226 475 226 C473 222 473 218 474 215 Z;
+                        M466 216 C471 214 477 214 482 218 C477 222 471 224 466 223 C465 220 465 218 466 216 Z"
+                    />
+                  </path>
+                </mask>
+              </defs>
+
+              <g filter="url(#ribbonShadow)" stroke="#aa6657" stroke-width="2" stroke-linejoin="round">
+                <path
+                  class="ribbon-shape ribbon-tail ribbon-tail-left"
+                  fill="url(#ribbonTailLeft)"
+                  d="M430 226 C390 275 340 350 278 444 L218 396 C286 331 352 258 416 211 Z"
+                >
+                  <animate
+                    data-ribbon-motion
+                    attributeName="d"
+                    begin="indefinite"
+                    dur="1.35s"
+                    fill="freeze"
+                    calcMode="spline"
+                    keyTimes="0;.14;.72;1"
+                    keySplines=".22 .7 .2 1;.22 .7 .2 1;.4 0 1 1"
+                    values="
+                      M430 226 C390 275 340 350 278 444 L218 396 C286 331 352 258 416 211 Z;
+                      M430 226 C390 275 340 350 278 444 L218 396 C286 331 352 258 416 211 Z;
+                      M430 226 C330 226 172 235 -40 252 L-40 204 C170 205 337 211 416 211 Z;
+                      M-70 226 C-250 226 -430 232 -620 240 L-620 202 C-430 202 -250 207 -84 211 Z"
+                  />
+                  <animate data-ribbon-motion attributeName="opacity" begin="indefinite" dur="1.35s" fill="freeze" keyTimes="0;.72;.9;1" values="1;1;.82;0" />
+                </path>
+
+                <path
+                  class="ribbon-shape ribbon-tail ribbon-tail-right"
+                  fill="url(#ribbonTailRight)"
+                  d="M470 226 C510 275 560 350 622 444 L682 396 C614 331 548 258 484 211 Z"
+                >
+                  <animate
+                    data-ribbon-motion
+                    attributeName="d"
+                    begin="indefinite"
+                    dur="1.35s"
+                    fill="freeze"
+                    calcMode="spline"
+                    keyTimes="0;.14;.72;1"
+                    keySplines=".22 .7 .2 1;.22 .7 .2 1;.4 0 1 1"
+                    values="
+                      M470 226 C510 275 560 350 622 444 L682 396 C614 331 548 258 484 211 Z;
+                      M470 226 C510 275 560 350 622 444 L682 396 C614 331 548 258 484 211 Z;
+                      M470 226 C570 226 728 235 940 252 L940 204 C730 205 563 211 484 211 Z;
+                      M970 226 C1150 226 1330 232 1520 240 L1520 202 C1330 202 1150 207 984 211 Z"
+                  />
+                  <animate data-ribbon-motion attributeName="opacity" begin="indefinite" dur="1.35s" fill="freeze" keyTimes="0;.72;.9;1" values="1;1;.82;0" />
+                </path>
+
+                <path
+                  class="ribbon-shape ribbon-loop ribbon-loop-left"
+                  fill="url(#ribbonLoopLeft)"
+                  mask="url(#ribbonLoopLeftMask)"
+                  d="M438 216 C360 140 244 72 112 111 C138 207 286 250 423 235 C430 230 435 223 438 216 Z"
+                >
+                  <animate
+                    data-ribbon-motion
+                    attributeName="d"
+                    begin="indefinite"
+                    dur="1.1s"
+                    fill="freeze"
+                    calcMode="spline"
+                    keyTimes="0;.16;.7;1"
+                    keySplines=".22 .7 .2 1;.22 .7 .2 1;.4 0 1 1"
+                    values="
+                      M438 216 C360 140 244 72 112 111 C138 207 286 250 423 235 C430 230 435 223 438 216 Z;
+                      M438 216 C360 140 244 72 112 111 C138 207 286 250 423 235 C430 230 435 223 438 216 Z;
+                      M438 216 C406 191 363 179 326 191 C348 220 388 235 425 231 C431 226 435 221 438 216 Z;
+                      M438 216 C429 210 418 210 410 217 C418 225 428 227 437 224 C438 221 438 218 438 216 Z"
+                  />
+                  <animate data-ribbon-motion attributeName="opacity" begin="indefinite" dur="1.1s" fill="freeze" keyTimes="0;.6;.82;1" values="1;1;.72;0" />
+                </path>
+
+                <path
+                  class="ribbon-shape ribbon-loop ribbon-loop-right"
+                  fill="url(#ribbonLoopRight)"
+                  mask="url(#ribbonLoopRightMask)"
+                  d="M462 216 C540 140 656 72 788 111 C762 207 614 250 477 235 C470 230 465 223 462 216 Z"
+                >
+                  <animate
+                    data-ribbon-motion
+                    attributeName="d"
+                    begin="indefinite"
+                    dur="1.1s"
+                    fill="freeze"
+                    calcMode="spline"
+                    keyTimes="0;.16;.7;1"
+                    keySplines=".22 .7 .2 1;.22 .7 .2 1;.4 0 1 1"
+                    values="
+                      M462 216 C540 140 656 72 788 111 C762 207 614 250 477 235 C470 230 465 223 462 216 Z;
+                      M462 216 C540 140 656 72 788 111 C762 207 614 250 477 235 C470 230 465 223 462 216 Z;
+                      M462 216 C494 191 537 179 574 191 C552 220 512 235 475 231 C469 226 465 221 462 216 Z;
+                      M462 216 C471 210 482 210 490 217 C482 225 472 227 463 224 C462 221 462 218 462 216 Z"
+                  />
+                  <animate data-ribbon-motion attributeName="opacity" begin="indefinite" dur="1.1s" fill="freeze" keyTimes="0;.6;.82;1" values="1;1;.72;0" />
+                </path>
+
+                <path
+                  class="ribbon-shape ribbon-knot"
+                  fill="url(#ribbonKnot)"
+                  d="M410 194 C430 184 470 184 490 194 L485 248 C465 260 435 260 415 248 Z"
+                >
+                  <animate
+                    data-ribbon-motion
+                    attributeName="d"
+                    begin="indefinite"
+                    dur="1.22s"
+                    fill="freeze"
+                    calcMode="spline"
+                    keyTimes="0;.16;.72;1"
+                    keySplines=".22 .7 .2 1;.22 .7 .2 1;.4 0 1 1"
+                    values="
+                      M410 194 C430 184 470 184 490 194 L485 248 C465 260 435 260 415 248 Z;
+                      M410 194 C430 184 470 184 490 194 L485 248 C465 260 435 260 415 248 Z;
+                      M398 207 C426 197 474 197 502 207 L496 239 C470 247 430 247 404 239 Z;
+                      M386 218 C423 211 477 211 514 218 L506 232 C470 237 430 237 394 232 Z"
+                  />
+                  <animate data-ribbon-motion attributeName="opacity" begin="indefinite" dur="1.22s" fill="freeze" keyTimes="0;.72;.9;1" values="1;1;.9;0" />
+                </path>
+              </g>
+            </svg>
           </span>
         </div>
         <div class="velvet-heading">
@@ -131,45 +333,43 @@
         </div>
       </section>
 
-      <section class="details-section" id="details">
-        <div class="section-shell">
-          <div class="section-heading reveal">
-            <p class="eyebrow" data-i18n="detailsEyebrow">Dagens detaljer</p>
-            <h2 data-i18n="detailsTitle">Ceremoni och fest</h2>
+            <section class="rsvp-section" id="rsvp">Ö
+        <div class="section-shell rsvp-layout">
+          <div class="rsvp-copy reveal">
+            <p class="eyebrow" data-i18n="rsvpEyebrow">OSA</p>
+            <h2 data-i18n="rsvpTitle">Svara på inbjudan</h2>
+            <p data-i18n="rsvpBody">OSA kan också göras genom att kontakta Yaeel eller Nuha.</p>
+            <p class="rsvp-party-line" data-party-line></p>
           </div>
-          <div class="detail-layout">
-            <article class="detail-card reveal">
-              <span class="card-number">01</span>
-              <h3 data-i18n="ceremonyTitle">Ceremoni</h3>
-              <p class="detail-time">19:00</p>
-              <p data-i18n="ceremonyBody">Vigseln hålls i Tensta Maria kyrka.</p>
-              <a href="https://maps.google.com/?q=Tensta%20Maria%20kyrkan" target="_blank" rel="noreferrer" data-i18n="mapLink">
-                Öppna karta
-              </a>
-              <div class="travel-map detail-map" role="img" aria-label="Karta till Tensta Maria kyrka" data-i18n-aria-label="travelMapAria">
-                <div class="map-embed" aria-hidden="true">
-                  <span class="map-road map-road-main"></span>
-                  <span class="map-road map-road-cross"></span>
-                  <span class="map-road map-road-soft"></span>
-                  <span class="map-transit-line"></span>
-                  <span class="map-marker"></span>
-                  <span class="map-label map-church">Tensta Maria kyrka</span>
-                  <span class="map-label map-address">Krällingegränd 1</span>
-                  <span class="map-label map-bus" data-i18n="mapBusLabel">Buss: Krällingegränd</span>
-                  <span class="map-label map-metro" data-i18n="mapMetroLabel">Tensta T-bana</span>
-                </div>
-              </div>
-            </article>
-            <article class="detail-card reveal">
-              <span class="card-number">02</span>
-              <h3 data-i18n="receptionTitle">Fest</h3>
-              <p class="detail-time">20:00</p>
-              <p data-i18n="receptionBody">
-                Efter ceremonin fortsätter firandet i kyrkans lokal med mat,
-                musik och minnen vi kommer bära med oss livet ut.
-              </p>
-            </article>
-          </div>
+          <form class="rsvp-form reveal" id="rsvpForm">
+            <label>
+              <span data-i18n="nameLabel">Namn</span>
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              <span data-i18n="attendanceLabel">Kan du komma?</span>
+              <select name="attendance" required>
+                <option value="Ja" data-i18n="attendingYes">Ja, jag/vi kommer</option>
+                <option value="Nej" data-i18n="attendingNo">Nej, jag/vi kan inte komma</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="guestCountLabel">Antal personer</span>
+              <input type="number" name="guests" min="0" max="20" value="1" required />
+            </label>
+            <label>
+              <span data-i18n="messageLabel">Meddelande</span>
+              <textarea name="message" rows="4"></textarea>
+            </label>
+            <div class="contact-actions">
+              <button type="button" class="primary-btn" data-rsvp-send data-i18n="sendReply">
+                Skicka svar
+              </button>
+            </div>
+            <p class="form-note" data-i18n="phoneNote">
+              OSA-kontakter: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.
+            </p>
+          </form>
         </div>
       </section>
 
@@ -212,45 +412,6 @@
         </div>
       </section>
 
-      <section class="rsvp-section" id="rsvp">Ö
-        <div class="section-shell rsvp-layout">
-          <div class="rsvp-copy reveal">
-            <p class="eyebrow" data-i18n="rsvpEyebrow">OSA</p>
-            <h2 data-i18n="rsvpTitle">Svara på inbjudan</h2>
-            <p data-i18n="rsvpBody">OSA kan också göras genom att kontakta Yaeel eller Nuha.</p>
-            <p class="rsvp-party-line" data-party-line></p>
-          </div>
-          <form class="rsvp-form reveal" id="rsvpForm">
-            <label>
-              <span data-i18n="nameLabel">Namn</span>
-              <input type="text" name="name" autocomplete="name" required />
-            </label>
-            <label>
-              <span data-i18n="attendanceLabel">Kan du komma?</span>
-              <select name="attendance" required>
-                <option value="Ja" data-i18n="attendingYes">Ja, jag/vi kommer</option>
-                <option value="Nej" data-i18n="attendingNo">Nej, jag/vi kan inte komma</option>
-              </select>
-            </label>
-            <label>
-              <span data-i18n="guestCountLabel">Antal personer</span>
-              <input type="number" name="guests" min="0" max="20" value="1" required />
-            </label>
-            <label>
-              <span data-i18n="messageLabel">Meddelande</span>
-              <textarea name="message" rows="4"></textarea>
-            </label>
-            <div class="contact-actions">
-              <button type="button" class="primary-btn" data-rsvp-send data-i18n="sendReply">
-                Skicka svar
-              </button>
-            </div>
-            <p class="form-note" data-i18n="phoneNote">
-              OSA-kontakter: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.
-            </p>
-          </form>
-        </div>
-      </section>
 
       <section class="gallery-section" id="gallery">
         <div class="section-shell">
