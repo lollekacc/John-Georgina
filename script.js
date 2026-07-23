@@ -98,13 +98,15 @@ const translations = {
     uploadPhotos: "Ladda upp bilder",
     rsvpEyebrow: "OSA",
     rsvpTitle: "OSA till bröllopet",
-    rsvpBody: "Fyll i namn, om du eller ni kommer och hur många personer svaret gäller.",
+    rsvpBody: "Skriv ditt namn och välj ditt svar med ett enkelt tryck.",
     nameLabel: "Namn",
     attendanceLabel: "Kan du/ni komma?",
     chooseAttendance: "Välj svar",
-    attendingYes: "Ja, jag/vi kommer",
-    attendingNo: "Nej, jag/vi kan inte komma",
-    guestCountLabel: "Antal personer som svaret gäller",
+    attendingYes: "Kommer",
+    attendingNo: "Kan inte komma",
+    guestCountLabel: "Hur många kommer?",
+    decreaseGuestsAria: "Minska antal",
+    increaseGuestsAria: "Öka antal",
     sendReply: "Skicka OSA",
     footerText: "25 september 2026 | Tensta Maria kyrka",
     smsIntro: "OSA – John & Georgina",
@@ -206,13 +208,15 @@ const translations = {
     uploadPhotos: "Upload photos",
     rsvpEyebrow: "RSVP",
     rsvpTitle: "Wedding RSVP",
-    rsvpBody: "Enter your name, whether you are attending, and how many people the response covers.",
+    rsvpBody: "Enter your name and choose your answer with one simple tap.",
     nameLabel: "Name",
     attendanceLabel: "Can you attend?",
     chooseAttendance: "Choose an answer",
-    attendingYes: "Yes, I/we will attend",
-    attendingNo: "No, I/we cannot attend",
-    guestCountLabel: "Number of people covered by this response",
+    attendingYes: "Attending",
+    attendingNo: "Unable to attend",
+    guestCountLabel: "How many are attending?",
+    decreaseGuestsAria: "Decrease number",
+    increaseGuestsAria: "Increase number",
     sendReply: "Send RSVP",
     footerText: "September 25, 2026 | Tensta Maria Church",
     smsIntro: "RSVP – John & Georgina",
@@ -314,13 +318,15 @@ const translations = {
     uploadPhotos: "رفع الصور",
     rsvpEyebrow: "تأكيد الحضور",
     rsvpTitle: "تأكيد حضور حفل الزفاف",
-    rsvpBody: "اكتبوا الاسم، وحددوا إن كنتم ستحضرون، وعدد الأشخاص الذين يشملهم الرد.",
+    rsvpBody: "اكتبوا الاسم واختاروا الإجابة بلمسة واحدة.",
     nameLabel: "الاسم",
     attendanceLabel: "هل ستتمكنون من الحضور؟",
     chooseAttendance: "اختر الإجابة",
-    attendingYes: "نعم، سأحضر / سنحضر",
-    attendingNo: "لا، لن أتمكن / لن نتمكن من الحضور",
-    guestCountLabel: "عدد الأشخاص الذين يشملهم الرد",
+    attendingYes: "سنحضر",
+    attendingNo: "لن نحضر",
+    guestCountLabel: "كم شخصا سيحضر؟",
+    decreaseGuestsAria: "تقليل العدد",
+    increaseGuestsAria: "زيادة العدد",
     sendReply: "إرسال تأكيد الحضور",
     footerText: "25 سبتمبر 2026 | كنيسة تنستا ماريا",
     smsIntro: "تأكيد الحضور – John & Georgina",
@@ -465,6 +471,7 @@ function shuffleGalleryPhotos() {
   }
 
   const originalTiles = Array.from(grid.querySelectorAll("[data-media]"));
+  const fixedItems = Array.from(grid.children).filter((item) => !item.matches("[data-media]"));
   const getLayoutGroup = (tile) => {
     if (tile.classList.contains("media-wide")) return "wide";
     if (tile.classList.contains("media-tall")) return "tall";
@@ -501,7 +508,7 @@ function shuffleGalleryPhotos() {
   shuffledTiles.forEach((tile, index) => {
     tile.dataset.media = String(index);
   });
-  grid.replaceChildren(...shuffledTiles);
+  grid.replaceChildren(...shuffledTiles, ...fixedItems);
 }
 
 shuffleGalleryPhotos();
@@ -656,6 +663,13 @@ function applyLanguage(lang) {
     }
   });
 
+  document.querySelectorAll("[data-i18n-title]").forEach((element) => {
+    const key = element.dataset.i18nTitle;
+    if (copy[key]) {
+      element.setAttribute("title", copy[key]);
+    }
+  });
+
   document.querySelectorAll(".lang-btn").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.lang === lang);
   });
@@ -675,11 +689,47 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
 const rsvpForm = document.querySelector("#rsvpForm");
 rsvpForm.addEventListener("submit", (event) => event.preventDefault());
 
+const attendanceInputs = rsvpForm.querySelectorAll('input[name="attendance"]');
+const guestCountInput = rsvpForm.querySelector('input[name="guests"]');
+const guestCountField = rsvpForm.querySelector(".guest-count-field");
+const guestCountButtons = rsvpForm.querySelectorAll("[data-guest-action]");
+
+function setGuestCountState(attendance) {
+  const isAttending = attendance !== "no";
+  guestCountField.classList.toggle("is-disabled", !isAttending);
+  guestCountButtons.forEach((button) => {
+    button.disabled = !isAttending;
+  });
+
+  if (!isAttending) {
+    guestCountInput.value = "0";
+    guestCountInput.min = "0";
+  } else {
+    guestCountInput.min = "1";
+    guestCountInput.value = String(Math.max(1, Number.parseInt(guestCountInput.value, 10) || 1));
+  }
+}
+
+attendanceInputs.forEach((input) => {
+  input.addEventListener("change", () => setGuestCountState(input.value));
+});
+
+guestCountButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const current = Number.parseInt(guestCountInput.value, 10) || 1;
+    const minimum = Number.parseInt(guestCountInput.min, 10) || 1;
+    const maximum = Number.parseInt(guestCountInput.max, 10) || 20;
+    const change = button.dataset.guestAction === "increase" ? 1 : -1;
+    guestCountInput.value = String(Math.min(maximum, Math.max(minimum, current + change)));
+  });
+});
+
 function createRsvpMessage(contactKey) {
   const formData = new FormData(rsvpForm);
   const copy = translations[activeLang];
   const name = String(formData.get("name") || "").trim();
-  const attendance = rsvpForm.querySelector('[name="attendance"] option:checked')?.textContent || "";
+  const attendanceValue = String(formData.get("attendance") || "");
+  const attendance = attendanceValue === "yes" ? copy.attendingYes : copy.attendingNo;
   const guests = String(formData.get("guests") || "").trim();
   const contact = contacts[contactKey];
 

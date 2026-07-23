@@ -1057,6 +1057,79 @@ p {
   min-height: 0;
 }
 
+.essential-place-card {
+  grid-template-columns: minmax(0, 1fr) 94px;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  padding: 17px 18px;
+}
+
+.essential-place-card > span,
+.essential-place-card > strong {
+  grid-column: 1;
+}
+
+.essential-place-card > strong {
+  align-self: start;
+  font-size: clamp(19px, 1.55vw, 24px);
+}
+
+.essential-mini-map {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1 / 3;
+  width: 94px;
+  height: 92px;
+  overflow: hidden;
+  border: 1px solid rgba(195, 162, 95, 0.44);
+  border-radius: 5px;
+  background:
+    url("https://tile.openstreetmap.org/15/18014/9624.png") -175px -234px / 256px 256px no-repeat,
+    url("https://tile.openstreetmap.org/15/18015/9624.png") 81px -234px / 256px 256px no-repeat,
+    url("https://tile.openstreetmap.org/15/18014/9625.png") -175px 22px / 256px 256px no-repeat,
+    url("https://tile.openstreetmap.org/15/18015/9625.png") 81px 22px / 256px 256px no-repeat,
+    #e8e1d7;
+  filter: saturate(0.76) sepia(0.06);
+}
+
+.essential-mini-map::after {
+  content: "© OSM";
+  position: absolute;
+  right: 2px;
+  bottom: 1px;
+  z-index: 2;
+  padding: 1px 2px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #49382d;
+  font-size: 6px;
+  line-height: 1;
+}
+
+.essential-map-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff9ed;
+  border-radius: 50% 50% 50% 0;
+  background: #8c2639;
+  box-shadow: 0 3px 8px rgba(58, 24, 28, 0.42);
+  transform: translate(-50%, -68%) rotate(-45deg);
+}
+
+.essential-mini-map a {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.essential-mini-map a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
+}
+
 .hourglass-countdown {
   --sand-remaining: 1;
   --sand-collected: 0;
@@ -1547,8 +1620,12 @@ body[dir="rtl"] .story-journey .journey-fill::after {
 .media-tile:focus-visible img,
 .media-tile:hover video,
 .media-tile:focus-visible video {
-  filter: brightness(0.82);
-  transform: scale(1.035);
+  filter: brightness(1.04);
+  transform: scale(1.018);
+}
+
+.media-grid .media-tile:is(:hover, :focus-visible) {
+  z-index: 100;
 }
 
 .media-wide {
@@ -1580,20 +1657,41 @@ body[dir="rtl"] .media-video span {
 }
 
 .gallery-upload {
+  position: relative;
+  grid-column: 1 / -1;
+  justify-self: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  margin-top: 28px;
-  padding: 18px 20px;
-  border: 1px solid rgba(195, 162, 95, 0.26);
-  border-radius: 8px;
-  background: rgba(255, 250, 242, 0.82);
+  width: min(760px, 92%);
+  margin: 18px auto 2px;
+  padding: 20px 22px;
+  border: 1px solid rgba(99, 73, 47, 0.24);
+  border-radius: 2px;
+  background:
+    linear-gradient(rgba(255, 253, 246, 0.96), rgba(249, 239, 220, 0.96)),
+    #fffaf0;
+  box-shadow: 0 13px 28px rgba(55, 36, 20, 0.27), 0 2px 5px rgba(55, 36, 20, 0.16);
+}
+
+.gallery-upload::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 86px;
+  height: 21px;
+  background: rgba(240, 222, 174, 0.88);
+  box-shadow: 0 2px 5px rgba(69, 50, 31, 0.14);
+  transform: translateX(-50%) rotate(-1deg);
 }
 
 .gallery-upload p {
   margin: 0;
+  color: var(--ink);
   font-size: 15px;
+  font-weight: 650;
   line-height: 1.5;
 }
 
@@ -1707,6 +1805,130 @@ textarea:focus {
   box-shadow: none;
 }
 
+.attendance-field {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.attendance-field legend,
+.guest-count-field .field-label {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.attendance-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 52px;
+  overflow: hidden;
+  border: 1px solid rgba(195, 162, 95, 0.42);
+  background: rgba(255, 250, 242, 0.75);
+}
+
+.attendance-option {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: 8px 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.attendance-option + .attendance-option {
+  border-inline-start: 1px solid rgba(195, 162, 95, 0.42);
+}
+
+.attendance-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+}
+
+.attendance-option span {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.attendance-option:has(input:checked) {
+  background: var(--ink);
+  color: var(--paper-strong);
+}
+
+.attendance-option:has(input:focus-visible) {
+  box-shadow: inset 0 0 0 3px var(--gold);
+}
+
+.guest-count-field {
+  min-width: 0;
+}
+
+.guest-stepper {
+  display: grid;
+  grid-template-columns: 46px minmax(48px, 1fr) 46px;
+  min-height: 52px;
+  border: 1px solid rgba(195, 162, 95, 0.42);
+  background: rgba(255, 250, 242, 0.75);
+  transition: opacity 160ms ease;
+}
+
+.guest-stepper button {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.guest-stepper button:first-child {
+  border-inline-end: 1px solid rgba(195, 162, 95, 0.32);
+}
+
+.guest-stepper button:last-child {
+  border-inline-start: 1px solid rgba(195, 162, 95, 0.32);
+}
+
+.guest-stepper input {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 800;
+  appearance: textfield;
+}
+
+.guest-stepper input::-webkit-inner-spin-button,
+.guest-stepper input::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.guest-count-field.is-disabled .guest-stepper {
+  opacity: 0.42;
+}
+
+.guest-stepper button:disabled {
+  cursor: default;
+}
+
+.guest-stepper button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
+}
+
 @media (min-width: 901px) {
   .event-overview .rsvp-layout {
     grid-template-columns: minmax(210px, 0.62fr) minmax(0, 1.8fr);
@@ -1714,19 +1936,25 @@ textarea:focus {
   }
 
   .event-overview .rsvp-form {
-    grid-template-columns: minmax(150px, 1.2fr) minmax(170px, 1.2fr) minmax(145px, 0.72fr) minmax(130px, 0.7fr);
+    grid-template-columns: minmax(145px, 1fr) minmax(230px, 1.45fr) minmax(150px, 0.75fr) minmax(130px, 0.7fr);
     align-items: end;
     gap: 12px;
   }
 
-  .event-overview .rsvp-form label {
+  .event-overview .rsvp-form > label,
+  .event-overview .attendance-field legend,
+  .event-overview .guest-count-field .field-label {
     min-width: 0;
     font-size: 10px;
   }
 
-  .event-overview .rsvp-form input,
-  .event-overview .rsvp-form select,
+  .event-overview .rsvp-name-field input,
   .event-overview .rsvp-form .primary-btn {
+    min-height: 48px;
+  }
+
+  .event-overview .attendance-options,
+  .event-overview .guest-stepper {
     min-height: 48px;
   }
 }
@@ -2350,7 +2578,7 @@ body.motion-ready .welcome-section .reveal {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-auto-rows: clamp(42px, 3.3vw, 54px);
     grid-auto-flow: dense;
-    gap: 10px;
+    gap: 4px;
   }
 
   .media-tile {
@@ -2364,7 +2592,7 @@ body.motion-ready .welcome-section .reveal {
 
   .media-tile:hover,
   .media-tile:focus-visible {
-    z-index: 5;
+    z-index: 10;
     box-shadow: 0 24px 45px rgba(49, 37, 27, 0.27), 0 5px 10px rgba(49, 37, 27, 0.16);
     transform: translate(var(--photo-x), calc(var(--photo-y) - 7px)) rotate(var(--photo-tilt));
   }
@@ -2378,23 +2606,26 @@ body.motion-ready .welcome-section .reveal {
     --photo-x: 5px;
     --photo-y: 4px;
     --photo-tilt: -2.6deg;
+    z-index: 1;
     grid-column: 1 / 6;
-    grid-row: 1 / 5;
+    grid-row: 1 / 6;
   }
 
   .media-grid .media-tile:nth-child(2) {
     --photo-x: -5px;
     --photo-y: 9px;
     --photo-tilt: 2.8deg;
-    grid-column: 6 / 9;
-    grid-row: 1 / 6;
+    z-index: 3;
+    grid-column: 5 / 8;
+    grid-row: 1 / 7;
   }
 
   .media-grid .media-tile:nth-child(3) {
     --photo-x: 4px;
     --photo-y: 3px;
     --photo-tilt: 3.5deg;
-    grid-column: 9 / 13;
+    z-index: 2;
+    grid-column: 8 / 12;
     grid-row: 1 / 5;
   }
 
@@ -2402,64 +2633,88 @@ body.motion-ready .welcome-section .reveal {
     --photo-x: -4px;
     --photo-y: 2px;
     --photo-tilt: -1.8deg;
-    grid-column: 8 / 13;
-    grid-row: 5 / 9;
+    z-index: 4;
+    grid-column: 7 / 13;
+    grid-row: 4 / 8;
   }
 
   .media-grid .media-tile:nth-child(5) {
     --photo-x: 3px;
     --photo-y: -3px;
     --photo-tilt: -4deg;
-    grid-column: 1 / 4;
-    grid-row: 5 / 11;
+    z-index: 2;
+    grid-column: 1 / 5;
+    grid-row: 4 / 10;
   }
 
   .media-grid .media-tile:nth-child(6) {
     --photo-x: 5px;
     --photo-y: 4px;
     --photo-tilt: 2.4deg;
-    grid-column: 4 / 8;
-    grid-row: 6 / 10;
+    z-index: 5;
+    grid-column: 3 / 7;
+    grid-row: 5 / 9;
   }
 
   .media-grid .media-tile:nth-child(7) {
     --photo-x: -3px;
     --photo-y: 5px;
     --photo-tilt: -2.2deg;
-    grid-column: 4 / 9;
-    grid-row: 10 / 14;
+    z-index: 2;
+    grid-column: 1 / 7;
+    grid-row: 8 / 12;
   }
 
   .media-grid .media-tile:nth-child(8) {
     --photo-x: 4px;
     --photo-y: -4px;
     --photo-tilt: 1.7deg;
-    grid-column: 8 / 13;
-    grid-row: 9 / 13;
+    z-index: 4;
+    grid-column: 6 / 13;
+    grid-row: 7 / 11;
   }
 
   .media-grid .media-tile:nth-child(9) {
     --photo-x: 4px;
     --photo-y: -5px;
     --photo-tilt: 3.8deg;
+    z-index: 3;
     grid-column: 1 / 5;
-    grid-row: 11 / 17;
+    grid-row: 10 / 16;
   }
 
   .media-grid .media-tile:nth-child(10) {
     --photo-x: -4px;
     --photo-y: 3px;
     --photo-tilt: -2.8deg;
+    z-index: 5;
     grid-column: 5 / 9;
-    grid-row: 14 / 20;
+    grid-row: 10 / 16;
   }
 
   .media-grid .media-tile:nth-child(11) {
     --photo-x: -5px;
     --photo-y: -4px;
     --photo-tilt: 2.2deg;
+    z-index: 4;
     grid-column: 9 / 13;
-    grid-row: 13 / 19;
+    grid-row: 10 / 16;
+  }
+
+  .media-grid .gallery-upload {
+    grid-column: 2 / 12;
+    grid-row: 16 / 19;
+    align-self: center;
+    margin-top: 8px;
+  }
+
+  .media-grid .media-tile:is(:hover, :focus-visible) {
+    z-index: 100;
+    box-shadow: 0 30px 54px rgba(49, 37, 27, 0.34), 0 7px 14px rgba(49, 37, 27, 0.2);
+    transform:
+      translate(var(--photo-x), calc(var(--photo-y) - 9px))
+      rotate(var(--photo-tilt))
+      scale(1.045);
   }
 
   .rsvp-layout {

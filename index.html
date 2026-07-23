@@ -311,9 +311,19 @@
               <span data-i18n="essentialTimeLabel">Tid</span>
               <strong data-i18n="essentialTimeValue">19:00 vigsel</strong>
             </article>
-            <article class="essential-card reveal">
+            <article class="essential-card essential-place-card reveal">
               <span data-i18n="essentialPlaceLabel">Plats</span>
               <strong data-i18n="essentialPlaceValue">Tensta Maria kyrka</strong>
+              <div class="essential-mini-map">
+                <span class="essential-map-pin" aria-hidden="true"></span>
+                <a
+                  href="https://www.openstreetmap.org/?mlat=59.39424&amp;mlon=17.91724#map=17/59.39424/17.91724"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Karta till Tensta Maria kyrka"
+                  data-i18n-aria-label="travelMapAria"
+                ></a>
+              </div>
             </article>
           </div>
 
@@ -400,22 +410,31 @@
                 <p class="rsvp-party-line" data-party-line></p>
               </div>
               <form class="rsvp-form reveal" id="rsvpForm">
-                <label>
+                <label class="rsvp-name-field">
                   <span data-i18n="nameLabel">Namn</span>
                   <input type="text" name="name" autocomplete="name" required />
                 </label>
-                <label>
-                  <span data-i18n="attendanceLabel">Kan du/ni komma?</span>
-                  <select name="attendance" required>
-                    <option value="" selected disabled data-i18n="chooseAttendance">Välj svar</option>
-                    <option value="yes" data-i18n="attendingYes">Ja, jag/vi kommer</option>
-                    <option value="no" data-i18n="attendingNo">Nej, jag/vi kan inte komma</option>
-                  </select>
-                </label>
-                <label>
-                  <span data-i18n="guestCountLabel">Antal personer som svaret gäller</span>
-                  <input type="number" name="guests" min="1" max="20" value="1" inputmode="numeric" required />
-                </label>
+                <fieldset class="attendance-field">
+                  <legend data-i18n="attendanceLabel">Kan du/ni komma?</legend>
+                  <div class="attendance-options">
+                    <label class="attendance-option">
+                      <input type="radio" name="attendance" value="yes" required />
+                      <span data-i18n="attendingYes">Kommer</span>
+                    </label>
+                    <label class="attendance-option">
+                      <input type="radio" name="attendance" value="no" required />
+                      <span data-i18n="attendingNo">Kan inte komma</span>
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="guest-count-field">
+                  <span class="field-label" data-i18n="guestCountLabel">Hur många kommer?</span>
+                  <div class="guest-stepper">
+                    <button type="button" data-guest-action="decrease" aria-label="Minska antal" data-i18n-aria-label="decreaseGuestsAria">−</button>
+                    <input type="number" name="guests" min="1" max="20" value="1" inputmode="numeric" readonly required aria-live="polite" />
+                    <button type="button" data-guest-action="increase" aria-label="Öka antal" data-i18n-aria-label="increaseGuestsAria">+</button>
+                  </div>
+                </div>
                 <div class="contact-actions">
                   <button type="button" class="primary-btn" data-recipient="yaeel" data-i18n="sendReply">
                     Skicka OSA
@@ -540,19 +559,19 @@
                 data-i18n-alt="galleryAltStairs"
               />
             </button>
-          </div>
-          <div class="gallery-upload reveal">
-            <p data-i18n="uploadPhotosBody">
-              Efter bröllopet kan du dela dina bilder med oss här.
-            </p>
-            <a
-              href="https://photos.app.goo.gl/"
-              target="_blank"
-              rel="noreferrer"
-              data-i18n="uploadPhotos"
-            >
-              Ladda upp bilder
-            </a>
+            <div class="gallery-upload reveal">
+              <p data-i18n="uploadPhotosBody">
+                Efter bröllopet kan du dela dina bilder med oss här.
+              </p>
+              <a
+                href="https://photos.app.goo.gl/"
+                target="_blank"
+                rel="noreferrer"
+                data-i18n="uploadPhotos"
+              >
+                Ladda upp bilder
+              </a>
+            </div>
           </div>
         </div>
       </section>
