@@ -60,6 +60,8 @@ const translations = {
     essentialPlaceLabel: "Plats",
     essentialPlaceValue: "Tensta Maria kyrka",
     countdownEyebrow: "Nedräkning",
+    countdownTitle: "Tills vi säger ja",
+    countdownNote: "Sanden räknar ner till vår stora dag.",
     days: "Dagar",
     hours: "Timmar",
     minutes: "Minuter",
@@ -163,6 +165,8 @@ const translations = {
     essentialPlaceLabel: "Place",
     essentialPlaceValue: "Tensta Maria Church",
     countdownEyebrow: "Countdown",
+    countdownTitle: "Until we say I do",
+    countdownNote: "The sand is counting down to our day.",
     days: "Days",
     hours: "Hours",
     minutes: "Minutes",
@@ -266,6 +270,8 @@ const translations = {
     essentialPlaceLabel: "المكان",
     essentialPlaceValue: "كنيسة تنستا ماريا",
     countdownEyebrow: "العد التنازلي",
+    countdownTitle: "حتى نقول نعم",
+    countdownNote: "الرمال تعدّ الوقت المتبقي ليومنا الكبير.",
     days: "أيام",
     hours: "ساعات",
     minutes: "دقائق",
@@ -421,6 +427,14 @@ function updateCountdown() {
   document.querySelector('[data-time="hours"]').textContent = String(hours);
   document.querySelector('[data-time="minutes"]').textContent = String(minutes);
   document.querySelector('[data-time="seconds"]').textContent = String(seconds);
+
+  const countdown = document.querySelector("#countdown");
+  if (countdown) {
+    const displayWindow = 365 * 86400000;
+    const sandRemaining = Math.min(1, distance / displayWindow);
+    countdown.style.setProperty("--sand-remaining", sandRemaining.toFixed(4));
+    countdown.style.setProperty("--sand-collected", (1 - sandRemaining).toFixed(4));
+  }
 }
 
 function getGuestLine() {
