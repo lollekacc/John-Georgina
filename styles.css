@@ -232,6 +232,30 @@ section[id] {
   pointer-events: none;
 }
 
+.velvet-heading > * {
+  animation: landingTextFadeIn 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.velvet-heading-kicker {
+  animation-delay: 120ms;
+}
+
+.velvet-heading h1 {
+  animation-delay: 280ms;
+}
+
+.velvet-instruction {
+  animation-delay: 500ms;
+}
+
+.velvet-heading .gate-guest {
+  animation-delay: 680ms;
+}
+
+.velvet-heading .party-size {
+  animation-delay: 820ms;
+}
+
 .velvet-heading-kicker {
   margin: 0 0 4px;
   color: #6f1a2d;
@@ -505,15 +529,12 @@ body[dir="rtl"] .velvet-heading .party-size {
   right: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 20px;
   min-height: 78px;
   padding: 12px clamp(18px, 4vw, 54px);
-  border-bottom: 1px solid rgba(195, 162, 95, 0.24);
-  background: rgba(255, 253, 248, 0.84);
-  box-shadow: 0 14px 36px rgba(36, 28, 24, 0.08);
-  backdrop-filter: blur(18px) saturate(1.04);
+  background: transparent;
 }
 
 .brand {
@@ -591,6 +612,7 @@ body[dir="rtl"] .velvet-heading .party-size {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-self: end;
 }
 
 .language-switch {
@@ -624,18 +646,25 @@ body[dir="rtl"] .velvet-heading .party-size {
 }
 
 .icon-btn {
-  display: inline-grid;
-  place-items: center;
-  width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  min-width: 96px;
   height: 44px;
+  padding: 0 15px;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: 999px;
+  color: var(--ink);
   background: rgba(255, 253, 248, 0.92);
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .music-icon {
   position: relative;
   display: block;
+  flex: 0 0 auto;
   width: 15px;
   height: 18px;
   border-left: 3px solid var(--gold);
@@ -668,6 +697,15 @@ body[dir="rtl"] .velvet-heading .party-size {
 
 .icon-btn.is-playing {
   background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper-strong);
+}
+
+.music-state {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .hero {
@@ -1342,6 +1380,21 @@ body[dir="rtl"] .detail-card a {
   width: var(--journey-progress);
   max-width: 92%;
   background: linear-gradient(90deg, var(--gold), var(--rose));
+  box-shadow: 0 0 10px rgba(195, 162, 95, 0.48);
+}
+
+.story-journey .journey-fill::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 58px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #fff3bd 52%, transparent);
+  box-shadow: 0 0 8px rgba(255, 232, 158, 0.95), 0 0 18px rgba(195, 162, 95, 0.78);
+  transform: translateY(-50%);
+  animation: journeyLineGlow 3.8s ease-in-out infinite;
 }
 
 .journey-moment {
@@ -1365,9 +1418,43 @@ body[dir="rtl"] .detail-card a {
   box-shadow: 0 0 0 8px rgba(255, 253, 248, 0.1), 0 14px 34px rgba(0, 0, 0, 0.22);
 }
 
+.journey-moment::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fff0b0;
+  box-shadow: 0 0 8px #fff0b0, 0 0 18px rgba(195, 162, 95, 0.92);
+  animation: journeyDotGlow 2.8s ease-in-out infinite;
+}
+
+.journey-moment:nth-of-type(2)::after {
+  animation-delay: 700ms;
+}
+
+.journey-moment:nth-of-type(3)::after {
+  animation-delay: 1400ms;
+}
+
+.journey-moment:nth-of-type(4)::after {
+  animation-delay: 2100ms;
+}
+
 body[dir="rtl"] .journey-moment::before {
   right: 0;
   left: auto;
+}
+
+body[dir="rtl"] .journey-moment::after {
+  right: 9px;
+  left: auto;
+}
+
+body[dir="rtl"] .story-journey .journey-fill::after {
+  animation-direction: reverse;
 }
 
 .journey-moment time {
@@ -1533,7 +1620,7 @@ textarea:focus {
 
 .contact-actions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
@@ -1775,7 +1862,23 @@ body.motion-ready .reveal {
 
 body.motion-ready .hero-content.reveal {
   opacity: 1;
-  transform: none;
+  transition: transform 920ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+body.motion-ready:not(.invitation-entered) .hero-content.reveal {
+  transform: translateY(54px);
+}
+
+body.motion-ready .hero-photo-strip {
+  transform: translateY(38px);
+  transition: transform 880ms cubic-bezier(0.22, 1, 0.36, 1) 140ms;
+  will-change: transform;
+}
+
+body.motion-ready.invitation-entered .hero-content.reveal,
+body.motion-ready.invitation-entered .hero-photo-strip {
+  transform: translateY(0);
 }
 
 body.motion-ready .reveal.is-visible {
@@ -1786,6 +1889,57 @@ body.motion-ready .reveal.is-visible {
 body.motion-ready .welcome-section .reveal {
   opacity: 1;
   transform: none;
+}
+
+@keyframes landingTextFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes journeyLineGlow {
+  0%,
+  10% {
+    left: 0;
+  }
+
+  90%,
+  100% {
+    left: calc(100% - 58px);
+  }
+}
+
+@keyframes journeyDotGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(255, 240, 176, 0.62), 0 0 11px rgba(195, 162, 95, 0.45);
+    transform: scale(0.82);
+  }
+
+  45% {
+    box-shadow: 0 0 10px #fff0b0, 0 0 24px rgba(195, 162, 95, 1);
+    transform: scale(1.16);
+  }
+}
+
+@keyframes journeyLineGlowVertical {
+  0%,
+  10% {
+    top: 0;
+  }
+
+  90%,
+  100% {
+    top: calc(100% - 58px);
+  }
 }
 
 @keyframes velvetHeadingExit {
@@ -1873,9 +2027,7 @@ body.motion-ready .welcome-section .reveal {
   .site-header {
     min-height: 76px;
     padding-inline: max(54px, calc((100vw - 1360px) / 2 + 42px));
-    background:
-      linear-gradient(90deg, rgba(255, 253, 248, 0.93), rgba(246, 241, 232, 0.86)),
-      rgba(255, 253, 248, 0.88);
+    background: transparent;
   }
 
   .nav-links {
@@ -2126,6 +2278,14 @@ body.motion-ready .welcome-section .reveal {
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
   }
+
+  .velvet-heading > * {
+    animation-delay: 0ms !important;
+  }
+
+  body.motion-ready .hero-photo-strip {
+    transition-delay: 0ms !important;
+  }
 }
 
 @media (max-width: 1050px) {
@@ -2152,7 +2312,7 @@ body.motion-ready .welcome-section .reveal {
   .site-header {
     grid-template-columns: auto auto;
     gap: 12px;
-    min-height: 108px;
+    min-height: 78px;
   }
 
   .nav-links {
@@ -2180,7 +2340,7 @@ body.motion-ready .welcome-section .reveal {
   .hero-content {
     width: min(100% - 32px, 700px);
     margin: 0 auto;
-    padding-top: 154px;
+    padding-top: 124px;
   }
 
   body[dir="rtl"] .hero-content {
@@ -2270,7 +2430,14 @@ body.motion-ready .welcome-section .reveal {
   }
 
   .icon-btn {
-    display: none;
+    min-width: 78px;
+    height: 38px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .music-state {
+    font-size: 10px;
   }
 
   .header-actions {
@@ -2386,11 +2553,10 @@ body.motion-ready .welcome-section .reveal {
   }
 
   .site-header {
-    min-height: 94px;
+    min-height: 68px;
     grid-template-columns: 46px 1fr;
     gap: 8px;
-    background: rgba(255, 253, 248, 0.91);
-    box-shadow: 0 10px 28px rgba(36, 28, 24, 0.08);
+    background: transparent;
   }
 
   .brand {
@@ -2437,7 +2603,7 @@ body.motion-ready .welcome-section .reveal {
   }
 
   .hero-content {
-    padding-top: 116px;
+    padding-top: 92px;
     padding-bottom: 94px;
   }
 
@@ -2674,6 +2840,22 @@ body.motion-ready .welcome-section .reveal {
     height: 100%;
   }
 
+  .story-journey .journey-fill::after {
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 58px;
+    background: linear-gradient(180deg, transparent, #fff3bd 52%, transparent);
+    transform: translateX(-50%);
+    animation-name: journeyLineGlowVertical;
+  }
+
+  body[dir="rtl"] .story-journey .journey-fill::after {
+    right: auto;
+    left: 50%;
+    animation-direction: normal;
+  }
+
   .journey-moment {
     min-height: 0;
     padding-top: 0;
@@ -2691,8 +2873,18 @@ body.motion-ready .welcome-section .reveal {
     left: 0;
   }
 
+  .journey-moment::after {
+    top: 15px;
+    left: 9px;
+  }
+
   body[dir="rtl"] .journey-moment::before {
     right: 0;
+    left: auto;
+  }
+
+  body[dir="rtl"] .journey-moment::after {
+    right: 9px;
     left: auto;
   }
 

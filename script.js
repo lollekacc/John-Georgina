@@ -10,11 +10,11 @@ document.body.classList.add("motion-ready");
 const contacts = {
   yaeel: {
     name: "Yaeel Jadaon",
-    phone: "07xxxxxxxx",
+    phone: "0722671116",
   },
   nuha: {
     name: "Nuha Kawas",
-    phone: "07xxxxxxxxxx",
+    phone: "0720283065",
   },
 };
 
@@ -30,6 +30,8 @@ const translations = {
     languageAria: "Språk",
     musicPlay: "Spela musik",
     musicStop: "Stoppa musik",
+    musicStateOn: "På",
+    musicStateOff: "Av",
     heroAria: "Bröllopsinbjudan",
     heroPhotosAria: "Förlovningsbilder",
     essentialsAria: "Viktig information",
@@ -48,11 +50,11 @@ const translations = {
     navDetails: "Detaljer",
     navGallery: "Galleri",
     navRsvp: "OSA",
-    stickyRsvp: "OSA",
+    stickyRsvp: "OSA här",
     heroKicker: "Bröllopsinbjudan",
     verse: "Det Gud har fogat samman får människan inte skilja åt",
     heroDate: "Markus 10:9",
-    heroCta: "Svara på inbjudan",
+    heroCta: "OSA – svara här",
     essentialDateLabel: "Datum",
     essentialDateValue: "Fredag 25 september 2026",
     essentialTimeLabel: "Tid",
@@ -95,24 +97,20 @@ const translations = {
     uploadPhotosBody: "Efter bröllopet kan du dela dina bilder med oss här.",
     uploadPhotos: "Ladda upp bilder",
     rsvpEyebrow: "OSA",
-    rsvpTitle: "Svara på inbjudan",
-    rsvpBody:
-      "Berätta om du kommer eller inte, och hur många personer svaret gäller. Skicka ditt svar direkt till Yaeel eller Nuha.",
+    rsvpTitle: "OSA till bröllopet",
+    rsvpBody: "Fyll i namn, om du eller ni kommer och hur många personer svaret gäller.",
     nameLabel: "Namn",
-    attendanceLabel: "Kan du komma?",
+    attendanceLabel: "Kan du/ni komma?",
+    chooseAttendance: "Välj svar",
     attendingYes: "Ja, jag/vi kommer",
     attendingNo: "Nej, jag/vi kan inte komma",
-    guestCountLabel: "Antal personer",
-    messageLabel: "Meddelande",
-    sendYaeel: "Skicka till Yaeel",
-    sendNuha: "Skicka till Nuha",
-    phoneNote: "OSA-kontakter: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
+    guestCountLabel: "Antal personer som svaret gäller",
+    sendReply: "Skicka OSA",
     footerText: "25 september 2026 | Tensta Maria kyrka",
-    smsIntro: "Hej, detta är mitt OSA till John och Georginas bröllop.",
+    smsIntro: "OSA – John & Georgina",
     smsNameLabel: "Namn",
     smsReplyLabel: "Svar",
-    smsGuestsLabel: "Antal",
-    smsMessageLabel: "Meddelande",
+    smsGuestsLabel: "Antal personer",
     smsGuestLabel: "Inbjuden gäst",
     heroPhotoAltOne: "John och Georgina vid vattnet i solnedgången",
     heroPhotoAltTwo: "John och Georgina framför vattnet",
@@ -123,6 +121,11 @@ const translations = {
     galleryAltSunset: "John och Georgina vid solnedgången",
     galleryAltAltar: "John och Georgina framför altaret",
     galleryAltLaughing: "John och Georgina skrattar vid vattnet",
+    galleryAltWindow: "John och Georgina ler mot varandra vid ett ljust fönster",
+    galleryAltKiss: "John kysser Georgina på kinden i en utsmyckad sal",
+    galleryAltHall: "John och Georgina står tillsammans i en historisk sal",
+    galleryAltPortrait: "John och Georgina skrattar tillsammans i ett svartvitt porträtt",
+    galleryAltStairs: "John och Georgina går hand i hand uppför en stentrappa",
   },
   en: {
     documentTitle: "John & Georgina | Wedding",
@@ -135,6 +138,8 @@ const translations = {
     languageAria: "Language",
     musicPlay: "Play music",
     musicStop: "Stop music",
+    musicStateOn: "On",
+    musicStateOff: "Off",
     heroAria: "Wedding invitation",
     heroPhotosAria: "Engagement photos",
     essentialsAria: "Important information",
@@ -153,11 +158,11 @@ const translations = {
     navDetails: "Details",
     navGallery: "Gallery",
     navRsvp: "RSVP",
-    stickyRsvp: "RSVP",
+    stickyRsvp: "RSVP here",
     heroKicker: "Wedding invitation",
     verse: "Therefore what God has joined together, let no one separate",
     heroDate: "Mark 10:9",
-    heroCta: "Reply to the invitation",
+    heroCta: "RSVP – reply here",
     essentialDateLabel: "Date",
     essentialDateValue: "Friday, September 25, 2026",
     essentialTimeLabel: "Time",
@@ -200,24 +205,20 @@ const translations = {
     uploadPhotosBody: "After the wedding, you can share your photos with us here.",
     uploadPhotos: "Upload photos",
     rsvpEyebrow: "RSVP",
-    rsvpTitle: "Reply to the invitation",
-    rsvpBody:
-      "Let us know whether you can attend, and how many people your reply includes. Send your answer directly to Yaeel or Nuha.",
+    rsvpTitle: "Wedding RSVP",
+    rsvpBody: "Enter your name, whether you are attending, and how many people the response covers.",
     nameLabel: "Name",
     attendanceLabel: "Can you attend?",
+    chooseAttendance: "Choose an answer",
     attendingYes: "Yes, I/we will attend",
     attendingNo: "No, I/we cannot attend",
-    guestCountLabel: "Number of people",
-    messageLabel: "Message",
-    sendYaeel: "Send to Yaeel",
-    sendNuha: "Send to Nuha",
-    phoneNote: "RSVP contacts: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
+    guestCountLabel: "Number of people covered by this response",
+    sendReply: "Send RSVP",
     footerText: "September 25, 2026 | Tensta Maria Church",
-    smsIntro: "Hello, this is my RSVP for John and Georgina's wedding.",
+    smsIntro: "RSVP – John & Georgina",
     smsNameLabel: "Name",
-    smsReplyLabel: "Reply",
-    smsGuestsLabel: "Guests",
-    smsMessageLabel: "Message",
+    smsReplyLabel: "Response",
+    smsGuestsLabel: "Number of people",
     smsGuestLabel: "Invited guest",
     heroPhotoAltOne: "John and Georgina by the water at sunset",
     heroPhotoAltTwo: "John and Georgina by the water",
@@ -228,6 +229,11 @@ const translations = {
     galleryAltSunset: "John and Georgina at sunset",
     galleryAltAltar: "John and Georgina before the altar",
     galleryAltLaughing: "John and Georgina laughing by the water",
+    galleryAltWindow: "John and Georgina smiling at each other by a bright window",
+    galleryAltKiss: "John kissing Georgina on the cheek in an ornate hall",
+    galleryAltHall: "John and Georgina standing together in a historic hall",
+    galleryAltPortrait: "John and Georgina laughing together in a black-and-white portrait",
+    galleryAltStairs: "John and Georgina walking hand in hand up a stone staircase",
   },
   ar: {
     documentTitle: "John & Georgina | الزفاف",
@@ -240,6 +246,8 @@ const translations = {
     languageAria: "اللغة",
     musicPlay: "تشغيل الموسيقى",
     musicStop: "إيقاف الموسيقى",
+    musicStateOn: "تشغيل",
+    musicStateOff: "إيقاف",
     heroAria: "دعوة زفاف",
     heroPhotosAria: "صور الخطوبة",
     essentialsAria: "معلومات مهمة",
@@ -258,11 +266,11 @@ const translations = {
     navDetails: "التفاصيل",
     navGallery: "الصور",
     navRsvp: "تأكيد الحضور",
-    stickyRsvp: "تأكيد الحضور",
+    stickyRsvp: "الرد هنا",
     heroKicker: "دعوة زفاف",
     verse: "ما جمعه الله لا يفرقه إنسان",
     heroDate: "مرقس 10:9",
-    heroCta: "أرسل الرد",
+    heroCta: "تأكيد الحضور – أرسلوا الرد",
     essentialDateLabel: "التاريخ",
     essentialDateValue: "الجمعة 25 سبتمبر 2026",
     essentialTimeLabel: "الوقت",
@@ -305,24 +313,20 @@ const translations = {
     uploadPhotosBody: "بعد الزفاف يمكنكم مشاركة صوركم معنا هنا.",
     uploadPhotos: "رفع الصور",
     rsvpEyebrow: "تأكيد الحضور",
-    rsvpTitle: "الرد على الدعوة",
-    rsvpBody:
-      "أخبرونا إن كنتم ستتمكنون من الحضور، وكم شخصا يشمل الرد. أرسلوا الرد مباشرة إلى يائيل أو نهى.",
+    rsvpTitle: "تأكيد حضور حفل الزفاف",
+    rsvpBody: "اكتبوا الاسم، وحددوا إن كنتم ستحضرون، وعدد الأشخاص الذين يشملهم الرد.",
     nameLabel: "الاسم",
-    attendanceLabel: "هل تستطيع الحضور؟",
+    attendanceLabel: "هل ستتمكنون من الحضور؟",
+    chooseAttendance: "اختر الإجابة",
     attendingYes: "نعم، سأحضر / سنحضر",
-    attendingNo: "لا، لا أستطيع / لا نستطيع الحضور",
-    guestCountLabel: "عدد الأشخاص",
-    messageLabel: "رسالة",
-    sendYaeel: "إرسال إلى يائيل",
-    sendNuha: "إرسال إلى نهى",
-    phoneNote: "جهات تأكيد الحضور: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
+    attendingNo: "لا، لن أتمكن / لن نتمكن من الحضور",
+    guestCountLabel: "عدد الأشخاص الذين يشملهم الرد",
+    sendReply: "إرسال تأكيد الحضور",
     footerText: "25 سبتمبر 2026 | كنيسة تنستا ماريا",
-    smsIntro: "مرحبا، هذا تأكيد حضوري لزفاف John وGeorgina.",
+    smsIntro: "تأكيد الحضور – John & Georgina",
     smsNameLabel: "الاسم",
     smsReplyLabel: "الرد",
     smsGuestsLabel: "عدد الأشخاص",
-    smsMessageLabel: "الرسالة",
     smsGuestLabel: "الضيف المدعو",
     heroPhotoAltOne: "John وGeorgina بجانب الماء عند الغروب",
     heroPhotoAltTwo: "John وGeorgina بجانب الماء",
@@ -333,6 +337,11 @@ const translations = {
     galleryAltSunset: "John وGeorgina عند الغروب",
     galleryAltAltar: "John وGeorgina أمام المذبح",
     galleryAltLaughing: "John وGeorgina يضحكان بجانب الماء",
+    galleryAltWindow: "John وGeorgina يبتسمان لبعضهما بجانب نافذة مضيئة",
+    galleryAltKiss: "John يقبّل Georgina على خدها في قاعة مزخرفة",
+    galleryAltHall: "John وGeorgina يقفان معا في قاعة تاريخية",
+    galleryAltPortrait: "John وGeorgina يضحكان معا في صورة بالأبيض والأسود",
+    galleryAltStairs: "John وGeorgina يصعدان سلما حجريا وهما يمسكان بأيدي بعضهما",
   },
 };
 
@@ -395,6 +404,56 @@ const galleryItems = [
       sv: "Glädje vid vattnet",
       en: "Joy by the water",
       ar: "فرح بجانب الماء",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/WhatsApp Image 2026-07-21 at 11.35.50.jpeg",
+    altKey: "galleryAltWindow",
+    caption: {
+      sv: "Ett leende mellan oss",
+      en: "A smile between us",
+      ar: "ابتسامة تجمعنا",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/WhatsApp Image 2026-07-21 at 11.35.57.jpeg",
+    altKey: "galleryAltKiss",
+    caption: {
+      sv: "En kyss i den historiska salen",
+      en: "A kiss in the historic hall",
+      ar: "قبلة في القاعة التاريخية",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/WhatsApp Image 2026-07-21 at 15.43.40.jpeg",
+    altKey: "galleryAltHall",
+    caption: {
+      sv: "Tillsammans i den stora salen",
+      en: "Together in the grand hall",
+      ar: "معا في القاعة الكبرى",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/WhatsApp Image 2026-07-21 at 15.44.25.jpeg",
+    altKey: "galleryAltPortrait",
+    caption: {
+      sv: "Ett ögonblick av glädje",
+      en: "A moment of joy",
+      ar: "لحظة من الفرح",
+    },
+  },
+  {
+    type: "image",
+    src: "assets/images/WhatsApp Image 2026-07-21 at 15.48.13.jpeg",
+    altKey: "galleryAltStairs",
+    caption: {
+      sv: "Hand i hand",
+      en: "Hand in hand",
+      ar: "يدا بيد",
     },
   },
 ];
@@ -472,8 +531,9 @@ function applyGuestPersonalization() {
     nameInput.value = guestName;
   }
 
-  if (guestParty && countInput && !Number.isNaN(Number(guestParty))) {
-    countInput.value = guestParty;
+  const partyCount = Number.parseInt(guestParty, 10);
+  if (partyCount > 0 && partyCount <= 20 && countInput) {
+    countInput.value = String(partyCount);
   }
 }
 
@@ -541,6 +601,13 @@ function applyLanguage(lang) {
     }
   });
 
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    const key = element.dataset.i18nPlaceholder;
+    if (copy[key]) {
+      element.setAttribute("placeholder", copy[key]);
+    }
+  });
+
   document.querySelectorAll(".lang-btn").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.lang === lang);
   });
@@ -557,14 +624,15 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
   button.addEventListener("click", () => applyLanguage(button.dataset.lang));
 });
 
+const rsvpForm = document.querySelector("#rsvpForm");
+rsvpForm.addEventListener("submit", (event) => event.preventDefault());
+
 function createRsvpMessage(contactKey) {
-  const form = document.querySelector("#rsvpForm");
-  const formData = new FormData(form);
+  const formData = new FormData(rsvpForm);
   const copy = translations[activeLang];
-  const name = formData.get("name") || "";
-  const attendance = form.querySelector('[name="attendance"] option:checked')?.textContent || "";
-  const guests = formData.get("guests") || "";
-  const message = formData.get("message") || "";
+  const name = String(formData.get("name") || "").trim();
+  const attendance = rsvpForm.querySelector('[name="attendance"] option:checked')?.textContent || "";
+  const guests = String(formData.get("guests") || "").trim();
   const contact = contacts[contactKey];
 
   return {
@@ -574,7 +642,6 @@ function createRsvpMessage(contactKey) {
       `${copy.smsNameLabel}: ${name}`,
       `${copy.smsReplyLabel}: ${attendance}`,
       `${copy.smsGuestsLabel}: ${guests}`,
-      message ? `${copy.smsMessageLabel}: ${message}` : "",
       guestName ? `${copy.smsGuestLabel}: ${guestName}` : "",
     ]
       .filter(Boolean)
@@ -584,13 +651,12 @@ function createRsvpMessage(contactKey) {
 
 document.querySelectorAll("[data-recipient]").forEach((button) => {
   button.addEventListener("click", () => {
-    const form = document.querySelector("#rsvpForm");
-    if (!form.reportValidity()) {
+    if (!rsvpForm.reportValidity()) {
       return;
     }
 
     const { phone, body } = createRsvpMessage(button.dataset.recipient);
-    window.location.href = `sms:${phone}?&body=${encodeURIComponent(body)}`;
+    window.location.href = `sms:${phone}?body=${encodeURIComponent(body)}`;
   });
 });
 
@@ -646,7 +712,14 @@ function updateMusicButtonLabel() {
     return;
   }
 
-  button.setAttribute("aria-label", translations[activeLang][isPlaying ? "musicStop" : "musicPlay"]);
+  const copy = translations[activeLang];
+  button.setAttribute("aria-label", copy[isPlaying ? "musicStop" : "musicPlay"]);
+  button.setAttribute("aria-pressed", String(isPlaying));
+
+  const stateLabel = button.querySelector(".music-state");
+  if (stateLabel) {
+    stateLabel.textContent = copy[isPlaying ? "musicStateOn" : "musicStateOff"];
+  }
 }
 
 async function toggleMusic(forcePlay = false) {
@@ -688,11 +761,13 @@ document.querySelector("#openInvitation").addEventListener("click", () => {
   const openingDuration = reducedMotion ? 80 : 2680;
   window.setTimeout(() => {
     gate.classList.add("is-open");
+    document.body.classList.add("invitation-entered");
   }, openingDuration);
 });
 
 if (skipIntro) {
   document.querySelector("#invitationGate").classList.add("is-open");
+  document.body.classList.add("invitation-entered");
 }
 
 function escapeHtml(value) {
