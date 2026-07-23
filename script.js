@@ -10,11 +10,11 @@ document.body.classList.add("motion-ready");
 const contacts = {
   yaeel: {
     name: "Yaeel Jadaon",
-    phone: "0722671116",
+    phone: "07xxxxxxxx",
   },
   nuha: {
     name: "Nuha Kawas",
-    phone: "0720283065",
+    phone: "07xxxxxxxxxx",
   },
 };
 
@@ -34,6 +34,7 @@ const translations = {
     heroPhotosAria: "Förlovningsbilder",
     essentialsAria: "Viktig information",
     countdownAria: "Nedräkning",
+    travelMapAria: "Karta till Tensta Maria kyrka",
     mediaDialogLabel: "Media",
     mediaClose: "Stäng",
     mediaPrev: "Föregående",
@@ -66,11 +67,14 @@ const translations = {
     detailsEyebrow: "Dagens detaljer",
     detailsTitle: "Ceremoni och fest",
     ceremonyTitle: "Ceremoni",
-    ceremonyBody: "Vigseln hålls i Tensta Maria kyrka.",
+    ceremonyBody:
+      "Vigseln hålls i Tensta Maria kyrka. Kom gärna i god tid så vi kan börjnt och vackert tillsammans.a kvällen lug",
     mapLink: "Öppna karta",
     receptionTitle: "Fest",
     receptionBody:
       "Efter ceremonin fortsätter firandet i kyrkans lokal med mat, musik och minnen vi kommer bära med oss livet ut.",
+    mapBusLabel: "Buss: Krällingegränd",
+    mapMetroLabel: "Tensta T-bana",
     storyEyebrow: "Vår berättelse",
     storyTitle: "Från ett ja i hjärtat till ett ja inför Gud",
     storyBody:
@@ -84,21 +88,23 @@ const translations = {
     journey2026Title: "Bröllopsdagen",
     journey2026Body: "Den 25 september börjar vårt nya kapitel i Tensta Maria kyrka.",
     galleryEyebrow: "Bilder och video",
-    galleryTitle: "Våra minnen fram till den stora dagen",
+    galleryTitle: "Några ögonblick från vägen hit",
     playVideo: "Spela video",
     uploadPhotosBody: "Efter bröllopet kan du dela dina bilder med oss här.",
     uploadPhotos: "Ladda upp bilder",
     rsvpEyebrow: "OSA",
     rsvpTitle: "Svara på inbjudan",
-    rsvpBody: "OSA kan också göras genom att kontakta Yaeel eller Nuha.",
+    rsvpBody:
+      "Berätta om du kommer eller inte, och hur många personer svaret gäller. Skicka ditt svar direkt till Yaeel eller Nuha.",
     nameLabel: "Namn",
     attendanceLabel: "Kan du komma?",
     attendingYes: "Ja, jag/vi kommer",
     attendingNo: "Nej, jag/vi kan inte komma",
     guestCountLabel: "Antal personer",
     messageLabel: "Meddelande",
-    sendReply: "Skicka svar",
-    phoneNote: "OSA-kontakter: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.",
+    sendYaeel: "Skicka till Yaeel",
+    sendNuha: "Skicka till Nuha",
+    phoneNote: "OSA-kontakter: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
     footerText: "25 september 2026 | Tensta Maria kyrka",
     smsIntro: "Hej, detta är mitt OSA till John och Georginas bröllop.",
     smsNameLabel: "Namn",
@@ -131,6 +137,7 @@ const translations = {
     heroPhotosAria: "Engagement photos",
     essentialsAria: "Important information",
     countdownAria: "Countdown",
+    travelMapAria: "Map to Tensta Maria Church",
     mediaDialogLabel: "Media",
     mediaClose: "Close",
     mediaPrev: "Previous",
@@ -163,11 +170,14 @@ const translations = {
     detailsEyebrow: "The details",
     detailsTitle: "Ceremony and celebration",
     ceremonyTitle: "Ceremony",
-    ceremonyBody: "The ceremony will take place at Tensta Maria Church.",
+    ceremonyBody:
+      "The ceremony will take place at Tensta Maria Church. Please arrive a little early so we can begin the evening calmly and beautifully together.",
     mapLink: "Open map",
     receptionTitle: "Reception",
     receptionBody:
       "After the ceremony, the celebration continues in the church hall with food, music and memories we will carry for life.",
+    mapBusLabel: "Bus: Krällingegränd",
+    mapMetroLabel: "Tensta metro",
     storyEyebrow: "Our story",
     storyTitle: "From yes in the heart to yes before God",
     storyBody:
@@ -181,21 +191,23 @@ const translations = {
     journey2026Title: "The wedding day",
     journey2026Body: "On September 25, our new chapter begins at Tensta Maria Church.",
     galleryEyebrow: "Photos and video",
-    galleryTitle: "Our memories leading up to the big day",
+    galleryTitle: "A few moments from the road here",
     playVideo: "Play video",
     uploadPhotosBody: "After the wedding, you can share your photos with us here.",
     uploadPhotos: "Upload photos",
     rsvpEyebrow: "RSVP",
     rsvpTitle: "Reply to the invitation",
-    rsvpBody: "RSVP can also be made by contacting Yaeel or Nuha.",
+    rsvpBody:
+      "Let us know whether you can attend, and how many people your reply includes. Send your answer directly to Yaeel or Nuha.",
     nameLabel: "Name",
     attendanceLabel: "Can you attend?",
     attendingYes: "Yes, I/we will attend",
     attendingNo: "No, I/we cannot attend",
     guestCountLabel: "Number of people",
     messageLabel: "Message",
-    sendReply: "Send reply",
-    phoneNote: "RSVP contacts: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.",
+    sendYaeel: "Send to Yaeel",
+    sendNuha: "Send to Nuha",
+    phoneNote: "RSVP contacts: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
     footerText: "September 25, 2026 | Tensta Maria Church",
     smsIntro: "Hello, this is my RSVP for John and Georgina's wedding.",
     smsNameLabel: "Name",
@@ -228,6 +240,7 @@ const translations = {
     heroPhotosAria: "صور الخطوبة",
     essentialsAria: "معلومات مهمة",
     countdownAria: "العد التنازلي",
+    travelMapAria: "خريطة الوصول إلى كنيسة تنستا ماريا",
     mediaDialogLabel: "الوسائط",
     mediaClose: "إغلاق",
     mediaPrev: "السابق",
@@ -260,11 +273,14 @@ const translations = {
     detailsEyebrow: "تفاصيل اليوم",
     detailsTitle: "المراسم والاحتفال",
     ceremonyTitle: "المراسم",
-    ceremonyBody: "ستقام المراسم في كنيسة تنستا ماريا.",
+    ceremonyBody:
+      "ستقام المراسم في كنيسة تنستا ماريا. نرجو الحضور مبكرا قليلا لنبدأ الأمسية بهدوء وجمال معا.",
     mapLink: "فتح الخريطة",
     receptionTitle: "الاحتفال",
     receptionBody:
       "بعد المراسم نكمل الاحتفال في قاعة الكنيسة مع الطعام والموسيقى والذكريات الجميلة.",
+    mapBusLabel: "الحافلة: Krällingegränd",
+    mapMetroLabel: "مترو Tensta",
     storyEyebrow: "قصتنا",
     storyTitle: "من نعم في القلب إلى نعم أمام الله",
     storyBody:
@@ -278,21 +294,23 @@ const translations = {
     journey2026Title: "يوم الزفاف",
     journey2026Body: "في 25 سبتمبر يبدأ فصلنا الجديد في كنيسة تنستا ماريا.",
     galleryEyebrow: "صور وفيديو",
-    galleryTitle: "ذكرياتنا حتى اليوم الكبير",
+    galleryTitle: "بعض اللحظات من الطريق إلى هنا",
     playVideo: "تشغيل الفيديو",
     uploadPhotosBody: "بعد الزفاف يمكنكم مشاركة صوركم معنا هنا.",
     uploadPhotos: "رفع الصور",
     rsvpEyebrow: "تأكيد الحضور",
     rsvpTitle: "الرد على الدعوة",
-    rsvpBody: "يمكن أيضا تأكيد الحضور من خلال التواصل مع يائيل أو نهى.",
+    rsvpBody:
+      "أخبرونا إن كنتم ستتمكنون من الحضور، وكم شخصا يشمل الرد. أرسلوا الرد مباشرة إلى يائيل أو نهى.",
     nameLabel: "الاسم",
     attendanceLabel: "هل تستطيع الحضور؟",
     attendingYes: "نعم، سأحضر / سنحضر",
     attendingNo: "لا، لا أستطيع / لا نستطيع الحضور",
     guestCountLabel: "عدد الأشخاص",
     messageLabel: "رسالة",
-    sendReply: "إرسال الرد",
-    phoneNote: "جهات تأكيد الحضور: Yaeel Jadaon 0722671116, Nuha Kawas 0720283065.",
+    sendYaeel: "إرسال إلى يائيل",
+    sendNuha: "إرسال إلى نهى",
+    phoneNote: "جهات تأكيد الحضور: Yaeel Jadaon 07xxxxxxxx, Nuha Kawas 07xxxxxxxxxx.",
     footerText: "25 سبتمبر 2026 | كنيسة تنستا ماريا",
     smsIntro: "مرحبا، هذا تأكيد حضوري لزفاف John وGeorgina.",
     smsNameLabel: "الاسم",
@@ -550,14 +568,16 @@ function createRsvpMessage(contactKey) {
   };
 }
 
-document.querySelector("[data-rsvp-send]")?.addEventListener("click", () => {
-  const form = document.querySelector("#rsvpForm");
-  if (!form.reportValidity()) {
-    return;
-  }
+document.querySelectorAll("[data-recipient]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const form = document.querySelector("#rsvpForm");
+    if (!form.reportValidity()) {
+      return;
+    }
 
-  const { phone, body } = createRsvpMessage("yaeel");
-  window.location.href = `sms:${phone}?&body=${encodeURIComponent(body)}`;
+    const { phone, body } = createRsvpMessage(button.dataset.recipient);
+    window.location.href = `sms:${phone}?&body=${encodeURIComponent(body)}`;
+  });
 });
 
 let audioContext;
@@ -638,7 +658,7 @@ async function toggleMusic(forcePlay = false) {
 
 document.querySelector("#musicToggle").addEventListener("click", () => toggleMusic());
 
-document.querySelector("#openInvitation").addEventListener("click", async () => {
+document.querySelector("#openInvitation").addEventListener("click", () => {
   const gate = document.querySelector("#invitationGate");
   const button = document.querySelector("#openInvitation");
 
@@ -648,78 +668,16 @@ document.querySelector("#openInvitation").addEventListener("click", async () => 
 
   button.disabled = true;
   gate.classList.add("is-opening");
-  launchCelebrationRain();
-  await toggleMusic(true);
+  toggleMusic(true).catch(() => {});
+
+  const openingDuration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 80 : 2210;
   window.setTimeout(() => {
     gate.classList.add("is-open");
-  }, 3250);
+  }, openingDuration);
 });
 
 if (skipIntro) {
   document.querySelector("#invitationGate").classList.add("is-open");
-}
-
-function launchCelebrationRain() {
-  const container = document.querySelector("#celebrationRain");
-  const colors = ["#fffdf8", "#f7e8e2", "#f2d7d7", "#c3a25f", "#b36b72", "#d8b66f"];
-  const shapes = ["petal", "petal", "petal", "sparkle", "ribbon"];
-  const envelope = document.querySelector(".gate-envelope");
-  const envelopeRect = envelope.getBoundingClientRect();
-  const containerRect = container.getBoundingClientRect();
-  const originX = envelopeRect.left + envelopeRect.width / 2 - containerRect.left;
-  const originY = envelopeRect.top + envelopeRect.height * 0.48 - containerRect.top;
-  const randomBetween = (min, max) => min + Math.random() * (max - min);
-
-  container.innerHTML = "";
-
-  for (let i = 0; i < 30; i += 1) {
-    const piece = document.createElement("span");
-    const shape = shapes[Math.floor(Math.random() * shapes.length)];
-    const isSparkle = shape === "sparkle";
-    const isRibbon = shape === "ribbon";
-    const size = isSparkle ? randomBetween(5, 10) : isRibbon ? randomBetween(6, 11) : randomBetween(7, 15);
-    const angle = randomBetween(-168, -12) * (Math.PI / 180);
-    const distance = randomBetween(130, Math.min(window.innerWidth * 0.44, 300));
-    const burstX = Math.cos(angle) * distance;
-    const burstY = Math.abs(Math.sin(angle) * distance);
-
-    piece.className = `${shape} burst`;
-    piece.style.setProperty("--burst-left", `${originX}px`);
-    piece.style.setProperty("--burst-top", `${originY}px`);
-    piece.style.setProperty("--burst-x", `${burstX}px`);
-    piece.style.setProperty("--burst-y", `${burstY}px`);
-    piece.style.setProperty("--fall-drift", `${randomBetween(-95, 95)}px`);
-    piece.style.setProperty("--fall-start-rotate", `${randomBetween(-80, 80)}deg`);
-    piece.style.setProperty("--fall-rotate", `${randomBetween(-760, 760)}deg`);
-    piece.style.setProperty("--fall-duration", `${randomBetween(3.7, 5.6)}s`);
-    piece.style.setProperty("--fall-delay", `${randomBetween(0.22, 0.62)}s`);
-    piece.style.setProperty("--fall-size", `${size}px`);
-    piece.style.setProperty("--fall-color", colors[i % colors.length]);
-    container.appendChild(piece);
-  }
-
-  for (let i = 0; i < 96; i += 1) {
-    const piece = document.createElement("span");
-    const shape = shapes[Math.floor(Math.random() * shapes.length)];
-    const isSparkle = shape === "sparkle";
-    const isRibbon = shape === "ribbon";
-    const size = isSparkle ? randomBetween(5, 10) : isRibbon ? randomBetween(6, 13) : randomBetween(7, 16);
-
-    piece.className = `${shape} fall`;
-    piece.style.setProperty("--fall-left", `${randomBetween(-5, 105)}%`);
-    piece.style.setProperty("--fall-drift", `${randomBetween(-190, 190)}px`);
-    piece.style.setProperty("--fall-start-rotate", `${randomBetween(-90, 90)}deg`);
-    piece.style.setProperty("--fall-rotate", `${randomBetween(-820, 820)}deg`);
-    piece.style.setProperty("--fall-duration", `${randomBetween(4.0, 7.0)}s`);
-    piece.style.setProperty("--fall-delay", `${randomBetween(0.28, 1.55)}s`);
-    piece.style.setProperty("--fall-size", `${size}px`);
-    piece.style.setProperty("--fall-color", colors[(i + 2) % colors.length]);
-    container.appendChild(piece);
-  }
-
-  window.setTimeout(() => {
-    container.innerHTML = "";
-  }, 8200);
 }
 
 function escapeHtml(value) {

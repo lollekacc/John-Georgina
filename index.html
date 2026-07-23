@@ -24,34 +24,28 @@
   <body>
     <div class="invitation-gate" id="invitationGate" aria-label="Öppna inbjudan" data-i18n-aria-label="gateAria">
       <div class="gate-media" aria-hidden="true"></div>
-      <div class="celebration-rain" id="celebrationRain" aria-hidden="true"></div>
       <div class="gate-panel">
-        <div class="gate-envelope" aria-hidden="true">
-          <div class="envelope-shadow"></div>
-          <div class="envelope-body">
-            <span class="envelope-letter">
-              <span class="wordmark">John <span class="wordmark-amp">&amp;</span> Georgina</span>
-              <strong>25.09.2026</strong>
-            </span>
-            <span class="envelope-back"></span>
-            <span class="envelope-flap envelope-flap-left"></span>
-            <span class="envelope-flap envelope-flap-right"></span>
-            <span class="envelope-flap envelope-flap-front"></span>
-            <span class="envelope-flap envelope-flap-top"></span>
-            <span class="envelope-seal">J&amp;G</span>
-            <span class="envelope-burst"></span>
-          </div>
+        <div class="lace-reveal" aria-hidden="true">
+          <span class="lace-reveal-date">25&nbsp;&nbsp;&middot;&nbsp;&nbsp;09&nbsp;&nbsp;&middot;&nbsp;&nbsp;2026</span>
+          <span class="lace-reveal-names wordmark">John <span class="wordmark-amp">&amp;</span> Georgina</span>
+          <span class="lace-reveal-place">STOCKHOLM</span>
         </div>
-        <p class="gate-kicker" data-i18n="gateKicker">John & Georgina</p>
-        <h1 data-i18n="gateTitle">Vi gifter oss</h1>
-        <p class="gate-verse" data-i18n="verse">
-          Det Gud har fogat samman får människan inte skilja åt
-        </p>
-        <p class="gate-guest" data-guest-line></p>
-        <p class="party-size" data-party-line></p>
-        <button class="open-card" id="openInvitation" type="button">
-          <span class="open-card-lines" aria-hidden="true"></span>
-          <span data-i18n="openInvitation">Öppna inbjudan</span>
+        <div class="heirloom-envelope" aria-hidden="true">
+          <span class="heirloom-base"></span>
+          <span class="heirloom-flap"></span>
+        </div>
+        <div class="lace-heading">
+          <p class="lace-heading-kicker" data-i18n="gateTitle">Vi gifter oss</p>
+          <h1 class="wordmark">John <span class="wordmark-amp">&amp;</span> Georgina</h1>
+          <p class="lace-instruction" data-i18n="openInvitation">Öppna inbjudan</p>
+          <span class="lace-arrow" aria-hidden="true">&#8595;</span>
+          <p class="gate-guest" data-guest-line></p>
+          <p class="party-size" data-party-line></p>
+        </div>
+        <button class="lace-seal" id="openInvitation" type="button" aria-label="Öppna inbjudan" data-i18n-aria-label="gateAria">
+          <span class="lace-seal-leaf lace-seal-leaf-left" aria-hidden="true"></span>
+          <span class="lace-seal-core" aria-hidden="true">J<span>&amp;</span>G</span>
+          <span class="lace-seal-leaf lace-seal-leaf-right" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -98,15 +92,9 @@
           <a class="primary-link" href="#rsvp" data-i18n="heroCta">Svara på inbjudan</a>
         </div>
         <aside class="hero-photo-strip" aria-label="Förlovningsbilder" data-i18n-aria-label="heroPhotosAria">
-          <button type="button" data-media="0">
-            <img src="assets/images/q.jfif" alt="John och Georgina vid vattnet i solnedgången" data-i18n-alt="heroPhotoAltOne" />
-          </button>
-          <button type="button" data-media="2">
-            <img src="assets/images/e.jfif" alt="John och Georgina framför vattnet" data-i18n-alt="heroPhotoAltTwo" />
-          </button>
-          <button type="button" data-media="1">
-            <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" data-i18n-alt="heroPhotoAltThree" />
-          </button>
+          <img src="assets/images/q.jfif" alt="John och Georgina vid vattnet i solnedgången" data-i18n-alt="heroPhotoAltOne" />
+          <img src="assets/images/e.jfif" alt="John och Georgina framför vattnet" data-i18n-alt="heroPhotoAltTwo" />
+          <img src="assets/images/t.jfif" alt="John och Georgina i kyrkan" data-i18n-alt="heroPhotoAltThree" />
         </aside>
       </section>
 
@@ -154,13 +142,18 @@
               <a href="https://maps.google.com/?q=Tensta%20Maria%20kyrkan" target="_blank" rel="noreferrer" data-i18n="mapLink">
                 Öppna karta
               </a>
-              <div class="travel-map detail-map">
-                <iframe
-                  title="Tensta Maria kyrka"
-                  src="https://www.google.com/maps?q=Tensta%20Maria%20kyrka&output=embed"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
+              <div class="travel-map detail-map" role="img" aria-label="Karta till Tensta Maria kyrka" data-i18n-aria-label="travelMapAria">
+                <div class="map-embed" aria-hidden="true">
+                  <span class="map-road map-road-main"></span>
+                  <span class="map-road map-road-cross"></span>
+                  <span class="map-road map-road-soft"></span>
+                  <span class="map-transit-line"></span>
+                  <span class="map-marker"></span>
+                  <span class="map-label map-church">Tensta Maria kyrka</span>
+                  <span class="map-label map-address">Krällingegränd 1</span>
+                  <span class="map-label map-bus" data-i18n="mapBusLabel">Buss: Krällingegränd</span>
+                  <span class="map-label map-metro" data-i18n="mapMetroLabel">Tensta T-bana</span>
+                </div>
               </div>
             </article>
             <article class="detail-card reveal">
@@ -215,7 +208,7 @@
         </div>
       </section>
 
-      <section class="rsvp-section" id="rsvp">
+      <section class="rsvp-section" id="rsvp">Ö
         <div class="section-shell rsvp-layout">
           <div class="rsvp-copy reveal">
             <p class="eyebrow" data-i18n="rsvpEyebrow">OSA</p>
