@@ -853,13 +853,13 @@ document.querySelector("#openInvitation").addEventListener("click", () => {
 
   button.disabled = true;
   gate.classList.add("is-opening");
+  document.body.classList.add("invitation-entered");
   toggleMusic(true).catch(() => {});
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const openingDuration = reducedMotion ? 80 : 2680;
+  const openingDuration = reducedMotion ? 60 : 760;
   window.setTimeout(() => {
     gate.classList.add("is-open");
-    document.body.classList.add("invitation-entered");
   }, openingDuration);
 });
 
