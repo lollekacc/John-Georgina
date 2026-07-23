@@ -458,6 +458,54 @@ const galleryItems = [
   },
 ];
 
+function shuffleGalleryPhotos() {
+  const grid = document.querySelector("#mediaGrid");
+  if (!grid) {
+    return;
+  }
+
+  const originalTiles = Array.from(grid.querySelectorAll("[data-media]"));
+  const getLayoutGroup = (tile) => {
+    if (tile.classList.contains("media-wide")) return "wide";
+    if (tile.classList.contains("media-tall")) return "tall";
+    return "standard";
+  };
+  const groups = new Map();
+
+  originalTiles
+    .filter((tile) => !tile.classList.contains("media-video"))
+    .forEach((tile) => {
+      const group = getLayoutGroup(tile);
+      if (!groups.has(group)) groups.set(group, []);
+      groups.get(group).push(tile);
+    });
+
+  groups.forEach((tiles) => {
+    for (let index = tiles.length - 1; index > 0; index -= 1) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [tiles[index], tiles[randomIndex]] = [tiles[randomIndex], tiles[index]];
+    }
+  });
+
+  const groupPositions = new Map();
+  const shuffledTiles = originalTiles.map((tile) => {
+    if (tile.classList.contains("media-video")) return tile;
+    const group = getLayoutGroup(tile);
+    const position = groupPositions.get(group) || 0;
+    groupPositions.set(group, position + 1);
+    return groups.get(group)[position];
+  });
+  const shuffledItems = shuffledTiles.map((tile) => galleryItems[Number(tile.dataset.media)]);
+
+  galleryItems.splice(0, galleryItems.length, ...shuffledItems);
+  shuffledTiles.forEach((tile, index) => {
+    tile.dataset.media = String(index);
+  });
+  grid.replaceChildren(...shuffledTiles);
+}
+
+shuffleGalleryPhotos();
+
 let activeLang = "sv";
 
 const revealObserver = new IntersectionObserver(
