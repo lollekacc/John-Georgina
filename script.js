@@ -670,7 +670,7 @@ document.querySelector("#openInvitation").addEventListener("click", () => {
   gate.classList.add("is-opening");
   toggleMusic(true).catch(() => {});
 
-  const openingDuration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 80 : 2210;
+  const openingDuration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 80 : 2050;
   window.setTimeout(() => {
     gate.classList.add("is-open");
   }, openingDuration);
