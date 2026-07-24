@@ -7,17 +7,6 @@ const skipIntro = params.get("open") === "1";
 
 document.body.classList.add("motion-ready");
 
-const contacts = {
-  yaeel: {
-    name: "Yaeel Jadaon",
-    phone: "0722671116",
-  },
-  nuha: {
-    name: "Nuha Kawas",
-    phone: "0720283065",
-  },
-};
-
 const translations = {
   sv: {
     documentTitle: "John & Georgina | Bröllop",
@@ -49,12 +38,9 @@ const translations = {
     partyLine: "Denna inbjudan gäller {party} personer",
     navDetails: "Detaljer",
     navGallery: "Galleri",
-    navRsvp: "OSA",
-    stickyRsvp: "OSA här",
     heroKicker: "Bröllopsinbjudan",
     verse: "Det Gud har fogat samman får människan inte skilja åt",
     heroDate: "Markus 10:9",
-    heroCta: "OSA – svara här",
     essentialDateLabel: "Datum",
     essentialDateValue: "Fredag 25 september 2026",
     essentialTimeLabel: "Tid",
@@ -96,24 +82,7 @@ const translations = {
     playVideo: "Spela video",
     uploadPhotosBody: "Efter bröllopet kan du dela dina bilder med oss här.",
     uploadPhotos: "Ladda upp bilder",
-    rsvpEyebrow: "OSA",
-    rsvpTitle: "OSA till bröllopet",
-    rsvpBody: "Skriv ditt namn och välj ditt svar med ett enkelt tryck.",
-    nameLabel: "Namn",
-    attendanceLabel: "Kan du/ni komma?",
-    chooseAttendance: "Välj svar",
-    attendingYes: "Kommer",
-    attendingNo: "Kan inte komma",
-    guestCountLabel: "Hur många kommer?",
-    decreaseGuestsAria: "Minska antal",
-    increaseGuestsAria: "Öka antal",
-    sendReply: "Skicka OSA",
     footerText: "25 september 2026 | Tensta Maria kyrka",
-    smsIntro: "OSA – John & Georgina",
-    smsNameLabel: "Namn",
-    smsReplyLabel: "Svar",
-    smsGuestsLabel: "Antal personer",
-    smsGuestLabel: "Inbjuden gäst",
     heroPhotoAltOne: "John och Georgina vid vattnet i solnedgången",
     heroPhotoAltTwo: "John och Georgina framför vattnet",
     heroPhotoAltThree: "John och Georgina i kyrkan",
@@ -159,12 +128,9 @@ const translations = {
     partyLine: "This invitation is for {party} people",
     navDetails: "Details",
     navGallery: "Gallery",
-    navRsvp: "RSVP",
-    stickyRsvp: "RSVP here",
     heroKicker: "Wedding invitation",
     verse: "Therefore what God has joined together, let no one separate",
     heroDate: "Mark 10:9",
-    heroCta: "RSVP – reply here",
     essentialDateLabel: "Date",
     essentialDateValue: "Friday, September 25, 2026",
     essentialTimeLabel: "Time",
@@ -206,24 +172,7 @@ const translations = {
     playVideo: "Play video",
     uploadPhotosBody: "After the wedding, you can share your photos with us here.",
     uploadPhotos: "Upload photos",
-    rsvpEyebrow: "RSVP",
-    rsvpTitle: "Wedding RSVP",
-    rsvpBody: "Enter your name and choose your answer with one simple tap.",
-    nameLabel: "Name",
-    attendanceLabel: "Can you attend?",
-    chooseAttendance: "Choose an answer",
-    attendingYes: "Attending",
-    attendingNo: "Unable to attend",
-    guestCountLabel: "How many are attending?",
-    decreaseGuestsAria: "Decrease number",
-    increaseGuestsAria: "Increase number",
-    sendReply: "Send RSVP",
     footerText: "September 25, 2026 | Tensta Maria Church",
-    smsIntro: "RSVP – John & Georgina",
-    smsNameLabel: "Name",
-    smsReplyLabel: "Response",
-    smsGuestsLabel: "Number of people",
-    smsGuestLabel: "Invited guest",
     heroPhotoAltOne: "John and Georgina by the water at sunset",
     heroPhotoAltTwo: "John and Georgina by the water",
     heroPhotoAltThree: "John and Georgina in the church",
@@ -269,12 +218,9 @@ const translations = {
     partyLine: "هذه الدعوة مخصصة لعدد {party} أشخاص",
     navDetails: "التفاصيل",
     navGallery: "الصور",
-    navRsvp: "تأكيد الحضور",
-    stickyRsvp: "الرد هنا",
     heroKicker: "دعوة زفاف",
     verse: "ما جمعه الله لا يفرقه إنسان",
     heroDate: "مرقس 10:9",
-    heroCta: "تأكيد الحضور – أرسلوا الرد",
     essentialDateLabel: "التاريخ",
     essentialDateValue: "الجمعة 25 سبتمبر 2026",
     essentialTimeLabel: "الوقت",
@@ -316,24 +262,7 @@ const translations = {
     playVideo: "تشغيل الفيديو",
     uploadPhotosBody: "بعد الزفاف يمكنكم مشاركة صوركم معنا هنا.",
     uploadPhotos: "رفع الصور",
-    rsvpEyebrow: "تأكيد الحضور",
-    rsvpTitle: "تأكيد حضور حفل الزفاف",
-    rsvpBody: "اكتبوا الاسم واختاروا الإجابة بلمسة واحدة.",
-    nameLabel: "الاسم",
-    attendanceLabel: "هل ستتمكنون من الحضور؟",
-    chooseAttendance: "اختر الإجابة",
-    attendingYes: "سنحضر",
-    attendingNo: "لن نحضر",
-    guestCountLabel: "كم شخصا سيحضر؟",
-    decreaseGuestsAria: "تقليل العدد",
-    increaseGuestsAria: "زيادة العدد",
-    sendReply: "إرسال تأكيد الحضور",
     footerText: "25 سبتمبر 2026 | كنيسة تنستا ماريا",
-    smsIntro: "تأكيد الحضور – John & Georgina",
-    smsNameLabel: "الاسم",
-    smsReplyLabel: "الرد",
-    smsGuestsLabel: "عدد الأشخاص",
-    smsGuestLabel: "الضيف المدعو",
     heroPhotoAltOne: "John وGeorgina بجانب الماء عند الغروب",
     heroPhotoAltTwo: "John وGeorgina بجانب الماء",
     heroPhotoAltThree: "John وGeorgina في الكنيسة",
@@ -579,17 +508,6 @@ function applyGuestPersonalization() {
     element.textContent = partyLine;
   });
 
-  const nameInput = document.querySelector('#rsvpForm input[name="name"]');
-  const countInput = document.querySelector('#rsvpForm input[name="guests"]');
-
-  if (guestName && nameInput && !nameInput.value) {
-    nameInput.value = guestName;
-  }
-
-  const partyCount = Number.parseInt(guestParty, 10);
-  if (partyCount > 0 && partyCount <= 20 && countInput) {
-    countInput.value = String(partyCount);
-  }
 }
 
 async function fetchInviteMap() {
@@ -684,78 +602,6 @@ function applyLanguage(lang) {
 
 document.querySelectorAll(".lang-btn").forEach((button) => {
   button.addEventListener("click", () => applyLanguage(button.dataset.lang));
-});
-
-const rsvpForm = document.querySelector("#rsvpForm");
-rsvpForm.addEventListener("submit", (event) => event.preventDefault());
-
-const attendanceInputs = rsvpForm.querySelectorAll('input[name="attendance"]');
-const guestCountInput = rsvpForm.querySelector('input[name="guests"]');
-const guestCountField = rsvpForm.querySelector(".guest-count-field");
-const guestCountButtons = rsvpForm.querySelectorAll("[data-guest-action]");
-
-function setGuestCountState(attendance) {
-  const isAttending = attendance !== "no";
-  guestCountField.classList.toggle("is-disabled", !isAttending);
-  guestCountButtons.forEach((button) => {
-    button.disabled = !isAttending;
-  });
-
-  if (!isAttending) {
-    guestCountInput.value = "0";
-    guestCountInput.min = "0";
-  } else {
-    guestCountInput.min = "1";
-    guestCountInput.value = String(Math.max(1, Number.parseInt(guestCountInput.value, 10) || 1));
-  }
-}
-
-attendanceInputs.forEach((input) => {
-  input.addEventListener("change", () => setGuestCountState(input.value));
-});
-
-guestCountButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const current = Number.parseInt(guestCountInput.value, 10) || 1;
-    const minimum = Number.parseInt(guestCountInput.min, 10) || 1;
-    const maximum = Number.parseInt(guestCountInput.max, 10) || 20;
-    const change = button.dataset.guestAction === "increase" ? 1 : -1;
-    guestCountInput.value = String(Math.min(maximum, Math.max(minimum, current + change)));
-  });
-});
-
-function createRsvpMessage(contactKey) {
-  const formData = new FormData(rsvpForm);
-  const copy = translations[activeLang];
-  const name = String(formData.get("name") || "").trim();
-  const attendanceValue = String(formData.get("attendance") || "");
-  const attendance = attendanceValue === "yes" ? copy.attendingYes : copy.attendingNo;
-  const guests = String(formData.get("guests") || "").trim();
-  const contact = contacts[contactKey];
-
-  return {
-    phone: contact.phone,
-    body: [
-      copy.smsIntro,
-      `${copy.smsNameLabel}: ${name}`,
-      `${copy.smsReplyLabel}: ${attendance}`,
-      `${copy.smsGuestsLabel}: ${guests}`,
-      guestName ? `${copy.smsGuestLabel}: ${guestName}` : "",
-    ]
-      .filter(Boolean)
-      .join("\n"),
-  };
-}
-
-document.querySelectorAll("[data-recipient]").forEach((button) => {
-  button.addEventListener("click", () => {
-    if (!rsvpForm.reportValidity()) {
-      return;
-    }
-
-    const { phone, body } = createRsvpMessage(button.dataset.recipient);
-    window.location.href = `sms:${phone}?body=${encodeURIComponent(body)}`;
-  });
 });
 
 let audioContext;
@@ -857,7 +703,7 @@ document.querySelector("#openInvitation").addEventListener("click", () => {
   toggleMusic(true).catch(() => {});
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const openingDuration = reducedMotion ? 60 : 760;
+  const openingDuration = reducedMotion ? 100 : 2020;
   window.setTimeout(() => {
     gate.classList.add("is-open");
   }, openingDuration);

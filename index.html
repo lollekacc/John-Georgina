@@ -33,8 +33,18 @@
           <p class="party-size" data-party-line></p>
         </div>
         <button class="velvet-seal" id="openInvitation" type="button" aria-label="Öppna inbjudan" data-i18n-aria-label="gateAria">
-          <img class="velvet-seal-image" src="assets/images/jg-wax-seal.png" alt="" aria-hidden="true" />
+          <img class="velvet-seal-image" src="assets/images/jg-wax-seal-front.png" alt="" aria-hidden="true" />
         </button>
+        <div class="envelope-flap-motion" aria-hidden="true"></div>
+        <div class="envelope-mouth-motion" aria-hidden="true"></div>
+        <div class="envelope-pocket-motion" aria-hidden="true"></div>
+        <div class="site-emergence" aria-hidden="true">
+          <div class="site-emergence-shade"></div>
+          <div class="site-emergence-copy">
+            <p class="wordmark">John <span class="wordmark-amp">&amp;</span> Georgina</p>
+            <span data-i18n="verse">Det Gud har fogat samman får människan inte skilja åt</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -55,8 +65,6 @@
       </div>
     </header>
 
-    <a class="sticky-rsvp" href="#rsvp" data-i18n="stickyRsvp">OSA här</a>
-
     <main>
       <section class="hero" id="home" aria-label="Bröllopsinbjudan" data-i18n-aria-label="heroAria">
         <div class="hero-video" aria-hidden="true">
@@ -73,7 +81,6 @@
             Det Gud har fogat samman får människan inte skilja åt
           </p>
           <p class="hero-date" data-i18n="heroDate">Markus 10:9</p>
-          <a class="primary-link" href="#rsvp" data-i18n="heroCta">OSA – svara här</a>
         </div>
         <aside class="hero-photo-strip" aria-label="Förlovningsbilder" data-i18n-aria-label="heroPhotosAria">
           <img src="assets/images/q.jfif" alt="John och Georgina vid vattnet i solnedgången" data-i18n-alt="heroPhotoAltOne" />
@@ -181,50 +188,6 @@
             </div>
           </article>
 
-          <section class="rsvp-section" id="rsvp">
-            <div class="rsvp-layout">
-              <div class="rsvp-copy reveal">
-                <p class="eyebrow" data-i18n="rsvpEyebrow">OSA</p>
-                <h2 data-i18n="rsvpTitle">OSA till bröllopet</h2>
-                <p data-i18n="rsvpBody">
-                  Fyll i namn, om du eller ni kommer och hur många personer svaret gäller.
-                </p>
-                <p class="rsvp-party-line" data-party-line></p>
-              </div>
-              <form class="rsvp-form reveal" id="rsvpForm">
-                <label class="rsvp-name-field">
-                  <span data-i18n="nameLabel">Namn</span>
-                  <input type="text" name="name" autocomplete="name" required />
-                </label>
-                <fieldset class="attendance-field">
-                  <legend data-i18n="attendanceLabel">Kan du/ni komma?</legend>
-                  <div class="attendance-options">
-                    <label class="attendance-option">
-                      <input type="radio" name="attendance" value="yes" required />
-                      <span data-i18n="attendingYes">Kommer</span>
-                    </label>
-                    <label class="attendance-option">
-                      <input type="radio" name="attendance" value="no" required />
-                      <span data-i18n="attendingNo">Kan inte komma</span>
-                    </label>
-                  </div>
-                </fieldset>
-                <div class="guest-count-field">
-                  <span class="field-label" data-i18n="guestCountLabel">Hur många kommer?</span>
-                  <div class="guest-stepper">
-                    <button type="button" data-guest-action="decrease" aria-label="Minska antal" data-i18n-aria-label="decreaseGuestsAria">−</button>
-                    <input type="number" name="guests" min="1" max="20" value="1" inputmode="numeric" readonly required aria-live="polite" />
-                    <button type="button" data-guest-action="increase" aria-label="Öka antal" data-i18n-aria-label="increaseGuestsAria">+</button>
-                  </div>
-                </div>
-                <div class="contact-actions">
-                  <button type="button" class="primary-btn" data-recipient="yaeel" data-i18n="sendReply">
-                    Skicka OSA
-                  </button>
-                </div>
-              </form>
-            </div>
-          </section>
         </div>
       </section>
 
