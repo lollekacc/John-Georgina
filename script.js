@@ -703,7 +703,7 @@ document.querySelector("#openInvitation").addEventListener("click", () => {
   toggleMusic(true).catch(() => {});
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const openingDuration = reducedMotion ? 100 : 2020;
+  const openingDuration = reducedMotion ? 100 : 2320;
   window.setTimeout(() => {
     gate.classList.add("is-open");
   }, openingDuration);
