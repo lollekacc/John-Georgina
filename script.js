@@ -640,50 +640,16 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
   button.addEventListener("click", () => applyLanguage(button.dataset.lang));
 });
 
-let audioContext;
-let musicTimer;
+const backgroundMusic = document.querySelector("#backgroundMusic");
+backgroundMusic.volume = 0.45;
 let isPlaying = false;
-let musicStep = 0;
 
-function playTone(frequency, start, duration, volume) {
-  const oscillator = audioContext.createOscillator();
-  const gain = audioContext.createGain();
-
-  oscillator.type = "sine";
-  oscillator.frequency.setValueAtTime(frequency, start);
-  gain.gain.setValueAtTime(0.0001, start);
-  gain.gain.exponentialRampToValueAtTime(volume, start + 0.08);
-  gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
-  oscillator.connect(gain).connect(audioContext.destination);
-  oscillator.start(start);
-  oscillator.stop(start + duration + 0.04);
-}
-
-function playCanonInspiredPhrase() {
-  const bass = [196, 147, 165, 124, 131, 98, 131, 147];
-  const melody = [392, 370, 330, 294, 330, 370, 392, 294, 330, 247, 262, 294, 330, 370, 330, 294];
-  const now = audioContext.currentTime;
-  const bassNote = bass[musicStep % bass.length];
-
-  playTone(bassNote, now, 1.8, 0.035);
-  for (let i = 0; i < 4; i += 1) {
-    const note = melody[(musicStep * 4 + i) % melody.length];
-    playTone(note, now + i * 0.42, 0.72, 0.026);
-    playTone(note * 1.5, now + i * 0.42 + 0.05, 0.54, 0.012);
-  }
-
-  musicStep += 1;
-}
-
-function playSoftMusic() {
-  audioContext = audioContext || new AudioContext();
-  playCanonInspiredPhrase();
-  musicTimer = setInterval(playCanonInspiredPhrase, 1680);
+async function playSoftMusic() {
+  await backgroundMusic.play();
 }
 
 function stopSoftMusic() {
-  clearInterval(musicTimer);
-  musicTimer = null;
+  backgroundMusic.pause();
 }
 
 function updateMusicButtonLabel() {
@@ -706,13 +672,15 @@ async function toggleMusic(forcePlay = false) {
   const button = document.querySelector("#musicToggle");
 
   if (!isPlaying || forcePlay) {
-    if (!isPlaying) {
-      playSoftMusic();
+    try {
+      await playSoftMusic();
+      isPlaying = true;
+    } catch {
+      isPlaying = false;
+      button.classList.remove("is-playing");
+      updateMusicButtonLabel();
+      return;
     }
-    if (audioContext.state === "suspended") {
-      await audioContext.resume();
-    }
-    isPlaying = true;
     button.classList.add("is-playing");
     updateMusicButtonLabel();
   } else {
