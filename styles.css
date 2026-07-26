@@ -3943,12 +3943,22 @@ body[dir="rtl"] .hourglass-visual {
   .ceremony-place-group {
     grid-column: 1;
     grid-row: 3;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 220px;
   }
 
-  .ceremony-place-group .essential-time-options > .ceremony-detail,
-  .ceremony-place-group .essential-place-card {
+  .event-facts .ceremony-place-group .essential-time-options > .ceremony-detail {
+    grid-column: 1;
     grid-row: 1;
+    min-height: 240px;
+  }
+
+  .event-facts .ceremony-place-group .essential-place-card {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 220px;
+    border-inline-start: 0;
+    border-top: 1px solid rgba(211, 163, 76, 0.42);
   }
 
   .essential-time-options > .reception-detail {
@@ -3966,5 +3976,68 @@ body[dir="rtl"] .hourglass-visual {
 
   .hourglass-visual {
     width: min(110px, 90%);
+  }
+}
+
+/* Fail-safe phone layout: ceremony must always precede the map. */
+@media (max-width: 640px) {
+  .event-facts .ceremony-place-group {
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+
+  .ceremony-place-group .essential-time-card {
+    display: block !important;
+    order: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .ceremony-place-group .essential-time-options {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .event-facts .ceremony-place-group .ceremony-detail {
+    position: relative !important;
+    display: flex !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 260px !important;
+    padding: 28px 18px !important;
+    transform: none !important;
+  }
+
+  .event-facts .ceremony-place-group .essential-place-card {
+    position: relative !important;
+    display: block !important;
+    order: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 230px !important;
+    min-height: 230px !important;
+    transform: none !important;
+    border-inline-start: 0 !important;
+    border-top: 1px solid rgba(211, 163, 76, 0.42) !important;
+  }
+
+  .ceremony-place-group .essential-mini-map {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    background:
+      url("https://tile.openstreetmap.org/15/18014/9624.png") -180px -260px / 340px 340px no-repeat,
+      url("https://tile.openstreetmap.org/15/18015/9624.png") 160px -260px / 340px 340px no-repeat,
+      url("https://tile.openstreetmap.org/15/18014/9625.png") -180px 80px / 340px 340px no-repeat,
+      url("https://tile.openstreetmap.org/15/18015/9625.png") 160px 80px / 340px 340px no-repeat,
+      #e8e1d7 !important;
   }
 }
