@@ -3431,8 +3431,8 @@ body.motion-ready .welcome-section .reveal {
 
 .section-shell.event-overview {
   display: grid;
-  grid-template-columns: minmax(28px, 0.35fr) 1.35fr repeat(3, minmax(0, 1fr)) minmax(28px, 0.35fr);
-  grid-template-rows: minmax(420px, auto) 248px;
+  grid-template-columns: minmax(28px, 0.65fr) 1.35fr repeat(2, minmax(0, 1fr)) minmax(28px, 0.65fr);
+  grid-template-rows: minmax(420px, auto) 286px;
   width: 100%;
   max-width: 1480px;
   margin: 0 auto;
@@ -3556,7 +3556,7 @@ body.motion-ready .welcome-section .reveal {
 .essential-place-card {
   position: relative;
   z-index: 3;
-  min-height: 232px;
+  min-height: 270px;
   transform: translateY(-52px);
   border: 1px solid rgba(211, 163, 76, 0.62);
   border-radius: 14px;
@@ -3670,13 +3670,13 @@ body[dir="rtl"] .hourglass-visual {
   text-align: center;
 }
 
-.essential-time-options > strong:first-child {
+.essential-time-options > .ceremony-detail {
   grid-column: 3;
   grid-row: 2;
 }
 
-.essential-time-options > strong:last-child {
-  grid-column: 5;
+.essential-time-options > .reception-detail {
+  grid-column: 4;
   grid-row: 2;
   padding-inline-start: 18px;
   border-inline-start: 1px solid rgba(211, 163, 76, 0.62);
@@ -3695,11 +3695,11 @@ body[dir="rtl"] .hourglass-visual {
   background-size: 45px 45px;
 }
 
-.essential-time-options > strong:first-child::before {
+.essential-time-options > .ceremony-detail::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23c58e31' stroke-width='2'%3E%3Ccircle cx='24' cy='36' r='13'/%3E%3Ccircle cx='40' cy='36' r='13'/%3E%3Cpath d='m20 19 4-5 4 5-4 5-4-5Zm20 0 4-5 4 5-4 5-4-5Z'/%3E%3C/svg%3E");
 }
 
-.essential-time-options > strong:last-child::before {
+.essential-time-options > .reception-detail::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23c58e31' stroke-width='2'%3E%3Cpath d='M15 12h14c0 13-2 20-8 27l-5-2c1-8 0-16-1-25Zm34 0H35c0 13 2 20 8 27l5-2c-1-8 0-16 1-25ZM21 39l-5 13m27-13 5 13M10 52h12m20 0h12M18 8v4m28-4v4'/%3E%3Cpath d='M20 24h8m8 0h8'/%3E%3Ccircle cx='32' cy='8' r='1' fill='%23c58e31'/%3E%3C/svg%3E");
 }
 
@@ -3715,6 +3715,17 @@ body[dir="rtl"] .hourglass-visual {
   color: #221e1b;
   font-size: clamp(34px, 3.2vw, 46px);
   font-weight: 500;
+}
+
+.ceremony-note {
+  max-width: 230px;
+  margin: 13px 0 0;
+  color: #6d6258;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: balance;
 }
 
 .essential-time-options > strong::after,
@@ -3800,7 +3811,7 @@ body[dir="rtl"] .hourglass-visual {
     grid-row: 2;
   }
 
-  .essential-time-options > strong:first-child {
+  .essential-time-options > .ceremony-detail {
     grid-column: 1;
     grid-row: 3;
   }
@@ -3810,10 +3821,6 @@ body[dir="rtl"] .hourglass-visual {
     grid-row: 3;
   }
 
-  .essential-time-options > strong:last-child {
-    grid-column: 1 / -1;
-    grid-row: 4;
-  }
 }
 
 @media (max-width: 520px) {
@@ -3852,8 +3859,8 @@ body[dir="rtl"] .hourglass-visual {
   .hourglass-countdown,
   .essential-time-options > strong,
   .essential-place-card,
-  .essential-time-options > strong:first-child,
-  .essential-time-options > strong:last-child {
+  .essential-time-options > .ceremony-detail,
+  .essential-time-options > .reception-detail {
     grid-column: 1;
     min-height: 210px;
     border-radius: 12px;
@@ -3864,7 +3871,7 @@ body[dir="rtl"] .hourglass-visual {
     grid-template-columns: 38% 62%;
   }
 
-  .essential-time-options > strong:first-child {
+  .essential-time-options > .ceremony-detail {
     grid-row: 3;
   }
 
@@ -3872,7 +3879,7 @@ body[dir="rtl"] .hourglass-visual {
     grid-row: 4;
   }
 
-  .essential-time-options > strong:last-child {
+  .essential-time-options > .reception-detail {
     grid-row: 5;
   }
 
