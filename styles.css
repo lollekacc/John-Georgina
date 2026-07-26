@@ -1014,23 +1014,24 @@ p {
 
 .event-overview {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.55fr);
-  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(430px, 2fr) repeat(2, minmax(105px, 0.55fr));
+  width: 100%;
+  max-width: none;
+  gap: 0;
   align-items: stretch;
-  padding-top: 0;
-  padding-bottom: 52px;
-  transform: translateY(-34px);
+  padding: 0;
+  transform: none;
+}
+
+.section-shell.event-overview {
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .event-facts {
-  display: grid;
-  grid-template-rows: minmax(244px, 2fr) repeat(2, minmax(82px, 0.7fr));
-  gap: 1px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--line);
-  box-shadow: 0 26px 70px rgba(36, 28, 24, 0.12);
+  display: contents;
 }
 
 .event-facts .essential-card {
@@ -1040,11 +1041,18 @@ p {
 .essential-calendar-card {
   position: relative;
   isolation: isolate;
+  grid-column: 1;
+  grid-row: 1 / 4;
   padding: 24px 22px 20px;
   overflow: hidden;
   background:
     radial-gradient(circle at 88% 12%, rgba(229, 187, 104, 0.16), transparent 30%),
     linear-gradient(145deg, #160b0f 0%, #2d111a 50%, #10090c 100%);
+}
+
+.essential-time-card {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .essential-calendar-card::after {
@@ -1171,6 +1179,8 @@ p {
 }
 
 .essential-place-card {
+  grid-column: 2;
+  grid-row: 3;
   grid-template-columns: minmax(0, 1fr) 128px;
   grid-template-rows: auto auto;
   column-gap: 10px;
@@ -1247,10 +1257,12 @@ p {
   --sand-remaining: 1;
   --sand-collected: 0;
   position: relative;
+  grid-column: 2;
+  grid-row: 1;
   isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(210px, 0.72fr);
-  min-height: 430px;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(224, 185, 103, 0.34);
   border-radius: 8px;
@@ -1260,6 +1272,12 @@ p {
     linear-gradient(135deg, #250c14 0%, #511326 48%, #210b12 100%);
   color: var(--paper-strong);
   box-shadow: 0 30px 76px rgba(44, 10, 18, 0.25);
+}
+
+.essential-calendar-card,
+.hourglass-countdown {
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .hourglass-countdown::before {
@@ -2752,14 +2770,31 @@ body.motion-ready .welcome-section .reveal {
 
   .event-overview {
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding-bottom: 42px;
-    transform: translateY(-26px);
+    grid-template-rows: auto;
+    gap: 0;
+    padding: 0;
+    transform: none;
   }
 
-  .event-facts {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: none;
+  .essential-calendar-card {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 410px;
+  }
+
+  .hourglass-countdown {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .essential-time-card {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .essential-place-card {
+    grid-column: 1;
+    grid-row: 4;
   }
 
   .hourglass-countdown {
@@ -3037,10 +3072,10 @@ body.motion-ready .welcome-section .reveal {
   }
 
   .event-overview {
-    width: min(100% - 24px, 1160px);
-    gap: 12px;
-    padding-bottom: 32px;
-    transform: translateY(-20px);
+    width: 100%;
+    gap: 0;
+    padding: 0;
+    transform: none;
   }
 
   .event-facts {
