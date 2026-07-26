@@ -92,13 +92,53 @@
       <section class="essentials-section" aria-label="Viktig information" data-i18n-aria-label="essentialsAria">
         <div class="section-shell event-overview">
           <div class="event-facts">
-            <article class="essential-card reveal">
-              <span data-i18n="essentialDateLabel">Datum</span>
-              <strong data-i18n="essentialDateValue">Fredag 25 september 2026</strong>
+            <article class="essential-card essential-calendar-card reveal">
+              <span class="calendar-date-label" data-i18n="essentialDateLabel">Datum</span>
+              <table class="wedding-calendar">
+                <caption data-i18n="calendarMonth">September 2026</caption>
+                <thead>
+                  <tr>
+                    <th scope="col" data-i18n="calendarMon">Mån</th>
+                    <th scope="col" data-i18n="calendarTue">Tis</th>
+                    <th scope="col" data-i18n="calendarWed">Ons</th>
+                    <th scope="col" data-i18n="calendarThu">Tor</th>
+                    <th scope="col" data-i18n="calendarFri">Fre</th>
+                    <th scope="col" data-i18n="calendarSat">Lör</th>
+                    <th scope="col" data-i18n="calendarSun">Sön</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                  <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                  <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                  <tr>
+                    <td>21</td><td>22</td><td>23</td><td>24</td>
+                    <td class="wedding-day">
+                      <time datetime="2026-09-25" aria-label="Fredag 25 september 2026" data-i18n-aria-label="essentialDateValue">
+                        <svg viewBox="0 0 40 36" aria-hidden="true">
+                          <path d="M20 33.2C17.2 30.5 5 21.6 3.2 13.3 1.5 5.4 10.9.2 16.5 6.2L20 10l3.5-3.8c5.6-6 15-0.8 13.3 7.1C35 21.6 22.8 30.5 20 33.2Z" />
+                        </svg>
+                        <span>25</span>
+                      </time>
+                    </td>
+                    <td>26</td><td>27</td>
+                  </tr>
+                  <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+              </table>
             </article>
-            <article class="essential-card reveal">
+            <article class="essential-card essential-time-card reveal">
               <span data-i18n="essentialTimeLabel">Tid</span>
-              <strong data-i18n="essentialTimeValue">19:00 vigsel</strong>
+              <div class="essential-time-options">
+                <strong>
+                  <small data-i18n="essentialCeremonyLabel">Vigsel</small>
+                  <time datetime="2026-09-25T19:00:00+02:00">19:00</time>
+                </strong>
+                <strong>
+                  <small data-i18n="essentialReceptionLabel">Bröllopsfest</small>
+                  <time datetime="2026-09-25T20:00:00+02:00">20:00</time>
+                </strong>
+              </div>
             </article>
             <article class="essential-card essential-place-card reveal">
               <span data-i18n="essentialPlaceLabel">Plats</span>
@@ -213,13 +253,13 @@
             </article>
             <article class="journey-moment">
               <time>2020</time>
-              <h3 data-i18n="journey2020Title">Ett minne som stannade</h3>
+              <h3 data-i18n="journey2020Title">När något nytt tog sin början</h3>
               <p data-i18n="journey2020Body">En tid av samtal, skratt och ögonblick som förde oss närmare varandra.</p>
             </article>
             <article class="journey-moment">
               <time>2023</time>
-              <h3 data-i18n="journey2023Title">När allt blev tydligare</h3>
-              <p data-i18n="journey2023Body">Kärleken växte till ett löfte och framtiden började kännas självklar.</p>
+              <h3 data-i18n="journey2023Title">När framtiden fick en ny betydelse</h3>
+              <p data-i18n="journey2023Body">Det vi byggt tillsammans blev till ett stilla löfte om allt som ännu låg framför oss.</p>
             </article>
             <article class="journey-moment">
               <time>2026</time>
